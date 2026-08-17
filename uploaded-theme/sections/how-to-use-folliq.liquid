@@ -1,0 +1,62 @@
+{{ 'component-folliq-pdp-final.css' | asset_url | stylesheet_tag }}
+
+<div class="folliq-howto color-{{ section.settings.color_scheme }}">
+  <div class="folliq-howto__head">
+    <h2 class="folliq-howto__heading">
+      {{ section.settings.heading }}
+      {%- if section.settings.heading_accent != blank -%}
+        <em>{{ section.settings.heading_accent }}</em>
+      {%- endif -%}
+    </h2>
+    {%- if section.settings.subheading != blank -%}
+      <p class="folliq-howto__subheading">{{ section.settings.subheading }}</p>
+    {%- endif -%}
+  </div>
+
+  {%- assign step_blocks = section.blocks | where: 'type', 'step' -%}
+  {%- if step_blocks.size > 0 -%}
+    <div class="folliq-howto__steps">
+      {%- for block in step_blocks -%}
+        <div class="folliq-howto__step" {{ block.shopify_attributes }}>
+          <span class="folliq-howto__step-number">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
+          <h3 class="folliq-howto__step-title">{{ block.settings.title }}</h3>
+          <p class="folliq-howto__step-text">{{ block.settings.text }}</p>
+        </div>
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "Folliq How to Use",
+  "tag": "section",
+  "class": "section-folliq-howto",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "How to Use" },
+    { "type": "text", "id": "heading_accent", "label": "Heading accent", "default": "Folliq" },
+    { "type": "richtext", "id": "subheading", "label": "Subheading", "default": "<p>Three simple steps to a healthier scalp and stronger hair.</p>" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-1" }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Title", "default": "Wet & Lather" },
+        { "type": "textarea", "id": "text", "label": "Text", "default": "Wet your hair and scalp, then work the bar between your palms into a rich lather." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Folliq How to Use",
+      "blocks": [
+        { "type": "step", "settings": { "title": "Wet & Lather", "text": "Wet your hair and scalp, then work the bar between your palms into a rich lather." } },
+        { "type": "step", "settings": { "title": "Massage the Scalp", "text": "Massage into the scalp for 1–2 minutes to stimulate circulation and work in the botanicals." } },
+        { "type": "step", "settings": { "title": "Rinse & Repeat Daily", "text": "Rinse thoroughly. Use daily — most people notice a difference within 4–6 weeks." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

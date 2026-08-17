@@ -402,4 +402,79 @@
   .folliq-stats2__items {
     grid-template-columns: 1fr;
   }
+  .folliq-howto__steps {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* === How to use === */
+.folliq-howto {
+  padding: 6rem 5%;
+  text-align: center;
+}
+
+.folliq-howto__head {
+  max-width: 620px;
+  margin: 0 auto 4rem;
+}
+
+.folliq-howto__heading {
+  font-family: var(--font-heading-family);
+  font-size: 3.6rem;
+  font-weight: 600;
+  line-height: 1.15;
+  margin: 0 0 1rem;
+}
+
+.folliq-howto__heading em {
+  font-style: normal;
+  color: rgb(var(--color-button));
+}
+
+.folliq-howto__subheading {
+  font-family: var(--font-body-family);
+  font-size: 1.6rem;
+  opacity: 0.75;
+  margin: 0;
+}
+
+.folliq-howto__steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.folliq-howto__step {
+  padding: 0 1rem;
+}
+
+.folliq-howto__step-number {
+  display: inline-block;
+  font-family: var(--font-heading-family);
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: rgb(var(--color-button));
+  border: 1px solid rgba(var(--color-button), 0.4);
+  border-radius: 50%;
+  width: 4.4rem;
+  height: 4.4rem;
+  line-height: 4.2rem;
+  margin-bottom: 1.6rem;
+}
+
+.folliq-howto__step-title {
+  font-family: var(--font-heading-family);
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0 0 0.8rem;
+}
+
+.folliq-howto__step-text {
+  font-family: var(--font-body-family);
+  font-size: 1.4rem;
+  line-height: 1.6;
+  opacity: 0.8;
+  margin: 0;
 }
