@@ -212,105 +212,41 @@
         "padding_bottom": 28
       }
     },
-    "ss_steps_11_gYPkL4": {
-      "type": "ss-steps-11",
+    "how_to_use_folliq_1": {
+      "type": "how-to-use-folliq",
       "blocks": {
-        "step_kEmCd4": {
+        "step_1": {
           "type": "step",
           "settings": {
-            "step": "STEP",
-            "title": "Step title",
-            "text": "<p>Add detailed descriptions here.</p>"
+            "title": "Wet & Lather",
+            "text": "Wet your hair and scalp, then work the bar between your palms into a rich lather."
           }
         },
-        "step_PU3bLM": {
+        "step_2": {
           "type": "step",
           "settings": {
-            "step": "STEP",
-            "title": "Step title",
-            "text": "<p>Add detailed descriptions here.</p>"
+            "title": "Massage the Scalp",
+            "text": "Massage into the scalp for 1–2 minutes to stimulate circulation and work in the botanicals."
           }
         },
-        "step_TFqVMG": {
+        "step_3": {
           "type": "step",
           "settings": {
-            "step": "STEP",
-            "title": "Step title",
-            "text": "<p>Add detailed descriptions here.</p>"
-          }
-        },
-        "step_fXCBQX": {
-          "type": "step",
-          "settings": {
-            "step": "STEP",
-            "title": "Step title",
-            "text": "<p>Add detailed descriptions here.</p>"
+            "title": "Rinse & Repeat Daily",
+            "text": "Rinse thoroughly. Use daily — most people notice a difference within 4–6 weeks."
           }
         }
       },
       "block_order": [
-        "step_kEmCd4",
-        "step_PU3bLM",
-        "step_TFqVMG",
-        "step_fXCBQX"
+        "step_1",
+        "step_2",
+        "step_3"
       ],
-      "name": "SS - Steps #11",
       "settings": {
-        "layout": "image_content",
-        "layout_mobile": "image_content",
-        "layout_gap": 64,
-        "layout_gap_mobile": 32,
-        "image_radius": 0,
-        "image_border_thickness": 0,
-        "image_ratio": "portrait",
-        "image_ratio_mobile": "portrait",
-        "steps_custom": false,
-        "steps_font": "josefin_sans_n4",
-        "steps_size": 12,
-        "steps_size_mobile": 12,
-        "steps_height": 100,
-        "steps_padding_horizontal": 8,
-        "steps_padding_horizontal_mobile": 8,
-        "steps_padding_vertical": 4,
-        "steps_padding_vertical_mobile": 4,
-        "steps_radius": 100,
-        "steps_border_thickness": 1,
-        "steps_content_align": "left",
-        "steps_content_align_mobile": "left",
-        "title_custom": false,
-        "title_font": "josefin_sans_n4",
-        "title_size": 24,
-        "title_size_mobile": 20,
-        "title_height": 130,
-        "text_custom": false,
-        "text_font": "josefin_sans_n4",
-        "text_size": 14,
-        "text_size_mobile": 12,
-        "text_height": 150,
-        "text_mt": 8,
-        "text_mt_mobile": 8,
-        "steps_color": "#121212",
-        "steps_bg_color": "#ffffff",
-        "steps_border_color": "#121212",
-        "title_color": "#121212",
-        "text_color": "#121212",
-        "image_border_color": "#121212",
-        "background_color": "#ffffff",
-        "background_gradient": "",
-        "border_color": "#121212",
-        "margin_top": 0,
-        "margin_bottom": 0,
-        "margin_horizontal": 0,
-        "margin_horizontal_mobile": 0,
-        "padding_top": 36,
-        "padding_bottom": 36,
-        "padding_horizontal": 5,
-        "padding_horizontal_mobile": 1.5,
-        "full_width": false,
-        "content_width": 1000,
-        "border_thickness": 0,
-        "section_radius": 0,
-        "lazy": true
+        "heading": "How to Use",
+        "heading_accent": "Folliq",
+        "subheading": "<p>Three simple steps to a healthier scalp and stronger hair.</p>",
+        "color_scheme": "scheme-1"
       }
     },
     "blocks_pJREJB": {
@@ -377,381 +313,86 @@
       "name": "Folliq testimonials",
       "settings": {}
     },
-    "ss_product_tabs_5_eAyYkR": {
-      "type": "ss-product-tabs-5",
+    "social_proof_folliq_1": {
+      "type": "social-proof-folliq",
       "blocks": {
-        "tab_dkApyt": {
-          "type": "tab",
+        "person_1": {
+          "type": "person",
           "settings": {
-            "title": "Title",
-            "icon": "atc",
-            "text": "<p>Text</p>",
-            "use_description": true
+            "initials": "D",
+            "name": "Davie"
           }
         },
-        "tab_pdbebi": {
-          "type": "tab",
+        "person_2": {
+          "type": "person",
           "settings": {
-            "title": "Title",
-            "icon": "atc",
-            "text": "<p>Text</p>",
-            "use_description": false
-          }
-        },
-        "tab_GctEXN": {
-          "type": "tab",
-          "settings": {
-            "title": "Title",
-            "icon": "atc",
-            "text": "<p>Text</p>",
-            "use_description": false
-          }
-        },
-        "tab_tknQnq": {
-          "type": "tab",
-          "settings": {
-            "title": "Title",
-            "icon": "atc",
-            "text": "<p>Text</p>",
-            "use_description": false
+            "initials": "M",
+            "name": "Mark"
           }
         }
       },
       "block_order": [
-        "tab_dkApyt",
-        "tab_pdbebi",
-        "tab_GctEXN",
-        "tab_tknQnq"
+        "person_1",
+        "person_2"
       ],
-      "name": "SS - Product tabs #5",
       "settings": {
-        "tabs_position": "below_buy",
-        "tab_padding_horizontal": 18,
-        "tab_padding_horizontal_mobile": 16,
-        "tab_padding_vertical": 18,
-        "tab_padding_vertical_mobile": 18,
-        "tab_radius": 16,
-        "tab_border_thickness": 1,
-        "tab_mt": 10,
-        "tab_mt_mobile": 10,
-        "title_gap": 12,
-        "title_gap_mobile": 12,
-        "title_icon_size": 22,
-        "title_icon_size_mobile": 20,
-        "title_custom": false,
-        "title_font": "josefin_sans_n4",
-        "title_size": 15,
-        "title_size_mobile": 15,
-        "title_height": 130,
-        "arrow_size": 24,
-        "arrow_size_mobile": 20,
-        "text_custom": false,
-        "text_font": "josefin_sans_n4",
-        "text_size": 15,
-        "text_size_mobile": 15,
-        "text_height": 150,
-        "text_padding_top": 20,
-        "tab_bg_color": "#ffffff",
-        "tab_border_color": "#9e9e9e",
-        "title_icon_color": "#000000",
-        "title_color": "#000000",
-        "arrow_color": "#000000",
-        "text_color": "#000000",
-        "background_color": "",
-        "background_gradient": "",
-        "border_color": "#000000",
-        "margin_top": 0,
-        "margin_bottom": 0,
-        "padding_top": 12,
-        "padding_bottom": 12,
-        "padding_horizontal": 0,
-        "padding_horizontal_mobile": 0,
-        "border_thickness": 0,
-        "lazy": true
+        "trailing_text": "and 1,500+ others love Folliq!",
+        "color_scheme": "scheme-1"
       }
     },
-    "ss_social_proof_7KPwtV": {
-      "type": "ss-social-proof",
-      "name": "SS - Social proof",
-      "settings": {
-        "coupon_position": "below_title",
-        "image_size": 30,
-        "image_size_mobile": 25,
-        "image_radius": 100,
-        "image_border_thickness": 0,
-        "text": "<p><strong>Davie</strong> ✓, <strong>Mark</strong> ✓ and <strong>1500+</strong> others love our products!</p>",
-        "text_custom": false,
-        "text_font": "josefin_sans_n4",
-        "text_size": 13,
-        "text_size_mobile": 13,
-        "text_height": 150,
-        "text_align": "left",
-        "text_align_mobile": "left",
-        "text_color": "#121212",
-        "icon_color": "#42a5f5",
-        "image_border_color": "#121212",
-        "background_style": "solid",
-        "background_color": "#f3f3f3",
-        "background_gradient": "linear-gradient(180deg, #FFFFFF 0%, #F2F2F2 100%)",
-        "border_color": "#121212",
-        "margin_top": 0,
-        "margin_bottom": 0,
-        "padding_top": 10,
-        "padding_bottom": 10,
-        "padding_horizontal": 10,
-        "padding_horizontal_mobile": 10,
-        "border_style": "solid",
-        "border_thickness": 0,
-        "section_radius": 0,
-        "lazy": false
-      }
-    },
-    "ss_product_vidoes_BDdPRF": {
-      "type": "ss-product-vidoes",
+    "video_reviews_folliq_1": {
+      "type": "video-reviews-folliq",
       "blocks": {
-        "video_texrKt": {
+        "video_1": {
           "type": "video",
           "settings": {
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "modal_heading": "<h4>Heading</h4>",
-            "modal_text": "<p>Text</p>"
+            "name": "Emma S.",
+            "usage": "Used for 3 months"
           }
         },
-        "video_dRLfak": {
+        "video_2": {
           "type": "video",
           "settings": {
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "modal_heading": "<h4>Heading</h4>",
-            "modal_text": "<p>Text</p>"
+            "name": "Sophie M.",
+            "usage": "Used for 6 months"
           }
         },
-        "video_mH67WP": {
+        "video_3": {
           "type": "video",
           "settings": {
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "modal_heading": "<h4>Heading</h4>",
-            "modal_text": "<p>Text</p>"
-          }
-        },
-        "video_k8bB3G": {
-          "type": "video",
-          "settings": {
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "modal_heading": "<h4>Heading</h4>",
-            "modal_text": "<p>Text</p>"
-          }
-        },
-        "video_fz8XmX": {
-          "type": "video",
-          "settings": {
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "modal_heading": "<h4>Heading</h4>",
-            "modal_text": "<p>Text</p>"
+            "name": "Lisa K.",
+            "usage": "Used for 4 months"
           }
         }
       },
       "block_order": [
-        "video_texrKt",
-        "video_dRLfak",
-        "video_mH67WP",
-        "video_k8bB3G",
-        "video_fz8XmX"
+        "video_1",
+        "video_2",
+        "video_3"
       ],
-      "name": "SS - Product videos",
       "settings": {
-        "videos_position": "above_description",
-        "use_metafield": false,
-        "heading": "<h2>WHAT OUR FELLOWS SAY</h2>",
-        "heading_custom": false,
-        "heading_font": "josefin_sans_n4",
-        "heading_size": 18,
-        "heading_size_mobile": 18,
-        "heading_height": 130,
-        "heading_align": "center",
-        "heading_align_mobile": "center",
-        "slider_view": 3,
-        "slider_view_mobile": 3,
-        "slider_gap": 16,
-        "slider_gap_mobile": 16,
-        "slider_mt": 20,
-        "slider_mt_mobile": 16,
-        "card_radius": 10,
-        "card_border_thickness": 0,
-        "video_ratio": "portrait",
-        "video_ratio_mobile": "portrait",
-        "video_overlay": 0.3,
-        "card_shadow": true,
-        "icon_size": 34,
-        "icon_size_mobile": 34,
-        "icon_border_thickness": 1,
-        "icon_position": "bottom_left",
-        "icon_position_mobile": "bottom_left",
-        "hide_icon": false,
-        "arrow_size": 35,
-        "arrow_size_mobile": 35,
-        "arrow_radius": 5,
-        "arrow_border_thickness": 0,
-        "arrow_hover_shadow": true,
-        "arrow_show_desktop": true,
-        "arrow_show_mobile": true,
-        "show_content": false,
-        "modal_width": 30,
-        "modal_width_mobile": 95,
-        "padding_advanced": false,
-        "modal_padding_vertical": 0,
-        "modal_padding_vertical_mobile": 0,
-        "modal_padding_horizontal": 0,
-        "modal_padding_horizontal_mobile": 0,
-        "modal_radius": 16,
-        "modal_border_thickness": 0,
-        "modal_overlay": 0.5,
-        "close_size": 42,
-        "close_size_mobile": 42,
-        "close_radius": 8,
-        "close_border_thickness": 0,
-        "buttons_size": 48,
-        "buttons_size_mobile": 48,
-        "buttons_radius": 8,
-        "buttons_border_thickness": 0,
-        "modal_video_radius": 0,
-        "modal_video_border_thickness": 0,
-        "modal_video_ratio": "portrait",
-        "modal_video_ratio_mobile": "portrait",
-        "modal_heading_custom": false,
-        "modal_heading_font": "josefin_sans_n4",
-        "modal_heading_size": 28,
-        "modal_heading_size_mobile": 28,
-        "modal_heading_height": 130,
-        "modal_heading_align": "center",
-        "modal_heading_align_mobile": "center",
-        "modal_text_custom": false,
-        "modal_text_font": "josefin_sans_n4",
-        "modal_text_size": 16,
-        "modal_text_size_mobile": 16,
-        "modal_text_height": 150,
-        "modal_text_align": "center",
-        "modal_text_align_mobile": "center",
-        "modal_text_mt": 16,
-        "modal_text_mt_mobile": 16,
-        "card_bg_color": "#FFFFFF",
-        "card_border_color": "#000000",
-        "video_overlay_color": "#000000",
-        "card_shadow_color": "#000000",
-        "icon_color": "#FFFFFF",
-        "icon_bg_color": "#000000",
-        "icon_border_color": "#FFFFFF",
-        "arrow_icon_color": "#1c1c1c",
-        "arrow_icon_hover_color": "#1c1c1c",
-        "arrow_bg_color": "#FFFFFF",
-        "arrow_bg_hover_color": "#FFFFFF",
-        "arrow_border_color": "#000000",
-        "arrow_border_hover_color": "#000000",
-        "modal_heading_color": "#000000",
-        "modal_text_color": "#000000",
-        "modal_content_bg_color": "#FFFFFF",
-        "modal_border_color": "#000000",
-        "modal_overlay_color": "#000000",
-        "modal_bg_color": "#FFFFFF",
-        "modal_video_border_color": "#000000",
-        "buttons_icon_color": "#FFFFFF",
-        "buttons_bg_color": "#FFFFFF",
-        "buttons_border_color": "#000000",
-        "close_icon_color": "#FFFFFF",
-        "close_bg_color": "#FFFFFF",
-        "close_border_color": "#000000",
-        "heading_color": "#000000",
-        "background_color": "",
-        "background_gradient": "",
-        "border_color": "#000000",
-        "margin_top": 0,
-        "margin_bottom": 0,
-        "padding_top": 20,
-        "padding_bottom": 20,
-        "padding_horizontal": 0,
-        "padding_horizontal_mobile": 0,
-        "border_thickness": 0,
-        "lazy": true
+        "heading": "What Our Customers Say",
+        "color_scheme": "scheme-2"
       }
     },
-    "ss_scrolling_logo_cloud_iiPezK": {
-      "type": "ss-scrolling-logo-cloud",
+    "press_logos_folliq_1": {
+      "type": "press-logos-folliq",
       "blocks": {
-        "slide_QNFN8J": {
-          "type": "slide",
-          "settings": {
-            "link": ""
-          }
-        },
-        "slide_hJhYFy": {
-          "type": "slide",
-          "settings": {
-            "link": ""
-          }
-        },
-        "slide_r9ANW8": {
-          "type": "slide",
-          "settings": {
-            "link": ""
-          }
-        },
-        "slide_PYqxLc": {
-          "type": "slide",
-          "settings": {
-            "link": ""
-          }
-        },
-        "slide_LUxGY3": {
-          "type": "slide",
-          "settings": {
-            "link": ""
-          }
-        },
-        "slide_mfVt4W": {
-          "type": "slide",
-          "settings": {
-            "link": ""
-          }
-        }
+        "logo_1": { "type": "logo", "settings": {} },
+        "logo_2": { "type": "logo", "settings": {} },
+        "logo_3": { "type": "logo", "settings": {} },
+        "logo_4": { "type": "logo", "settings": {} }
       },
       "block_order": [
-        "slide_QNFN8J",
-        "slide_hJhYFy",
-        "slide_r9ANW8",
-        "slide_PYqxLc",
-        "slide_LUxGY3",
-        "slide_mfVt4W"
+        "logo_1",
+        "logo_2",
+        "logo_3",
+        "logo_4"
       ],
-      "name": "SS - Scrolling logo cloud",
       "settings": {
-        "ss_title": "Trusted by",
-        "heading_custom": false,
-        "heading_font": "assistant_n4",
-        "header_size": 30,
-        "header_align": "center",
-        "scrolling_velocity": 10,
-        "slider_direction": "left",
-        "pause_hover": false,
-        "shadow": false,
-        "slider_advanced": false,
-        "sliders_mt": 24,
-        "logo_padding_top": 0,
-        "logo_padding_bottom": 0,
-        "slider_gap": 30,
-        "slider_gap_mobile": 30,
-        "icon_width": 200,
-        "slider_background_color": "#FFFFFF",
-        "header_color": "#121212",
-        "background_style": "solid",
-        "background_color": "#FFFFFF",
-        "background_gradient": "linear-gradient(180deg, #FFFFFF 0%, #F2F2F2 100%)",
-        "border_color": "#121212",
-        "margin_top": 0,
-        "margin_bottom": 0,
-        "padding_top": 36,
-        "padding_bottom": 36,
-        "width": "full",
-        "content_width": 1200,
-        "border_thickness": 0
+        "heading": "As Seen In",
+        "speed_seconds": 25,
+        "color_scheme": "scheme-1"
       }
     },
     "ingredients_carousel_folliq_1": {
@@ -1092,11 +733,10 @@
     "brand_story_folliq_1",
     "guarantee_banner_pdp_folliq_1",
     "related-products",
-    "ss_steps_11_gYPkL4",
+    "how_to_use_folliq_1",
     "blocks_pJREJB",
-    "ss_product_tabs_5_eAyYkR",
-    "ss_social_proof_7KPwtV",
-    "ss_product_vidoes_BDdPRF",
-    "ss_scrolling_logo_cloud_iiPezK"
+    "social_proof_folliq_1",
+    "video_reviews_folliq_1",
+    "press_logos_folliq_1"
   ]
 }
