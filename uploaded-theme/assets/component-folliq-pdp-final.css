@@ -536,3 +536,78 @@
   color: rgb(var(--color-button));
   margin: 0 0.3rem 0 0.15rem;
 }
+
+/* === Video reviews === */
+.folliq-vidrev {
+  padding: 6rem 5%;
+}
+
+.folliq-vidrev__heading {
+  font-family: var(--font-heading-family);
+  font-size: 3.2rem;
+  font-weight: 600;
+  text-align: center;
+  margin: 0 0 3.2rem;
+}
+
+.folliq-vidrev__row {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 0.6rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+.folliq-vidrev__card {
+  flex: 0 0 auto;
+  width: 240px;
+  scroll-snap-align: start;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.folliq-vidrev__poster-wrap {
+  position: relative;
+  display: block;
+  border-radius: 14px;
+  overflow: hidden;
+  aspect-ratio: 9 / 14;
+}
+
+.folliq-vidrev__poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.folliq-vidrev__play {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.folliq-vidrev__play svg {
+  width: 3.4rem;
+  height: 3.4rem;
+  color: #ffffff;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.4));
+}
+
+.folliq-vidrev__name {
+  display: block;
+  font-family: var(--font-heading-family);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+.folliq-vidrev__usage {
+  display: block;
+  font-family: var(--font-body-family);
+  font-size: 1.2rem;
+  opacity: 0.7;
+}
