@@ -611,3 +611,55 @@
   font-size: 1.2rem;
   opacity: 0.7;
 }
+
+/* === Press / logo cloud === */
+.folliq-logos {
+  padding: 4.4rem 0;
+}
+
+.folliq-logos__heading {
+  font-family: var(--font-body-family);
+  font-size: 1.3rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: center;
+  opacity: 0.6;
+  margin: 0 0 2.4rem;
+}
+
+.folliq-logos__viewport {
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+.folliq-logos__track {
+  display: flex;
+  width: max-content;
+  animation: folliq-logos-scroll var(--folliq-logos-duration, 25s) linear infinite;
+}
+
+.folliq-logos__set {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.folliq-logos__img {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+  margin: 0 3.6rem;
+  opacity: 0.6;
+  filter: grayscale(1);
+}
+
+@keyframes folliq-logos-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .folliq-logos__track {
+    animation: none;
+  }
+}

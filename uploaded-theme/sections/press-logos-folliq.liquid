@@ -1,0 +1,63 @@
+{{ 'component-folliq-pdp-final.css' | asset_url | stylesheet_tag }}
+
+{%- assign logo_blocks = section.blocks | where: 'type', 'logo' -%}
+{%- assign visible_logos = 0 -%}
+{%- for block in logo_blocks -%}
+  {%- if block.settings.image != blank -%}
+    {%- assign visible_logos = visible_logos | plus: 1 -%}
+  {%- endif -%}
+{%- endfor -%}
+
+{%- if visible_logos > 0 -%}
+  <div class="folliq-logos color-{{ section.settings.color_scheme }}">
+    {%- if section.settings.heading != blank -%}
+      <p class="folliq-logos__heading">{{ section.settings.heading }}</p>
+    {%- endif -%}
+    <div class="folliq-logos__viewport">
+      <div class="folliq-logos__track" style="--folliq-logos-duration: {{ section.settings.speed_seconds }}s;">
+        {%- for i in (1..2) -%}
+          <div class="folliq-logos__set" aria-hidden="{% if i == 2 %}true{% else %}false{% endif %}">
+            {%- for block in logo_blocks -%}
+              {%- if block.settings.image != blank -%}
+                <img class="folliq-logos__img" src="{{ block.settings.image | image_url: width: 240 }}" alt="{{ block.settings.image.alt | escape }}" loading="lazy" {{ block.shopify_attributes }}>
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Folliq Press Logos",
+  "tag": "section",
+  "class": "section-folliq-logos",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "As Seen In" },
+    { "type": "range", "id": "speed_seconds", "label": "Scroll speed (seconds per loop)", "min": 10, "max": 60, "step": 5, "default": 25 },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-1" }
+  ],
+  "blocks": [
+    {
+      "type": "logo",
+      "name": "Logo",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Logo image" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Folliq Press Logos",
+      "blocks": [
+        { "type": "logo" },
+        { "type": "logo" },
+        { "type": "logo" },
+        { "type": "logo" }
+      ]
+    }
+  ]
+}
+{% endschema %}
