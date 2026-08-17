@@ -1,0 +1,82 @@
+{{ 'component-folliq-pdp-extra.css' | asset_url | stylesheet_tag }}
+
+<div class="folliq-narrative color-{{ section.settings.color_scheme }}">
+  <div class="folliq-narrative__grid">
+    <div>
+      {%- if section.settings.image -%}
+        <img class="folliq-narrative__img" src="{{ section.settings.image | image_url: width: 700 }}" alt="{{ section.settings.image.alt | escape }}" loading="lazy">
+      {%- endif -%}
+    </div>
+    <div>
+      <h2 class="folliq-narrative__heading">
+        {{ section.settings.heading }}
+        {%- if section.settings.heading_accent != blank -%}
+          <em>{{ section.settings.heading_accent }}</em>
+        {%- endif -%}
+      </h2>
+      {%- if section.settings.subheading != blank -%}
+        <p class="folliq-narrative__subheading">{{ section.settings.subheading }}</p>
+      {%- endif -%}
+
+      {%- for block in section.blocks -%}
+        <div class="folliq-narrative__card" {{ block.shopify_attributes }}>
+          <p class="folliq-narrative__card-head">
+            <span class="folliq-narrative__card-icon">{%- render 'icon-narrative-folliq', icon: block.settings.icon -%}</span>
+            {{ block.settings.title }}
+          </p>
+          <p class="folliq-narrative__card-text">{{ block.settings.text_1 }}</p>
+          {%- if block.settings.text_2 != blank -%}
+            <p class="folliq-narrative__card-text">{{ block.settings.text_2 }}</p>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Folliq Problem/Solution",
+  "tag": "section",
+  "class": "section-folliq-narrative",
+  "settings": [
+    { "type": "image_picker", "id": "image", "label": "Image" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Thinning Hair Will NEVER Improve" },
+    { "type": "text", "id": "heading_accent", "label": "Heading accent line", "default": "Unless You Do This" },
+    { "type": "richtext", "id": "subheading", "label": "Subheading", "default": "<p>The real problem starts at the follicle, where most shampoos never reach.</p>" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-3" }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Narrative card",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            { "value": "warning", "label": "Warning" },
+            { "value": "search", "label": "Search" },
+            { "value": "lightbulb", "label": "Lightbulb" }
+          ],
+          "default": "warning"
+        },
+        { "type": "text", "id": "title", "label": "Title", "default": "The Lie: Any Shampoo Will Fix It" },
+        { "type": "textarea", "id": "text_1", "label": "Paragraph 1", "default": "You've tried every shampoo on the shelf. Hair feels fine for a week, then the shedding returns." },
+        { "type": "textarea", "id": "text_2", "label": "Paragraph 2", "default": "Most formulas were never designed to strengthen hair at the root." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Folliq Problem/Solution",
+      "blocks": [
+        { "type": "card", "settings": { "icon": "warning", "title": "The Lie: Any Shampoo Will Fix It", "text_1": "You've tried every shampoo on the shelf. Hair feels fine for a week, then the shedding returns.", "text_2": "Most formulas were never designed to strengthen hair at the root." } },
+        { "type": "card", "settings": { "icon": "search", "title": "The Truth: Weak Roots Need More Than Cleansing", "text_1": "Stress, buildup, and harsh sulfates weaken the follicle over time, making hair thinner with every wash.", "text_2": "Regular shampoo cleans the surface. The root stays undernourished." } },
+        { "type": "card", "settings": { "icon": "lightbulb", "title": "The Solution: Nourish First, Then Cleanse", "text_1": "Folliq combines rosemary, ginger, and biotin to nourish the scalp first, then gently cleanse without stripping.", "text_2": "Not harsher. In the right order." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

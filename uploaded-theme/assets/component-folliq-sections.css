@@ -1,0 +1,586 @@
+.folliq-section {
+  padding: 6rem 5%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.folliq-eyebrow {
+  font-family: var(--font-body-family);
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.65;
+  margin: 0 0 1rem;
+  text-align: center;
+}
+
+.folliq-heading {
+  font-family: var(--font-heading-family);
+  font-size: 3.6rem;
+  font-weight: 600;
+  line-height: 1.15;
+  text-align: center;
+  margin: 0 0 1.2rem;
+}
+
+.folliq-subheading {
+  font-family: var(--font-body-family);
+  font-size: 1.6rem;
+  line-height: 1.5;
+  text-align: center;
+  opacity: 0.75;
+  max-width: 620px;
+  margin: 0 auto 4rem;
+}
+
+.folliq-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.4rem 3rem;
+  border-radius: 100px;
+  font-family: var(--font-body-family);
+  font-weight: 600;
+  font-size: 1.5rem;
+  text-decoration: none;
+  background: rgb(var(--color-button));
+  color: rgb(var(--color-button-text));
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.folliq-btn:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+.folliq-btn--outline {
+  background: transparent;
+  color: rgb(var(--color-foreground));
+  border: 1px solid rgba(var(--color-foreground), 0.3);
+}
+
+/* Problem grid */
+.folliq-problem-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.folliq-problem-card {
+  text-align: center;
+}
+
+.folliq-problem-card__img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 1.6rem;
+}
+
+.folliq-problem-card__title {
+  font-family: var(--font-heading-family);
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0 0 0.6rem;
+}
+
+.folliq-problem-card__text {
+  font-family: var(--font-body-family);
+  font-size: 1.4rem;
+  opacity: 0.75;
+  margin: 0;
+}
+
+/* Product grid */
+.folliq-product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.folliq-product-card {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.folliq-product-card__img-wrap {
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 1.2rem;
+  background: rgba(var(--color-foreground), 0.05);
+}
+
+.folliq-product-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.folliq-product-card__rating {
+  font-family: var(--font-body-family);
+  font-size: 1.2rem;
+  opacity: 0.7;
+  margin: 0 0 0.4rem;
+}
+
+.folliq-product-card__title {
+  font-family: var(--font-heading-family);
+  font-size: 1.9rem;
+  font-weight: 600;
+  margin: 0 0 0.6rem;
+}
+
+.folliq-product-card__price {
+  font-family: var(--font-body-family);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.folliq-product-card__price s {
+  opacity: 0.5;
+  font-weight: 400;
+  margin-left: 0.6rem;
+}
+
+.folliq-product-card__btn {
+  display: block;
+  width: 100%;
+  margin-top: 1.2rem;
+  padding: 1.1rem;
+  border-radius: 100px;
+  text-align: center;
+  font-family: var(--font-body-family);
+  font-weight: 600;
+  font-size: 1.3rem;
+  background: rgb(var(--color-button));
+  color: rgb(var(--color-button-text));
+}
+
+/* Reviews */
+.folliq-reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.folliq-review-card {
+  padding: 2.4rem;
+  border-radius: 16px;
+  background: rgba(var(--color-foreground), 0.04);
+}
+
+.folliq-review-card__stars {
+  display: flex;
+  gap: 2px;
+  margin-bottom: 1.2rem;
+}
+
+.folliq-review-card__stars svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.folliq-review-card__text {
+  font-family: var(--font-body-family);
+  font-size: 1.4rem;
+  line-height: 1.6;
+  margin: 0 0 1.6rem;
+}
+
+.folliq-review-card__author {
+  font-family: var(--font-body-family);
+  font-size: 1.2rem;
+  font-weight: 700;
+  opacity: 0.8;
+}
+
+/* Why choose */
+.folliq-why {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.folliq-why__img {
+  width: 100%;
+  border-radius: 16px;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+}
+
+.folliq-why__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.folliq-why__item {
+  display: flex;
+  gap: 1.2rem;
+  padding: 1.6rem 0;
+  border-top: 1px solid rgba(var(--color-foreground), 0.12);
+  font-family: var(--font-body-family);
+  font-size: 1.6rem;
+}
+
+.folliq-why__item:last-child {
+  border-bottom: 1px solid rgba(var(--color-foreground), 0.12);
+}
+
+.folliq-why__check {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+}
+
+/* Symptom picker */
+.folliq-symptom-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.folliq-symptom-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 3/4;
+  display: flex;
+  align-items: flex-end;
+  text-decoration: none;
+  color: white;
+}
+
+.folliq-symptom-card__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.folliq-symptom-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.75), transparent 60%);
+}
+
+.folliq-symptom-card__content {
+  position: relative;
+  padding: 2.4rem;
+}
+
+.folliq-symptom-card__title {
+  font-family: var(--font-heading-family);
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin: 0 0 0.6rem;
+}
+
+.folliq-symptom-card__text {
+  font-family: var(--font-body-family);
+  font-size: 1.3rem;
+  opacity: 0.9;
+  margin: 0 0 1.2rem;
+}
+
+.folliq-symptom-card__link {
+  font-family: var(--font-body-family);
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+/* Before/After */
+.folliq-ba-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.4rem;
+}
+
+.folliq-ba-card {
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(var(--color-foreground), 0.04);
+}
+
+.folliq-ba-card__imgs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.folliq-ba-card__imgs img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.folliq-ba-card__body {
+  padding: 2rem;
+}
+
+.folliq-ba-card__text {
+  font-family: var(--font-body-family);
+  font-size: 1.4rem;
+  line-height: 1.6;
+  margin: 0 0 1rem;
+}
+
+.folliq-ba-card__author {
+  font-family: var(--font-body-family);
+  font-size: 1.2rem;
+  font-weight: 700;
+  opacity: 0.75;
+}
+
+/* Journey timeline */
+.folliq-journey {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.folliq-journey-step {
+  text-align: center;
+}
+
+.folliq-journey-step__img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 1.6rem;
+}
+
+.folliq-journey-step__label {
+  font-family: var(--font-body-family);
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  opacity: 0.6;
+  margin: 0 0 0.4rem;
+}
+
+.folliq-journey-step__title {
+  font-family: var(--font-heading-family);
+  font-size: 1.9rem;
+  font-weight: 600;
+  margin: 0 0 0.6rem;
+}
+
+.folliq-journey-step__text {
+  font-family: var(--font-body-family);
+  font-size: 1.3rem;
+  opacity: 0.75;
+  margin: 0 0 0.8rem;
+}
+
+.folliq-journey-step__stat {
+  font-family: var(--font-body-family);
+  font-size: 1.2rem;
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* Comparison table */
+.folliq-compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.folliq-compare-col {
+  border-radius: 16px;
+  padding: 3.2rem;
+}
+
+.folliq-compare-col--them {
+  background: rgba(var(--color-foreground), 0.04);
+}
+
+.folliq-compare-col--us {
+  background: rgb(var(--color-button));
+  color: rgb(var(--color-button-text));
+}
+
+.folliq-compare-col__title {
+  font-family: var(--font-heading-family);
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin: 0 0 2rem;
+  text-align: center;
+}
+
+.folliq-compare-row {
+  display: flex;
+  gap: 1.2rem;
+  align-items: flex-start;
+  padding: 1.2rem 0;
+  font-family: var(--font-body-family);
+  font-size: 1.4rem;
+  border-top: 1px solid currentColor;
+  border-top-color: rgba(128,128,128,0.15);
+}
+
+.folliq-compare-row svg {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+}
+
+/* UGC gallery */
+.folliq-ugc-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.2rem;
+}
+
+.folliq-ugc-item {
+  position: relative;
+  aspect-ratio: 9/16;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.folliq-ugc-item img,
+.folliq-ugc-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Guarantee banner */
+.folliq-guarantee {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.4rem;
+  text-align: center;
+  flex-direction: column;
+}
+
+.folliq-guarantee__icon {
+  width: 64px;
+  height: 64px;
+}
+
+.folliq-guarantee__title {
+  font-family: var(--font-heading-family);
+  font-size: 2.8rem;
+  font-weight: 600;
+  margin: 1.2rem 0 0.8rem;
+}
+
+.folliq-guarantee__text {
+  font-family: var(--font-body-family);
+  font-size: 1.5rem;
+  opacity: 0.8;
+  max-width: 560px;
+  margin: 0 0 2rem;
+}
+
+/* FAQ */
+.folliq-faq {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.folliq-faq-item {
+  border-top: 1px solid rgba(var(--color-foreground), 0.14);
+}
+
+.folliq-faq-item:last-child {
+  border-bottom: 1px solid rgba(var(--color-foreground), 0.14);
+}
+
+.folliq-faq-item summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0;
+  cursor: pointer;
+  font-family: var(--font-body-family);
+  font-size: 1.6rem;
+  font-weight: 600;
+  list-style: none;
+}
+
+.folliq-faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.folliq-faq-item__icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.folliq-faq-item[open] .folliq-faq-item__icon {
+  transform: rotate(45deg);
+}
+
+.folliq-faq-item__answer {
+  font-family: var(--font-body-family);
+  font-size: 1.4rem;
+  line-height: 1.6;
+  opacity: 0.75;
+  padding: 0 0 2rem;
+  margin: 0;
+}
+
+@media screen and (max-width: 989px) {
+  .folliq-problem-grid,
+  .folliq-product-grid,
+  .folliq-reviews-grid,
+  .folliq-symptom-grid,
+  .folliq-ba-grid,
+  .folliq-compare {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .folliq-journey {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .folliq-ugc-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .folliq-why {
+    grid-template-columns: 1fr;
+  }
+  .folliq-heading {
+    font-size: 2.8rem;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .folliq-section {
+    padding: 4rem 5%;
+  }
+  .folliq-problem-grid,
+  .folliq-product-grid,
+  .folliq-reviews-grid,
+  .folliq-symptom-grid,
+  .folliq-ba-grid,
+  .folliq-journey,
+  .folliq-compare {
+    grid-template-columns: 1fr;
+  }
+  .folliq-ugc-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .folliq-heading {
+    font-size: 2.4rem;
+  }
+}

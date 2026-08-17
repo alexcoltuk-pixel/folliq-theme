@@ -1,0 +1,780 @@
+{% doc %}
+  @prompt
+    Create an ultra-premium Shopify Hero Section for the luxury natural shampoo brand "Folliq".
+    
+    Aspect Ratio: 9:16 (1080×1920)
+    
+    STYLE
+    Minimal luxury, Scandinavian wellness meets Aesop + Rituals + Apple product photography.
+    Photorealistic, commercial advertising quality, cinematic lighting, 8K.
+    
+    BACKGROUND
+    
+    A breathtaking tropical rainforest with a massive multi-level waterfall flowing into crystal-clear emerald water.
+    Golden morning sunlight filtering through jungle leaves.
+    Soft mist, natural volumetric light, realistic reflections, lush green plants, wet rocks and subtle water splashes.
+    The environment should feel fresh, luxurious and premium—not wild or messy.
+    
+    COMPOSITION
+    
+    Leave approximately 40% empty space in the upper-left area for website headline and CTA.
+    
+    The product sits on a wet dark volcanic rock in the lower-right third.
+    
+    The waterfall occupies the center background.
+    
+    Depth of field creates strong separation between foreground and background.
+    
+    The image should immediately communicate:
+    Nature.
+    Luxury.
+    Clean Beauty.
+    Premium Hair Care.
+    
+    PRODUCT
+    
+    Folliq Shampoo Bar with premium emerald-green packaging.
+    Dark green luxury box with elegant gold logo.
+    Soap slightly in front of the box.
+    Natural water droplets on the packaging.
+    Perfect reflections.
+    Extremely sharp product.
+    
+    TEXT AREA
+    
+    Keep the upper-left area clean with soft background blur.
+    
+    No objects crossing behind the text.
+    
+    Leave enough negative space for:
+    
+    Headline
+    Subheadline
+    CTA button
+    
+    OVERLAY
+    
+    Very soft dark gradient from left to right (15–20% opacity) to improve text readability.
+    
+    COLORS
+    
+    Emerald Green
+    Forest Green
+    Gold
+    Deep Black
+    Warm White
+    
+    LIGHTING
+    
+    Golden hour.
+    Soft cinematic sunlight.
+    Luxury skincare commercial lighting.
+    Natural reflections.
+    Premium shadows.
+    
+    CAMERA
+    
+    85mm lens
+    f/2.8
+    HDR
+    Ultra realistic
+    Commercial photography
+    Award-winning advertising
+    Apple keynote quality
+    Luxury skincare campaign
+    
+    NEGATIVE PROMPT
+    
+    No people
+    No hands
+    No excessive leaves blocking the product
+    No fake CGI look
+    No text
+    No logos outside the packaging
+    No watermark
+    No low resolution
+    No oversaturated colors
+    No clutter
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-folliq-hero-{{ ai_gen_id }} {
+    display: block;
+    position: relative;
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    overflow: hidden;
+    background-color: #1a1a1a;
+  }
+
+  .ai-folliq-hero__image-wrapper-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .ai-folliq-hero__image-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .ai-folliq-hero__placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #1a3a2e 0%, #2d5a4a 50%, #1a3a2e 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .ai-folliq-hero__placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    max-width: 400px;
+    max-height: 400px;
+    opacity: 0.3;
+  }
+
+  .ai-folliq-hero__empty-state-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 16px 32px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    pointer-events: none;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+  }
+
+  .ai-folliq-hero__overlay-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, {{ block.settings.overlay_opacity }}) 0%,
+      rgba(0, 0, 0, {{ block.settings.overlay_opacity | times: 0.5 }}) 50%,
+      transparent 100%
+    );
+    pointer-events: none;
+  }
+
+  .ai-folliq-hero__content-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: {{ block.settings.content_vertical_alignment }};
+    padding: {{ block.settings.content_padding_mobile }}px;
+    z-index: 2;
+  }
+
+  .ai-folliq-hero__content-inner-{{ ai_gen_id }} {
+    max-width: {{ block.settings.content_max_width }}px;
+    width: 100%;
+  }
+
+  .ai-folliq-hero__heading-{{ ai_gen_id }} {
+    font-size: {{ block.settings.heading_size_mobile }}px;
+    line-height: 1.1;
+    font-weight: {{ block.settings.heading_weight }};
+    color: {{ block.settings.heading_color }};
+    margin: 0 0 {{ block.settings.heading_spacing }}px;
+    letter-spacing: {{ block.settings.heading_letter_spacing }}px;
+    text-transform: {{ block.settings.heading_text_transform }};
+  }
+
+  .ai-folliq-hero__subheading-{{ ai_gen_id }} {
+    font-size: {{ block.settings.subheading_size_mobile }}px;
+    line-height: 1.5;
+    font-weight: {{ block.settings.subheading_weight }};
+    color: {{ block.settings.subheading_color }};
+    margin: 0 0 {{ block.settings.subheading_spacing }}px;
+    letter-spacing: {{ block.settings.subheading_letter_spacing }}px;
+    opacity: {{ block.settings.subheading_opacity }};
+  }
+
+  .ai-folliq-hero__button-{{ ai_gen_id }} {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: {{ block.settings.button_padding_vertical }}px {{ block.settings.button_padding_horizontal }}px;
+    background-color: {{ block.settings.button_bg_color }};
+    color: {{ block.settings.button_text_color }};
+    font-size: {{ block.settings.button_font_size }}px;
+    font-weight: {{ block.settings.button_font_weight }};
+    text-decoration: none;
+    border-radius: {{ block.settings.button_border_radius }}px;
+    border: {{ block.settings.button_border_width }}px solid {{ block.settings.button_border_color }};
+    letter-spacing: {{ block.settings.button_letter_spacing }}px;
+    text-transform: {{ block.settings.button_text_transform }};
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .ai-folliq-hero__button-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_bg_hover_color }};
+    color: {{ block.settings.button_text_hover_color }};
+    border-color: {{ block.settings.button_border_hover_color }};
+    transform: translateY(-2px);
+  }
+
+  @media screen and (min-width: 750px) {
+    .ai-folliq-hero__content-{{ ai_gen_id }} {
+      padding: {{ block.settings.content_padding_desktop }}px;
+    }
+
+    .ai-folliq-hero__heading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.heading_size_desktop }}px;
+    }
+
+    .ai-folliq-hero__subheading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.subheading_size_desktop }}px;
+    }
+  }
+{% endstyle %}
+
+<folliq-hero-{{ ai_gen_id }} class="ai-folliq-hero-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-folliq-hero__image-wrapper-{{ ai_gen_id }}">
+    {% if block.settings.hero_image %}
+      <img
+        src="{{ block.settings.hero_image | image_url: width: 2000 }}"
+        srcset="
+          {{ block.settings.hero_image | image_url: width: 750 }} 750w,
+          {{ block.settings.hero_image | image_url: width: 1080 }} 1080w,
+          {{ block.settings.hero_image | image_url: width: 1500 }} 1500w,
+          {{ block.settings.hero_image | image_url: width: 2000 }} 2000w
+        "
+        sizes="100vw"
+        alt="{{ block.settings.hero_image.alt | escape }}"
+        loading="eager"
+        fetchpriority="high"
+        width="{{ block.settings.hero_image.width }}"
+        height="{{ block.settings.hero_image.height }}"
+        class="ai-folliq-hero__image-{{ ai_gen_id }}"
+      >
+    {% else %}
+      <div class="ai-folliq-hero__placeholder-{{ ai_gen_id }}">
+        {{ 'hero-apparel-1' | placeholder_svg_tag }}
+        <div class="ai-folliq-hero__empty-state-{{ ai_gen_id }}">
+          Add your luxury hero image (9:16 aspect ratio recommended)
+        </div>
+      </div>
+    {% endif %}
+  </div>
+
+  {% if block.settings.show_overlay %}
+    <div class="ai-folliq-hero__overlay-{{ ai_gen_id }}"></div>
+  {% endif %}
+
+  <div class="ai-folliq-hero__content-{{ ai_gen_id }}">
+    <div class="ai-folliq-hero__content-inner-{{ ai_gen_id }}">
+      {% if block.settings.heading != blank %}
+        <h1 class="ai-folliq-hero__heading-{{ ai_gen_id }}">
+          {{ block.settings.heading }}
+        </h1>
+      {% endif %}
+
+      {% if block.settings.subheading != blank %}
+        <div class="ai-folliq-hero__subheading-{{ ai_gen_id }}">
+          {{ block.settings.subheading }}
+        </div>
+      {% endif %}
+
+      {% if block.settings.button_text != blank %}
+        <a
+          href="{{ block.settings.button_link }}"
+          class="ai-folliq-hero__button-{{ ai_gen_id }}"
+        >
+          {{ block.settings.button_text }}
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</folliq-hero-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class FolliqHero{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.setupLazyLoading();
+      }
+
+      setupLazyLoading() {
+        const image = this.querySelector('.ai-folliq-hero__image-{{ ai_gen_id }}');
+        if (image && 'loading' in HTMLImageElement.prototype) {
+          image.loading = 'eager';
+        }
+      }
+    }
+
+    customElements.define('folliq-hero-{{ ai_gen_id }}', FolliqHero{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Folliq hero",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero image"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_overlay",
+      "label": "Show gradient overlay",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "min": 0,
+      "max": 1,
+      "step": 0.1,
+      "label": "Overlay opacity",
+      "default": 0.2
+    },
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Pure Nature. Pure Beauty."
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "min": 24,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "label": "Mobile size",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "heading_size_desktop",
+      "min": 32,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Desktop size",
+      "default": 72
+    },
+    {
+      "type": "select",
+      "id": "heading_weight",
+      "label": "Font weight",
+      "options": [
+        {
+          "value": "300",
+          "label": "Light"
+        },
+        {
+          "value": "400",
+          "label": "Regular"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semibold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ],
+      "default": "300"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "heading_letter_spacing",
+      "min": -2,
+      "max": 4,
+      "step": 0.5,
+      "unit": "px",
+      "label": "Letter spacing",
+      "default": 0
+    },
+    {
+      "type": "select",
+      "id": "heading_text_transform",
+      "label": "Text transform",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "uppercase",
+          "label": "Uppercase"
+        },
+        {
+          "value": "lowercase",
+          "label": "Lowercase"
+        },
+        {
+          "value": "capitalize",
+          "label": "Capitalize"
+        }
+      ],
+      "default": "none"
+    },
+    {
+      "type": "range",
+      "id": "heading_spacing",
+      "min": 8,
+      "max": 48,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom spacing",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Subheading"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Luxury natural hair care from the heart of nature"
+    },
+    {
+      "type": "range",
+      "id": "subheading_size_mobile",
+      "min": 12,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Mobile size",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "subheading_size_desktop",
+      "min": 14,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Desktop size",
+      "default": 20
+    },
+    {
+      "type": "select",
+      "id": "subheading_weight",
+      "label": "Font weight",
+      "options": [
+        {
+          "value": "300",
+          "label": "Light"
+        },
+        {
+          "value": "400",
+          "label": "Regular"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semibold"
+        }
+      ],
+      "default": "300"
+    },
+    {
+      "type": "color",
+      "id": "subheading_color",
+      "label": "Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "subheading_opacity",
+      "min": 0.5,
+      "max": 1,
+      "step": 0.1,
+      "label": "Opacity",
+      "default": 0.9
+    },
+    {
+      "type": "range",
+      "id": "subheading_letter_spacing",
+      "min": -1,
+      "max": 3,
+      "step": 0.5,
+      "unit": "px",
+      "label": "Letter spacing",
+      "default": 0.5
+    },
+    {
+      "type": "range",
+      "id": "subheading_spacing",
+      "min": 16,
+      "max": 64,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom spacing",
+      "default": 32
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Discover Folliq"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "range",
+      "id": "button_font_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size",
+      "default": 14
+    },
+    {
+      "type": "select",
+      "id": "button_font_weight",
+      "label": "Font weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "Regular"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semibold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ],
+      "default": "500"
+    },
+    {
+      "type": "range",
+      "id": "button_padding_vertical",
+      "min": 8,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Vertical padding",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "button_padding_horizontal",
+      "min": 16,
+      "max": 64,
+      "step": 4,
+      "unit": "px",
+      "label": "Horizontal padding",
+      "default": 40
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color",
+      "label": "Background color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Text color",
+      "default": "#1a3a2e"
+    },
+    {
+      "type": "color",
+      "id": "button_bg_hover_color",
+      "label": "Hover background",
+      "default": "#1a3a2e"
+    },
+    {
+      "type": "color",
+      "id": "button_text_hover_color",
+      "label": "Hover text color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "button_border_width",
+      "min": 0,
+      "max": 4,
+      "step": 1,
+      "unit": "px",
+      "label": "Border width",
+      "default": 1
+    },
+    {
+      "type": "color",
+      "id": "button_border_color",
+      "label": "Border color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "button_border_hover_color",
+      "label": "Hover border color",
+      "default": "#1a3a2e"
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "button_letter_spacing",
+      "min": 0,
+      "max": 3,
+      "step": 0.5,
+      "unit": "px",
+      "label": "Letter spacing",
+      "default": 1
+    },
+    {
+      "type": "select",
+      "id": "button_text_transform",
+      "label": "Text transform",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "uppercase",
+          "label": "Uppercase"
+        },
+        {
+          "value": "lowercase",
+          "label": "Lowercase"
+        },
+        {
+          "value": "capitalize",
+          "label": "Capitalize"
+        }
+      ],
+      "default": "uppercase"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "content_vertical_alignment",
+      "label": "Vertical alignment",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "Top"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "flex-end",
+          "label": "Bottom"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "content_max_width",
+      "min": 300,
+      "max": 800,
+      "step": 20,
+      "unit": "px",
+      "label": "Content max width",
+      "default": 500
+    },
+    {
+      "type": "range",
+      "id": "content_padding_mobile",
+      "min": 20,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "label": "Mobile padding",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "content_padding_desktop",
+      "min": 40,
+      "max": 120,
+      "step": 8,
+      "unit": "px",
+      "label": "Desktop padding",
+      "default": 64
+    }
+  ],
+  "presets": [
+    {
+      "name": "Folliq hero"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,515 @@
+.folliq-pdp {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 5rem;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 4rem 5%;
+}
+
+/* Gallery */
+.folliq-pdp__gallery {
+  position: sticky;
+  top: 2rem;
+  align-self: start;
+}
+
+.folliq-pdp__main-img-wrap {
+  aspect-ratio: 1;
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(var(--color-foreground), 0.04);
+  margin-bottom: 1.2rem;
+}
+
+.folliq-pdp__main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.folliq-pdp__thumbs {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.folliq-pdp__thumb {
+  width: 76px;
+  height: 76px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 2px solid transparent;
+  cursor: pointer;
+  padding: 0;
+  background: rgba(var(--color-foreground), 0.04);
+}
+
+.folliq-pdp__thumb.is-active {
+  border-color: rgb(var(--color-button));
+}
+
+.folliq-pdp__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Info column */
+.folliq-pdp__rating {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0 0 1.2rem;
+}
+
+.folliq-pdp__rating svg {
+  width: 15px;
+  height: 15px;
+  fill: currentColor;
+}
+
+.folliq-pdp__rating-text {
+  font-family: var(--font-body-family);
+  font-size: 1.3rem;
+  opacity: 0.75;
+}
+
+.folliq-pdp__title {
+  font-family: var(--font-heading-family);
+  font-size: 3.4rem;
+  font-weight: 600;
+  line-height: 1.15;
+  margin: 0 0 1rem;
+}
+
+.folliq-pdp__subtitle {
+  font-family: var(--font-body-family);
+  font-size: 1.5rem;
+  opacity: 0.75;
+  line-height: 1.5;
+  margin: 0 0 1.6rem;
+}
+
+.folliq-pdp__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 0 0 2rem;
+}
+
+.folliq-pdp__badge {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.7rem 1.2rem;
+  border-radius: 100px;
+  background: rgba(var(--color-foreground), 0.06);
+  font-family: var(--font-body-family);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.folliq-pdp__badge svg {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+}
+
+.folliq-pdp__price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 1.2rem;
+  margin: 0 0 2rem;
+}
+
+.folliq-pdp__price {
+  font-family: var(--font-heading-family);
+  font-size: 2.8rem;
+  font-weight: 600;
+}
+
+.folliq-pdp__price-compare {
+  font-family: var(--font-body-family);
+  font-size: 1.6rem;
+  opacity: 0.5;
+  text-decoration: line-through;
+}
+
+.folliq-pdp__price-save {
+  font-family: var(--font-body-family);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: rgb(var(--color-button));
+  background: rgba(var(--color-button), 0.12);
+  padding: 0.3rem 0.9rem;
+  border-radius: 100px;
+}
+
+/* Tiers */
+.folliq-pdp__tiers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+  margin: 0 0 2.4rem;
+}
+
+.folliq-pdp__tier {
+  position: relative;
+  border: 2px solid rgba(var(--color-foreground), 0.15);
+  border-radius: 14px;
+  padding: 1.6rem 1.2rem;
+  text-align: center;
+  cursor: pointer;
+  background: none;
+  font-family: var(--font-body-family);
+  transition: border-color 0.15s ease;
+}
+
+.folliq-pdp__tier.is-selected {
+  border-color: rgb(var(--color-button));
+  background: rgba(var(--color-button), 0.06);
+}
+
+.folliq-pdp__tier-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgb(var(--color-button));
+  color: rgb(var(--color-button-text));
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.3rem 1rem;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+.folliq-pdp__tier-label {
+  font-weight: 700;
+  font-size: 1.4rem;
+  margin: 0.4rem 0 0.2rem;
+}
+
+.folliq-pdp__tier-sub {
+  font-size: 1.1rem;
+  opacity: 0.65;
+  margin: 0 0 0.6rem;
+}
+
+.folliq-pdp__tier-price {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.folliq-pdp__tier-compare {
+  font-size: 1.1rem;
+  opacity: 0.5;
+  text-decoration: line-through;
+  margin-left: 0.4rem;
+}
+
+/* Gifts */
+.folliq-pdp__gifts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 0 0 2rem;
+}
+
+.folliq-pdp__gift {
+  text-align: center;
+  padding: 1.2rem 0.8rem;
+  border-radius: 12px;
+  background: rgba(var(--color-foreground), 0.04);
+  opacity: 0.4;
+  transition: opacity 0.2s ease;
+}
+
+.folliq-pdp__gift.is-unlocked {
+  opacity: 1;
+}
+
+.folliq-pdp__gift-icon {
+  width: 28px;
+  height: 28px;
+  margin: 0 auto 0.6rem;
+}
+
+.folliq-pdp__gift-name {
+  font-family: var(--font-body-family);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 0.2rem;
+}
+
+.folliq-pdp__gift-status {
+  font-family: var(--font-body-family);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.folliq-pdp__gift.is-unlocked .folliq-pdp__gift-status {
+  color: rgb(var(--color-button));
+}
+
+/* Urgency */
+.folliq-pdp__urgency {
+  font-family: var(--font-body-family);
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0 0 1.6rem;
+  color: rgb(var(--color-button));
+}
+
+.folliq-pdp__urgency strong {
+  font-weight: 800;
+}
+
+/* Stock progress bar */
+.folliq-pdp__stock {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  background: rgb(var(--color-background));
+  border-radius: 100px;
+  padding: 1.4rem 2rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  margin: 0 0 1.6rem;
+}
+
+.folliq-pdp__stock-bar {
+  flex: 1;
+  height: 6px;
+  border-radius: 100px;
+  background: rgba(var(--color-foreground), 0.12);
+  overflow: visible;
+}
+
+.folliq-pdp__stock-fill {
+  position: relative;
+  height: 100%;
+  border-radius: 100px;
+  background: #d13b3b;
+  box-shadow: 0 0 12px 3px rgba(209, 59, 59, 0.65), 0 0 4px 1px rgba(209, 59, 59, 0.85);
+}
+
+.folliq-pdp__stock-label {
+  font-family: var(--font-body-family);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #d13b3b;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.folliq-pdp__stock-sublabel {
+  font-family: var(--font-body-family);
+  font-size: 1.2rem;
+  font-weight: 600;
+  opacity: 0.6;
+  margin: 0 0 1.6rem;
+}
+
+.folliq-pdp__subscription {
+  font-family: var(--font-body-family);
+  font-size: 1.2rem;
+  font-weight: 600;
+  opacity: 0.7;
+  margin: 0 0 1.6rem;
+}
+
+/* Add to cart */
+.folliq-pdp__atc {
+  width: 100%;
+  padding: 1.7rem;
+  border-radius: 100px;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-body-family);
+  font-weight: 700;
+  font-size: 1.6rem;
+  background: rgb(var(--color-button));
+  color: rgb(var(--color-button-text));
+  margin: 0 0 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.folliq-pdp__atc-price {
+  font-weight: 700;
+  opacity: 0.9;
+}
+
+.folliq-pdp__atc-price s {
+  opacity: 0.6;
+  font-weight: 400;
+  margin-left: 0.4rem;
+}
+
+.folliq-pdp__atc:hover {
+  opacity: 0.9;
+}
+
+.folliq-pdp__trust {
+  display: flex;
+  justify-content: center;
+  gap: 1.6rem;
+  font-family: var(--font-body-family);
+  font-size: 1.2rem;
+  opacity: 0.7;
+  margin: 0 0 3rem;
+}
+
+/* Trust badge grid */
+.folliq-pdp__trust-grid {
+  margin: 0 0 3rem;
+  padding: 2.4rem;
+  border-radius: 16px;
+  background: rgba(var(--color-foreground), 0.04);
+}
+
+.folliq-pdp__trust-grid-heading {
+  font-family: var(--font-heading-family);
+  font-size: 1.9rem;
+  font-weight: 600;
+  text-align: center;
+  margin: 0 0 1.6rem;
+}
+
+.folliq-pdp__trust-grid-items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem 1.6rem;
+}
+
+.folliq-pdp__trust-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-family: var(--font-body-family);
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.folliq-pdp__trust-badge svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  color: rgb(var(--color-button));
+}
+
+/* Accordion */
+.folliq-pdp__accordion {
+  border-top: 1px solid rgba(var(--color-foreground), 0.14);
+}
+
+.folliq-pdp__accordion-item {
+  border-bottom: 1px solid rgba(var(--color-foreground), 0.14);
+}
+
+.folliq-pdp__accordion-item summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.8rem 0;
+  cursor: pointer;
+  font-family: var(--font-body-family);
+  font-weight: 700;
+  font-size: 1.5rem;
+  list-style: none;
+}
+
+.folliq-pdp__accordion-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.folliq-pdp__accordion-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.folliq-pdp__accordion-item[open] .folliq-pdp__accordion-icon {
+  transform: rotate(45deg);
+}
+
+.folliq-pdp__accordion-content {
+  font-family: var(--font-body-family);
+  font-size: 1.4rem;
+  line-height: 1.6;
+  opacity: 0.8;
+  padding: 0 0 1.8rem;
+}
+
+/* Sticky mobile bar */
+.folliq-pdp__sticky-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 30;
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.2rem;
+  padding: 1.2rem 5%;
+  background: rgb(var(--color-background));
+  border-top: 1px solid rgba(var(--color-foreground), 0.12);
+  transform: translateY(100%);
+  transition: transform 0.25s ease;
+}
+
+.folliq-pdp__sticky-bar.is-visible {
+  transform: translateY(0);
+}
+
+.folliq-pdp__sticky-info {
+  font-family: var(--font-body-family);
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.folliq-pdp__sticky-btn {
+  padding: 1.1rem 2.4rem;
+  border-radius: 100px;
+  border: none;
+  background: rgb(var(--color-button));
+  color: rgb(var(--color-button-text));
+  font-family: var(--font-body-family);
+  font-weight: 700;
+  font-size: 1.3rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 989px) {
+  .folliq-pdp {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .folliq-pdp__gallery {
+    position: static;
+  }
+  .folliq-pdp__sticky-bar {
+    display: flex;
+  }
+  .folliq-pdp__title {
+    font-size: 2.6rem;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .folliq-pdp__tiers,
+  .folliq-pdp__gifts {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.8rem;
+  }
+  .folliq-pdp__tier {
+    padding: 1.2rem 0.6rem;
+  }
+}

@@ -1,0 +1,238 @@
+.hero-folliq {
+  position: relative;
+  overflow: hidden;
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+  padding-top: var(--hero-padding-top, 96px);
+  padding-bottom: var(--hero-padding-bottom, 96px);
+}
+
+.hero-folliq__media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-folliq__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  inset: 0;
+}
+
+.hero-folliq__img--mobile {
+  display: none;
+}
+
+.hero-folliq__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgb(var(--color-foreground));
+  opacity: var(--hero-overlay-opacity, 0.35);
+}
+
+.hero-folliq__content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+.hero-folliq__content--center {
+  text-align: center;
+}
+
+.hero-folliq__content--center .hero-folliq__inner {
+  margin: 0 auto;
+}
+
+.hero-folliq__content--center .hero-folliq__buttons,
+.hero-folliq__content--center .hero-folliq__rating,
+.hero-folliq__content--center .hero-folliq__features {
+  justify-content: center;
+}
+
+.hero-folliq__inner {
+  max-width: 640px;
+  color: rgb(var(--color-foreground));
+}
+
+.hero-folliq__badge {
+  display: inline-block;
+  font-family: var(--font-body-family);
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.6rem 1.4rem;
+  border-radius: 100px;
+  background: rgba(var(--color-background), 0.15);
+  border: 1px solid rgba(var(--color-foreground), 0.25);
+  margin: 0 0 1.6rem;
+}
+
+.hero-folliq__heading {
+  font-family: var(--font-heading-family);
+  font-weight: 600;
+  font-size: 5.2rem;
+  line-height: 1.1;
+  margin: 0 0 1.6rem;
+}
+
+.hero-folliq__rating {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin: 0 0 1.6rem;
+}
+
+.hero-folliq__stars {
+  display: inline-flex;
+  gap: 2px;
+}
+
+.hero-folliq__stars svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+.hero-folliq__rating-text {
+  font-family: var(--font-body-family);
+  font-size: 1.4rem;
+}
+
+.hero-folliq__text {
+  font-family: var(--font-body-family);
+  font-size: 1.7rem;
+  line-height: 1.5;
+  opacity: 0.9;
+  margin: 0 0 2.4rem;
+  max-width: 520px;
+}
+
+.hero-folliq__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  margin: 0 0 3.2rem;
+}
+
+.hero-folliq__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.4rem 3rem;
+  border-radius: 100px;
+  font-family: var(--font-body-family);
+  font-weight: 600;
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.hero-folliq__btn:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+.hero-folliq__btn--primary {
+  background: rgb(var(--color-button));
+  color: rgb(var(--color-button-text));
+}
+
+.hero-folliq__btn--secondary {
+  background: transparent;
+  color: rgb(var(--color-foreground));
+  border: 1px solid rgba(var(--color-foreground), 0.4);
+}
+
+.hero-folliq__features {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.6rem 2.4rem;
+  margin: 0 0 3.2rem;
+  padding: 0;
+}
+
+.hero-folliq__feature {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-family: var(--font-body-family);
+  font-size: 1.3rem;
+}
+
+.hero-folliq__feature svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.hero-folliq__stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3.2rem;
+}
+
+.hero-folliq__stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-folliq__stat-percent {
+  font-family: var(--font-heading-family);
+  font-size: 3.6rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.hero-folliq__stat-heading {
+  font-family: var(--font-body-family);
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-top: 0.4rem;
+}
+
+.hero-folliq__stat-text {
+  font-family: var(--font-body-family);
+  font-size: 1.1rem;
+  opacity: 0.75;
+}
+
+@media screen and (max-width: 749px) {
+  .hero-folliq {
+    min-height: 440px;
+  }
+
+  .hero-folliq__img--desktop {
+    display: none;
+  }
+
+  .hero-folliq__img--mobile {
+    display: block;
+  }
+
+  .hero-folliq__heading {
+    font-size: 3.2rem;
+  }
+
+  .hero-folliq__text {
+    font-size: 1.5rem;
+  }
+
+  .hero-folliq__btn {
+    width: 100%;
+  }
+
+  .hero-folliq__buttons {
+    flex-direction: column;
+  }
+}

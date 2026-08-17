@@ -1,0 +1,64 @@
+{{ 'component-folliq-sections.css' | asset_url | stylesheet_tag }}
+
+<section class="folliq-section color-{{ section.settings.color_scheme }}">
+  {%- if section.settings.eyebrow != blank -%}
+    <p class="folliq-eyebrow">{{ section.settings.eyebrow }}</p>
+  {%- endif -%}
+  <h2 class="folliq-heading">{{ section.settings.heading }}</h2>
+  {%- if section.settings.subheading != blank -%}
+    <p class="folliq-subheading">{{ section.settings.subheading }}</p>
+  {%- endif -%}
+
+  <div class="folliq-symptom-grid">
+    {%- for block in section.blocks -%}
+      <a href="{{ block.settings.link }}" class="folliq-symptom-card" {{ block.shopify_attributes }}>
+        {%- if block.settings.image -%}
+          <img class="folliq-symptom-card__img" src="{{ block.settings.image | image_url: width: 700 }}" alt="{{ block.settings.title | escape }}" loading="lazy">
+        {%- endif -%}
+        <div class="folliq-symptom-card__overlay"></div>
+        <div class="folliq-symptom-card__content">
+          <h3 class="folliq-symptom-card__title">{{ block.settings.title }}</h3>
+          <p class="folliq-symptom-card__text">{{ block.settings.text }}</p>
+          <span class="folliq-symptom-card__link">{{ block.settings.link_label }}</span>
+        </div>
+      </a>
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Folliq Symptom Picker",
+  "tag": "section",
+  "class": "section-folliq-symptom",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Find Your Fit" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Start With Your Hair Concern" },
+    { "type": "richtext", "id": "subheading", "label": "Subheading", "default": "<p>Find the Folliq routine designed for your specific concern.</p>" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-1" }
+  ],
+  "blocks": [
+    {
+      "type": "symptom",
+      "name": "Concern card",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "text", "id": "title", "label": "Title", "default": "Hair Thinning" },
+        { "type": "text", "id": "text", "label": "Text", "default": "Noticeably less volume and density over time." },
+        { "type": "text", "id": "link_label", "label": "Link label", "default": "Shop the Solution" },
+        { "type": "url", "id": "link", "label": "Link" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Folliq Symptom Picker",
+      "blocks": [
+        { "type": "symptom", "settings": { "title": "Hair Thinning", "text": "Noticeably less volume and density over time." } },
+        { "type": "symptom", "settings": { "title": "Excessive Shedding", "text": "Losing more strands than usual." } },
+        { "type": "symptom", "settings": { "title": "Dry & Brittle", "text": "Strands that snap before they can grow." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

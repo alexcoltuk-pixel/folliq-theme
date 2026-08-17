@@ -1,0 +1,718 @@
+{% doc %}
+  @prompt
+    Create a premium, luxury Shopify Hero section for the Folliq homepage.
+    
+    Brand Style:
+    Folliq is a premium natural hair care brand inspired by nature, simplicity, and modern luxury. The design should feel elegant, trustworthy, and timeless with a Scandinavian aesthetic.
+    
+    Layout:
+    - Full-width hero
+    - 90vh desktop height
+    - Responsive for tablet and mobile
+    - Large editable background image
+    - Dark gradient overlay for text readability
+    - Left-aligned content
+    - Plenty of whitespace
+    - Smooth fade-in animations
+    - Rounded buttons (10-12px radius)
+    - Luxury ecommerce look similar to premium skincare brands
+    
+    Typography:
+    Headings:
+    • Cormorant Garamond
+    
+    Body:
+    • Manrope
+    
+    Buttons:
+    • Inter SemiBold
+    • Uppercase
+    
+    Brand Colors
+    
+    Primary
+    • Forest Green — #273522
+    • Cream — #F7F4EC
+    • Dark Charcoal — #2C2C2C
+    
+    Secondary
+    • Sage Green — #8EA88D
+    • Light Beige — #E8E2D6
+    • White — #FFFFFF
+    
+    Accent
+    • Gold — #C8A35B
+    
+    Color Usage:
+    - Hero overlay: dark forest green gradient with approximately 45% opacity.
+    - Main heading: Cream (#F7F4EC)
+    - Body text: White (#FFFFFF)
+    - Primary CTA: Forest Green background with Cream text.
+    - Primary CTA hover: Gold background with Dark Charcoal text.
+    - Secondary CTA: Transparent with 2px Cream border.
+    - Secondary CTA hover: Cream background with Forest Green text.
+    - Premium label and decorative elements: Gold (#C8A35B).
+    
+    Content
+    
+    Eyebrow:
+    NATURAL HAIR CARE
+    
+    Headline:
+    Healthy Hair Starts at the Root
+    
+    Paragraph:
+    Support stronger, fuller-looking hair with Folliq's naturally inspired formula, designed to nourish your scalp and elevate your daily hair care routine.
+    
+    Primary CTA:
+    SHOP NOW
+    
+    Secondary CTA:
+    LEARN MORE
+    
+    Background Image:
+    Use an editable Shopify image_picker.
+    The image should display healthy, shiny hair in a luxurious natural environment with warm lighting.
+    Use object-fit: cover.
+    
+    Shopify Requirements:
+    - Shopify Online Store 2.0 compatible
+    - Built entirely with Liquid
+    - JSON schema included
+    - Editable:
+      - Background image
+      - Heading
+      - Paragraph
+      - Buttons
+      - Colors
+      - Overlay opacity
+      - Section height
+      - Content alignment
+    - Lazy loading enabled
+    - Accessible (WCAG compliant)
+    - SEO-friendly semantic HTML
+    - Modern CSS only (no Bootstrap or external frameworks)
+    - Optimized for Core Web Vitals and fast loading.
+    
+    The final result should look comparable to premium Shopify themes such as Prestige, Motion, or Enterprise, with a clean luxury aesthetic that reinforces trust and encourages conversions.
+    
+    
+    
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@400;600&family=Manrope:wght@300;400;500;600&display=swap');
+
+  .ai-hero-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    height: {{ block.settings.hero_height_desktop }}vh;
+    min-height: 500px;
+    overflow: hidden;
+    display: block;
+  }
+
+  .ai-hero-image-wrapper-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  .ai-hero-image-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .ai-hero-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #8EA88D 0%, #273522 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-hero-placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    max-width: 600px;
+    max-height: 600px;
+    opacity: 0.3;
+  }
+
+  .ai-hero-overlay-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, {{ block.settings.overlay_color }} 0%, {{ block.settings.overlay_color_end }} 100%);
+    opacity: {{ block.settings.overlay_opacity }};
+    z-index: 2;
+  }
+
+  .ai-hero-content-wrapper-{{ ai_gen_id }} {
+    position: relative;
+    z-index: 3;
+    height: 100%;
+    max-width: {{ block.settings.content_max_width }}px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+  }
+
+  .ai-hero-content-{{ ai_gen_id }} {
+    width: 100%;
+    max-width: 600px;
+    text-align: {{ block.settings.content_alignment }};
+    opacity: 0;
+    transform: translateY(30px);
+    animation: ai-hero-fade-in-{{ ai_gen_id }} 1s ease-out 0.3s forwards;
+  }
+
+  @keyframes ai-hero-fade-in-{{ ai_gen_id }} {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .ai-hero-eyebrow-{{ ai_gen_id }} {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: {{ block.settings.eyebrow_size }}px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: {{ block.settings.eyebrow_color }};
+    margin-bottom: 16px;
+    display: inline-block;
+    opacity: 0;
+    animation: ai-hero-fade-in-{{ ai_gen_id }} 1s ease-out 0.5s forwards;
+  }
+
+  .ai-hero-heading-{{ ai_gen_id }} {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: {{ block.settings.heading_size }}px;
+    line-height: 1.2;
+    color: {{ block.settings.heading_color }};
+    margin: 0 0 24px 0;
+    opacity: 0;
+    animation: ai-hero-fade-in-{{ ai_gen_id }} 1s ease-out 0.7s forwards;
+  }
+
+  .ai-hero-paragraph-{{ ai_gen_id }} {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    font-size: {{ block.settings.paragraph_size }}px;
+    line-height: 1.7;
+    color: {{ block.settings.paragraph_color }};
+    margin: 0 0 40px 0;
+    max-width: 540px;
+    opacity: 0;
+    animation: ai-hero-fade-in-{{ ai_gen_id }} 1s ease-out 0.9s forwards;
+  }
+
+  .ai-hero-buttons-{{ ai_gen_id }} {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: ai-hero-fade-in-{{ ai_gen_id }} 1s ease-out 1.1s forwards;
+  }
+
+  .ai-hero-btn-{{ ai_gen_id }} {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 16px 40px;
+    border-radius: {{ block.settings.button_radius }}px;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+  }
+
+  .ai-hero-btn-primary-{{ ai_gen_id }} {
+    background-color: {{ block.settings.primary_btn_bg }};
+    color: {{ block.settings.primary_btn_text }};
+  }
+
+  .ai-hero-btn-primary-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.primary_btn_hover_bg }};
+    color: {{ block.settings.primary_btn_hover_text }};
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .ai-hero-btn-secondary-{{ ai_gen_id }} {
+    background-color: transparent;
+    color: {{ block.settings.secondary_btn_text }};
+    border: 2px solid {{ block.settings.secondary_btn_border }};
+  }
+
+  .ai-hero-btn-secondary-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.secondary_btn_hover_bg }};
+    color: {{ block.settings.secondary_btn_hover_text }};
+    border-color: {{ block.settings.secondary_btn_hover_bg }};
+    transform: translateY(-2px);
+  }
+
+  @media screen and (max-width: 989px) {
+    .ai-hero-{{ ai_gen_id }} {
+      height: {{ block.settings.hero_height_tablet }}vh;
+      min-height: 450px;
+    }
+
+    .ai-hero-content-wrapper-{{ ai_gen_id }} {
+      padding: 0 32px;
+    }
+
+    .ai-hero-heading-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.heading_size }}px * 0.75);
+    }
+
+    .ai-hero-paragraph-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.paragraph_size }}px * 0.9);
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-hero-{{ ai_gen_id }} {
+      height: {{ block.settings.hero_height_mobile }}vh;
+      min-height: 400px;
+    }
+
+    .ai-hero-content-wrapper-{{ ai_gen_id }} {
+      padding: 0 24px;
+    }
+
+    .ai-hero-content-{{ ai_gen_id }} {
+      text-align: {{ block.settings.content_alignment_mobile }};
+    }
+
+    .ai-hero-eyebrow-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.eyebrow_size }}px * 0.85);
+    }
+
+    .ai-hero-heading-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.heading_size }}px * 0.6);
+      margin-bottom: 16px;
+    }
+
+    .ai-hero-paragraph-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.paragraph_size }}px * 0.85);
+      margin-bottom: 32px;
+    }
+
+    .ai-hero-buttons-{{ ai_gen_id }} {
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .ai-hero-btn-{{ ai_gen_id }} {
+      width: 100%;
+      text-align: center;
+      padding: 14px 32px;
+    }
+  }
+{% endstyle %}
+
+<folliq-hero-{{ ai_gen_id }} class="ai-hero-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-hero-image-wrapper-{{ ai_gen_id }}">
+    {% if block.settings.background_image %}
+      <img
+        src="{{ block.settings.background_image | image_url: width: 2400 }}"
+        srcset="{{ block.settings.background_image | image_url: width: 750 }} 750w,
+                {{ block.settings.background_image | image_url: width: 1100 }} 1100w,
+                {{ block.settings.background_image | image_url: width: 1500 }} 1500w,
+                {{ block.settings.background_image | image_url: width: 2400 }} 2400w"
+        sizes="100vw"
+        alt="{{ block.settings.background_image.alt | escape }}"
+        loading="lazy"
+        width="{{ block.settings.background_image.width }}"
+        height="{{ block.settings.background_image.height }}"
+        class="ai-hero-image-{{ ai_gen_id }}"
+      >
+    {% else %}
+      <div class="ai-hero-placeholder-{{ ai_gen_id }}">
+        {{ 'hero-apparel-1' | placeholder_svg_tag }}
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="ai-hero-overlay-{{ ai_gen_id }}"></div>
+
+  <div class="ai-hero-content-wrapper-{{ ai_gen_id }}">
+    <div class="ai-hero-content-{{ ai_gen_id }}">
+      {% if block.settings.eyebrow != blank %}
+        <div class="ai-hero-eyebrow-{{ ai_gen_id }}">
+          {{ block.settings.eyebrow }}
+        </div>
+      {% endif %}
+
+      {% if block.settings.heading != blank %}
+        <h1 class="ai-hero-heading-{{ ai_gen_id }}">
+          {{ block.settings.heading }}
+        </h1>
+      {% endif %}
+
+      {% if block.settings.paragraph != blank %}
+        <div class="ai-hero-paragraph-{{ ai_gen_id }}">
+          {{ block.settings.paragraph }}
+        </div>
+      {% endif %}
+
+      <div class="ai-hero-buttons-{{ ai_gen_id }}">
+        {% if block.settings.primary_button_label != blank %}
+          <a
+            href="{{ block.settings.primary_button_link }}"
+            class="ai-hero-btn-{{ ai_gen_id }} ai-hero-btn-primary-{{ ai_gen_id }}"
+          >
+            {{ block.settings.primary_button_label }}
+          </a>
+        {% endif %}
+
+        {% if block.settings.secondary_button_label != blank %}
+          <a
+            href="{{ block.settings.secondary_button_link }}"
+            class="ai-hero-btn-{{ ai_gen_id }} ai-hero-btn-secondary-{{ ai_gen_id }}"
+          >
+            {{ block.settings.secondary_button_label }}
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</folliq-hero-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class FolliqHero{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.setupAccessibility();
+      }
+
+      setupAccessibility() {
+        const heading = this.querySelector('.ai-hero-heading-{{ ai_gen_id }}');
+        if (heading) {
+          heading.setAttribute('tabindex', '0');
+        }
+      }
+    }
+
+    customElements.define('folliq-hero-{{ ai_gen_id }}', FolliqHero{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Folliq hero",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Background image"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Image"
+    },
+    {
+      "type": "header",
+      "content": "Overlay"
+    },
+    {
+      "type": "color",
+      "id": "overlay_color",
+      "label": "Start color",
+      "default": "#273522"
+    },
+    {
+      "type": "color",
+      "id": "overlay_color_end",
+      "label": "End color",
+      "default": "#273522"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "min": 0,
+      "max": 1,
+      "step": 0.1,
+      "label": "Opacity",
+      "default": 0.5
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow text",
+      "default": "NATURAL HAIR CARE"
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Healthy Hair Starts at the Root"
+    },
+    {
+      "type": "textarea",
+      "id": "paragraph",
+      "label": "Paragraph",
+      "default": "Support stronger, fuller-looking hair with Folliq's naturally inspired formula, designed to nourish your scalp and elevate your daily hair care routine."
+    },
+    {
+      "type": "header",
+      "content": "Primary button"
+    },
+    {
+      "type": "text",
+      "id": "primary_button_label",
+      "label": "Label",
+      "default": "SHOP NOW"
+    },
+    {
+      "type": "url",
+      "id": "primary_button_link",
+      "label": "Link"
+    },
+    {
+      "type": "header",
+      "content": "Secondary button"
+    },
+    {
+      "type": "text",
+      "id": "secondary_button_label",
+      "label": "Label",
+      "default": "LEARN MORE"
+    },
+    {
+      "type": "url",
+      "id": "secondary_button_link",
+      "label": "Link"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "hero_height_desktop",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "vh",
+      "label": "Desktop height",
+      "default": 90
+    },
+    {
+      "type": "range",
+      "id": "hero_height_tablet",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "vh",
+      "label": "Tablet height",
+      "default": 70
+    },
+    {
+      "type": "range",
+      "id": "hero_height_mobile",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "vh",
+      "label": "Mobile height",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "content_max_width",
+      "min": 800,
+      "max": 1600,
+      "step": 100,
+      "unit": "px",
+      "label": "Content max width",
+      "default": 1200
+    },
+    {
+      "type": "select",
+      "id": "content_alignment",
+      "label": "Desktop alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "select",
+      "id": "content_alignment_mobile",
+      "label": "Mobile alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "eyebrow_size",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Eyebrow size",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 30,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading size",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "paragraph_size",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Paragraph size",
+      "default": 18
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "eyebrow_color",
+      "label": "Eyebrow",
+      "default": "#C8A35B"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading",
+      "default": "#F7F4EC"
+    },
+    {
+      "type": "color",
+      "id": "paragraph_color",
+      "label": "Paragraph",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "header",
+      "content": "Primary button style"
+    },
+    {
+      "type": "color",
+      "id": "primary_btn_bg",
+      "label": "Background",
+      "default": "#273522"
+    },
+    {
+      "type": "color",
+      "id": "primary_btn_text",
+      "label": "Text",
+      "default": "#F7F4EC"
+    },
+    {
+      "type": "color",
+      "id": "primary_btn_hover_bg",
+      "label": "Hover background",
+      "default": "#C8A35B"
+    },
+    {
+      "type": "color",
+      "id": "primary_btn_hover_text",
+      "label": "Hover text",
+      "default": "#2C2C2C"
+    },
+    {
+      "type": "header",
+      "content": "Secondary button style"
+    },
+    {
+      "type": "color",
+      "id": "secondary_btn_text",
+      "label": "Text",
+      "default": "#F7F4EC"
+    },
+    {
+      "type": "color",
+      "id": "secondary_btn_border",
+      "label": "Border",
+      "default": "#F7F4EC"
+    },
+    {
+      "type": "color",
+      "id": "secondary_btn_hover_bg",
+      "label": "Hover background",
+      "default": "#F7F4EC"
+    },
+    {
+      "type": "color",
+      "id": "secondary_btn_hover_text",
+      "label": "Hover text",
+      "default": "#273522"
+    },
+    {
+      "type": "range",
+      "id": "button_radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Button radius",
+      "default": 12
+    }
+  ],
+  "presets": [
+    {
+      "name": "Folliq hero"
+    }
+  ]
+}
+{% endschema %}

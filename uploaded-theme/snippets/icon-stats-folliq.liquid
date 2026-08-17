@@ -1,0 +1,35 @@
+{%- comment -%} Accepts: icon — shield, microscope, target, droplet, handshake, arrow-up {%- endcomment -%}
+{%- case icon -%}
+  {%- when 'shield' -%}
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6">
+      <path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/>
+      <path d="M9 12l2 2 4-4"/>
+    </svg>
+  {%- when 'microscope' -%}
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6 18h8M9 18v-4a3 3 0 0 1 3-3V8"/>
+      <path d="M9 3l6 6"/>
+      <circle cx="9" cy="6" r="2.2"/>
+      <path d="M17 18h1a2 2 0 0 0 0-4h-2"/>
+    </svg>
+  {%- when 'target' -%}
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6">
+      <circle cx="12" cy="12" r="8"/>
+      <circle cx="12" cy="12" r="4"/>
+      <circle cx="12" cy="12" r="0.7" fill="currentColor"/>
+    </svg>
+  {%- when 'droplet' -%}
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 2c4 5 7 9 7 12.5A7 7 0 0 1 5 14.5C5 11 8 7 12 2z"/>
+    </svg>
+  {%- when 'handshake' -%}
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M2 12l4-3 4 3 4-4 4 4 4-3"/>
+      <path d="M6 13l3 4 3-2 3 3 3-3"/>
+    </svg>
+  {%- when 'arrow-up' -%}
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 19V5M6 11l6-6 6 6"/>
+    </svg>
+  {%- else -%}
+{%- endcase -%}

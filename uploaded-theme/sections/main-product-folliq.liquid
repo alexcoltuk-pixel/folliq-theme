@@ -1,0 +1,297 @@
+{{ 'component-folliq-pdp.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'component-folliq-pdp.js' | asset_url }}" defer="defer"></script>
+
+{%- liquid
+  assign product_form_id = 'product-form-' | append: section.id
+-%}
+
+{%- liquid
+  assign product = product
+  assign featured_image = product.featured_image
+  assign compare_price = product.compare_at_price
+  assign price = product.price
+-%}
+
+<div class="folliq-pdp color-{{ section.settings.color_scheme }}">
+
+  <div class="folliq-pdp__gallery">
+    <div class="folliq-pdp__main-img-wrap">
+      {%- if featured_image -%}
+        <img class="folliq-pdp__main-img" src="{{ featured_image | image_url: width: 1000 }}" alt="{{ featured_image.alt | escape }}" id="folliq-pdp-main-img-{{ section.id }}">
+      {%- endif -%}
+    </div>
+    {%- if product.images.size > 1 -%}
+      <div class="folliq-pdp__thumbs">
+        {%- for image in product.images limit: 6 -%}
+          <button
+            type="button"
+            class="folliq-pdp__thumb{% if forloop.first %} is-active{% endif %}"
+            data-full-src="{{ image | image_url: width: 1000 }}"
+          >
+            <img src="{{ image | image_url: width: 160 }}" alt="{{ image.alt | escape }}" loading="lazy">
+          </button>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+
+  <div class="folliq-pdp__info">
+    {%- if section.settings.rating_text != blank -%}
+      <div class="folliq-pdp__rating">
+        {%- for i in (1..5) -%}{%- render 'icon-star-folliq' -%}{%- endfor -%}
+        <span class="folliq-pdp__rating-text">{{ section.settings.rating_text }}</span>
+      </div>
+    {%- endif -%}
+
+    <h1 class="folliq-pdp__title">{{ product.title }}</h1>
+
+    {%- if section.settings.subtitle != blank -%}
+      <p class="folliq-pdp__subtitle">{{ section.settings.subtitle }}</p>
+    {%- endif -%}
+
+    {%- assign badge_blocks = section.blocks | where: 'type', 'badge' -%}
+    {%- if badge_blocks.size > 0 -%}
+      <div class="folliq-pdp__badges">
+        {%- for block in badge_blocks -%}
+          <span class="folliq-pdp__badge" {{ block.shopify_attributes }}>
+            {%- render 'icon-check-folliq' -%}
+            {{ block.settings.text }}
+          </span>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+
+    <div class="folliq-pdp__price-row">
+      <span class="folliq-pdp__price">{{ price | money }}</span>
+      {%- if compare_price > price -%}
+        <span class="folliq-pdp__price-compare">{{ compare_price | money }}</span>
+        {%- assign save_amount = compare_price | minus: price -%}
+        <span class="folliq-pdp__price-save">Save {{ save_amount | money }}</span>
+      {%- else -%}
+        <span class="folliq-pdp__price-compare" hidden></span>
+        <span class="folliq-pdp__price-save" hidden></span>
+      {%- endif -%}
+    </div>
+
+    {%- assign tier_blocks = section.blocks | where: 'type', 'tier' -%}
+    {%- if tier_blocks.size > 0 -%}
+      <div class="folliq-pdp__tiers">
+        {%- for block in tier_blocks -%}
+          <div
+            class="folliq-pdp__tier{% if block.settings.selected %} is-selected{% endif %}"
+            data-quantity="{{ block.settings.quantity }}"
+            data-gifts="{{ block.settings.gifts_unlocked }}"
+            data-price="{{ block.settings.price }}"
+            data-compare="{{ block.settings.compare_price }}"
+            data-save="{{ block.settings.save_label }}"
+            {{ block.shopify_attributes }}
+          >
+            {%- if block.settings.ribbon != blank -%}
+              <span class="folliq-pdp__tier-badge">{{ block.settings.ribbon }}</span>
+            {%- endif -%}
+            <p class="folliq-pdp__tier-label">{{ block.settings.label }}</p>
+            {%- if block.settings.sublabel != blank -%}
+              <p class="folliq-pdp__tier-sub">{{ block.settings.sublabel }}</p>
+            {%- endif -%}
+            <p class="folliq-pdp__tier-price">
+              {{ block.settings.price }}
+              {%- if block.settings.compare_price != blank -%}
+                <span class="folliq-pdp__tier-compare">{{ block.settings.compare_price }}</span>
+              {%- endif -%}
+            </p>
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+
+    {%- if section.settings.stock_percent > 0 -%}
+      <div class="folliq-pdp__stock">
+        <div class="folliq-pdp__stock-bar">
+          <div class="folliq-pdp__stock-fill" style="width: {{ section.settings.stock_percent }}%;"></div>
+        </div>
+        <p class="folliq-pdp__stock-label">{{ section.settings.stock_percent }}% Sold</p>
+      </div>
+      {%- if section.settings.stock_label != blank -%}
+        <p class="folliq-pdp__stock-sublabel">{{ section.settings.stock_label }}</p>
+      {%- endif -%}
+    {%- endif -%}
+
+    {%- if section.settings.urgency_text != blank -%}
+      <p class="folliq-pdp__urgency">{{ section.settings.urgency_text }}</p>
+    {%- endif -%}
+
+    {%- if section.settings.subscription_text != blank -%}
+      <p class="folliq-pdp__subscription">{{ section.settings.subscription_text }}</p>
+    {%- endif -%}
+
+    <product-form>
+      <div class="product-form__error-message-wrapper" role="alert" hidden>
+        <span class="product-form__error-message"></span>
+      </div>
+      {%- form 'product', product, id: product_form_id, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
+        <input
+          type="hidden"
+          name="id"
+          value="{{ product.selected_or_first_available_variant.id }}"
+        >
+        <input
+          type="hidden"
+          name="quantity"
+          class="folliq-pdp__qty-input"
+          value="{{ tier_blocks.first.settings.quantity | default: 1 }}"
+          min="1"
+        >
+        <button type="submit" class="folliq-pdp__atc" name="add">
+          {%- render 'loading-spinner' -%}
+          <span>{{ section.settings.atc_label | default: 'Add To Cart' }}</span>
+          <span class="folliq-pdp__atc-price">{{ tier_blocks.first.settings.price }}
+            {%- if tier_blocks.first.settings.compare_price != blank -%}
+              <s>{{ tier_blocks.first.settings.compare_price }}</s>
+            {%- endif -%}
+          </span>
+        </button>
+      {%- endform -%}
+    </product-form>
+
+    {%- if section.settings.trust_text != blank -%}
+      <div class="folliq-pdp__trust">
+        {{ section.settings.trust_text }}
+      </div>
+    {%- endif -%}
+
+    {%- assign trust_blocks = section.blocks | where: 'type', 'trust_badge' -%}
+    {%- if trust_blocks.size > 0 -%}
+      <div class="folliq-pdp__trust-grid">
+        {%- if section.settings.trust_grid_heading != blank -%}
+          <h3 class="folliq-pdp__trust-grid-heading">{{ section.settings.trust_grid_heading }}</h3>
+        {%- endif -%}
+        <div class="folliq-pdp__trust-grid-items">
+          {%- for block in trust_blocks -%}
+            <div class="folliq-pdp__trust-badge" {{ block.shopify_attributes }}>
+              {%- render 'icon-check-folliq' -%}
+              <span>{{ block.settings.text }}</span>
+            </div>
+          {%- endfor -%}
+        </div>
+      </div>
+    {%- endif -%}
+
+
+    {%- assign accordion_blocks = section.blocks | where: 'type', 'accordion' -%}
+    {%- if accordion_blocks.size > 0 -%}
+      <div class="folliq-pdp__accordion">
+        {%- for block in accordion_blocks -%}
+          <details class="folliq-pdp__accordion-item" {{ block.shopify_attributes }}>
+            <summary>
+              <span>{{ block.settings.title }}</span>
+              <span class="folliq-pdp__accordion-icon">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+              </span>
+            </summary>
+            <div class="folliq-pdp__accordion-content">{{ block.settings.content }}</div>
+          </details>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+<div class="folliq-pdp__sticky-bar">
+  <span class="folliq-pdp__sticky-info">{{ price | money }}</span>
+  <button type="button" class="folliq-pdp__sticky-btn">{{ section.settings.atc_label | default: 'Add To Cart' }}</button>
+</div>
+
+{% schema %}
+{
+  "name": "Folliq Product Page",
+  "tag": "section",
+  "class": "section-folliq-pdp",
+  "settings": [
+    { "type": "text", "id": "rating_text", "label": "Rating text", "default": "Rated 4.9 / 5.0" },
+    { "type": "richtext", "id": "subtitle", "label": "Subtitle", "default": "<p>Targets the root cause of thinning hair while helping keep it clean and strong.</p>" },
+    { "type": "range", "id": "stock_percent", "label": "Stock sold percent", "min": 0, "max": 100, "step": 1, "default": 93 },
+    { "type": "text", "id": "stock_label", "label": "Stock label", "default": "Low Stock, Selling Fast" },
+    { "type": "text", "id": "urgency_text", "label": "Urgency text", "default": "Almost Sold Out — Only 21 Bars left!" },
+    { "type": "text", "id": "subscription_text", "label": "Subscription line", "default": "Save 20% With Automatic Refills! Zero Commitment, Cancel Anytime" },
+    { "type": "text", "id": "atc_label", "label": "Add to cart button label", "default": "Add To Cart" },
+    { "type": "richtext", "id": "trust_text", "label": "Trust row text", "default": "<p>Worldwide Delivery&nbsp;&nbsp;|&nbsp;&nbsp;Secure Checkout</p>" },
+    { "type": "text", "id": "trust_grid_heading", "label": "Trust grid heading", "default": "Why Trust Folliq With Your Hair?" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-2" }
+  ],
+  "blocks": [
+    {
+      "type": "badge",
+      "name": "Feature badge",
+      "settings": [
+        { "type": "text", "id": "text", "label": "Text", "default": "Targets Hair Thinning" }
+      ]
+    },
+    {
+      "type": "tier",
+      "name": "Quantity tier",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Label", "default": "Buy 1" },
+        { "type": "text", "id": "sublabel", "label": "Sublabel", "default": "+ 1 Free Gift!" },
+        { "type": "text", "id": "ribbon", "label": "Ribbon (optional)" },
+        { "type": "text", "id": "quantity", "label": "Quantity added to cart", "default": "1" },
+        { "type": "text", "id": "price", "label": "Display price", "default": "$29.00" },
+        { "type": "text", "id": "compare_price", "label": "Display compare-at price" },
+        { "type": "text", "id": "save_label", "label": "Save label" },
+        { "type": "range", "id": "gifts_unlocked", "label": "Gifts unlocked at this tier", "min": 0, "max": 3, "step": 1, "default": 1 },
+        { "type": "checkbox", "id": "selected", "label": "Selected by default", "default": false }
+      ]
+    },
+    {
+      "type": "gift",
+      "name": "Free gift",
+      "settings": [
+        { "type": "text", "id": "name", "label": "Gift name", "default": "Travel Pouch" }
+      ]
+    },
+    {
+      "type": "trust_badge",
+      "name": "Trust badge",
+      "settings": [
+        { "type": "text", "id": "text", "label": "Text", "default": "Third-Party Tested" }
+      ]
+    },
+    {
+      "type": "accordion",
+      "name": "Accordion tab",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Title", "default": "Description" },
+        { "type": "richtext", "id": "content", "label": "Content", "default": "<p>A botanical shampoo bar formulated with rosemary, ginger, and biotin.</p>" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Folliq Product Page",
+      "blocks": [
+        { "type": "badge", "settings": { "text": "Targets Hair Thinning" } },
+        { "type": "badge", "settings": { "text": "Natural Botanicals" } },
+        { "type": "badge", "settings": { "text": "Strengthens Strands" } },
+        { "type": "badge", "settings": { "text": "Daily Scalp Care" } },
+        { "type": "tier", "settings": { "label": "Buy 1", "sublabel": "+ 1 Free Gift!", "quantity": "1", "price": "$29.00", "gifts_unlocked": 1 } },
+        { "type": "tier", "settings": { "label": "Buy 2", "sublabel": "Get 1 Free", "ribbon": "Most Popular", "quantity": "3", "price": "$58.00", "compare_price": "$87.00", "gifts_unlocked": 2, "selected": true } },
+        { "type": "tier", "settings": { "label": "Buy 3", "sublabel": "Get 2 Free", "ribbon": "Best Value", "quantity": "5", "price": "$87.00", "compare_price": "$145.00", "gifts_unlocked": 3 } },
+        { "type": "gift", "settings": { "name": "Travel Pouch" } },
+        { "type": "gift", "settings": { "name": "Hair Care Guide" } },
+        { "type": "gift", "settings": { "name": "Free Shipping" } },
+        { "type": "trust_badge", "settings": { "text": "Third-Party Tested" } },
+        { "type": "trust_badge", "settings": { "text": "Dermatologist-Formulated" } },
+        { "type": "trust_badge", "settings": { "text": "Root-Cause Focused" } },
+        { "type": "trust_badge", "settings": { "text": "Clean, Sulfate-Free Formula" } },
+        { "type": "trust_badge", "settings": { "text": "Targets Thinning Hair" } },
+        { "type": "trust_badge", "settings": { "text": "Scalp Barrier Safe" } },
+        { "type": "trust_badge", "settings": { "text": "Daily Use Formula" } },
+        { "type": "accordion", "settings": { "title": "Description", "content": "<p>A botanical shampoo bar formulated with rosemary, ginger, and biotin to strengthen hair from root to tip.</p>" } },
+        { "type": "accordion", "settings": { "title": "How to Use", "content": "<p>Lather in the shower and massage into scalp for 1-2 minutes. Rinse thoroughly. Use daily for best results.</p>" } },
+        { "type": "accordion", "settings": { "title": "Ingredients", "content": "<p>Rosemary Extract, Ginger Root Extract, Biotin, Coconut Oil, Shea Butter.</p>" } },
+        { "type": "accordion", "settings": { "title": "Shipping & Returns", "content": "<p>Orders ship within 1-2 business days. 30-day money-back guarantee.</p>" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

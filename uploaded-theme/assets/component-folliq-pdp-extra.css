@@ -1,0 +1,429 @@
+/* === Ingredients Carousel === */
+.folliq-ing {
+  padding: 6rem 5%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.folliq-ing__grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.folliq-ing__hero-img {
+  width: 100%;
+  border-radius: 16px;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+}
+
+.folliq-ing__heading {
+  font-family: var(--font-heading-family);
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 1.15;
+  margin: 0 0 1.2rem;
+}
+
+.folliq-ing__heading em {
+  font-style: normal;
+  color: rgb(var(--color-button));
+}
+
+.folliq-ing__subheading {
+  font-family: var(--font-body-family);
+  font-size: 1.5rem;
+  opacity: 0.75;
+  margin: 0 0 2.4rem;
+}
+
+.folliq-ing__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 0 0 2.4rem;
+}
+
+.folliq-ing__list-item {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1.2rem 0;
+  border-top: 1px solid rgba(var(--color-foreground), 0.1);
+  cursor: pointer;
+  background: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+  width: 100%;
+  text-align: left;
+  font-family: var(--font-body-family);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.folliq-ing__list-item.is-active {
+  color: rgb(var(--color-button));
+}
+
+.folliq-ing__list-thumb {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.folliq-ing__card {
+  display: none;
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(var(--color-foreground), 0.04);
+  align-items: center;
+}
+
+.folliq-ing__card.is-active {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+}
+
+.folliq-ing__card-img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.folliq-ing__card-body {
+  padding: 2rem 2.4rem;
+}
+
+.folliq-ing__card-title {
+  font-family: var(--font-heading-family);
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0 0 0.8rem;
+}
+
+.folliq-ing__card-text {
+  font-family: var(--font-body-family);
+  font-size: 1.4rem;
+  line-height: 1.5;
+  opacity: 0.8;
+  margin: 0;
+}
+
+.folliq-ing__nav {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  margin-top: 1.6rem;
+}
+
+.folliq-ing__nav-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: rgb(var(--color-button));
+  color: rgb(var(--color-button-text));
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.folliq-ing__nav-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.folliq-ing__progress {
+  flex: 1;
+  height: 4px;
+  border-radius: 100px;
+  background: rgba(var(--color-foreground), 0.15);
+  overflow: hidden;
+}
+
+.folliq-ing__progress-fill {
+  height: 100%;
+  border-radius: 100px;
+  background: rgb(var(--color-button));
+  transition: width 0.25s ease;
+}
+
+/* === Problem/Solution Narrative === */
+.folliq-narrative {
+  padding: 6rem 5%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.folliq-narrative__grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.folliq-narrative__img {
+  width: 100%;
+  border-radius: 16px;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.folliq-narrative__heading {
+  font-family: var(--font-heading-family);
+  font-size: 3.2rem;
+  font-weight: 600;
+  line-height: 1.15;
+  margin: 0 0 1.2rem;
+}
+
+.folliq-narrative__heading em {
+  font-style: normal;
+  display: block;
+  opacity: 0.7;
+}
+
+.folliq-narrative__subheading {
+  font-family: var(--font-body-family);
+  font-size: 1.5rem;
+  opacity: 0.75;
+  margin: 0 0 2.4rem;
+}
+
+.folliq-narrative__card {
+  border-radius: 12px;
+  background: rgba(var(--color-foreground), 0.05);
+  padding: 1.8rem 2rem;
+  margin-bottom: 1.2rem;
+}
+
+.folliq-narrative__card-head {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: var(--font-body-family);
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin: 0 0 1rem;
+}
+
+.folliq-narrative__card-icon {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: rgba(var(--color-button), 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.folliq-narrative__card-icon svg {
+  width: 16px;
+  height: 16px;
+  color: rgb(var(--color-button));
+}
+
+.folliq-narrative__card-text {
+  font-family: var(--font-body-family);
+  font-size: 1.4rem;
+  line-height: 1.55;
+  opacity: 0.85;
+  margin: 0 0 0.8rem;
+}
+
+.folliq-narrative__card-text:last-child {
+  margin-bottom: 0;
+}
+
+/* === Before/After Carousel === */
+.folliq-ba2 {
+  padding: 6rem 5%;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.folliq-ba2__heading {
+  font-family: var(--font-heading-family);
+  font-size: 3rem;
+  font-weight: 600;
+  margin: 0 0 1rem;
+}
+
+.folliq-ba2__heading em {
+  font-style: normal;
+  color: rgb(var(--color-button));
+}
+
+.folliq-ba2__subheading {
+  font-family: var(--font-body-family);
+  font-size: 1.5rem;
+  opacity: 0.75;
+  margin: 0 0 3.2rem;
+}
+
+.folliq-ba2__slide {
+  display: none;
+}
+
+.folliq-ba2__slide.is-active {
+  display: block;
+}
+
+.folliq-ba2__imgs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 1.6rem;
+}
+
+.folliq-ba2__img-wrap {
+  position: relative;
+  aspect-ratio: 4/5;
+}
+
+.folliq-ba2__img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.folliq-ba2__day-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.6rem;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  font-family: var(--font-body-family);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.folliq-ba2__day-label--after {
+  background: rgb(var(--color-button));
+}
+
+.folliq-ba2__stars {
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+  margin-bottom: 0.6rem;
+}
+
+.folliq-ba2__stars svg {
+  width: 15px;
+  height: 15px;
+  fill: currentColor;
+}
+
+.folliq-ba2__rating-text {
+  font-family: var(--font-body-family);
+  font-size: 1.2rem;
+  opacity: 0.7;
+  margin: 0 0 1.2rem;
+}
+
+.folliq-ba2__title {
+  font-family: var(--font-heading-family);
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0 0 1rem;
+}
+
+.folliq-ba2__text {
+  font-family: var(--font-body-family);
+  font-size: 1.4rem;
+  line-height: 1.6;
+  opacity: 0.8;
+  margin: 0 0 1.6rem;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.folliq-ba2__author {
+  font-family: var(--font-body-family);
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.folliq-ba2__nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+  margin-top: 2.4rem;
+}
+
+.folliq-ba2__nav-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: rgb(var(--color-button));
+  color: rgb(var(--color-button-text));
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.folliq-ba2__nav-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.folliq-ba2__progress {
+  width: 200px;
+  height: 4px;
+  border-radius: 100px;
+  background: rgba(var(--color-foreground), 0.15);
+  overflow: hidden;
+}
+
+.folliq-ba2__progress-fill {
+  height: 100%;
+  border-radius: 100px;
+  background: rgb(var(--color-button));
+  transition: width 0.25s ease;
+}
+
+@media screen and (max-width: 989px) {
+  .folliq-ing__grid,
+  .folliq-narrative__grid {
+    grid-template-columns: 1fr;
+    gap: 2.4rem;
+  }
+  .folliq-ing__card.is-active {
+    grid-template-columns: 1fr;
+  }
+  .folliq-ba2__imgs {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .folliq-ing,
+  .folliq-narrative,
+  .folliq-ba2 {
+    padding: 4rem 5%;
+  }
+  .folliq-ing__heading,
+  .folliq-narrative__heading,
+  .folliq-ba2__heading {
+    font-size: 2.4rem;
+  }
+}

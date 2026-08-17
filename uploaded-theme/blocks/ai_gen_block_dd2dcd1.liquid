@@ -1,0 +1,1028 @@
+{% doc %}
+  @prompt
+    Create a premium "Before & After Results" section for the Folliq hair care brand.
+    
+    IMPORTANT:
+    Follow the official Folliq Brand Guidelines exactly.
+    
+    Brand Style:
+    
+    • Premium
+    • Luxury
+    • Botanical
+    • Clinical
+    • Scandinavian
+    • Minimal
+    • Elegant
+    
+    Inspired by:
+    Apple, Aesop, Vegamour, Act+Acre, Rhode.
+    
+    Use ONLY the official Folliq brand colors.
+    
+    --------------------------------------------------
+    
+    COLOR PALETTE
+    
+    Primary Green
+    #33452D
+    
+    Dark Green
+    #273522
+    
+    Accent Green
+    #56694B
+    
+    Warm Ivory
+    #F2EEE3
+    
+    Soft Ivory
+    #FAF8F3
+    
+    Text
+    #1F231D
+    
+    Border
+    #D9D8D2
+    
+    Do not introduce any additional colors.
+    
+    --------------------------------------------------
+    
+    SECTION BACKGROUND
+    
+    Background:
+    #FAF8F3
+    
+    Maximum Width:
+    1480px
+    
+    Padding Top:
+    120px
+    
+    Padding Bottom:
+    120px
+    
+    --------------------------------------------------
+    
+    SECTION HEADER
+    
+    Small Label
+    
+    REAL RESULTS
+    
+    Heading
+    
+    See the Folliq Difference
+    
+    Description
+    
+    Discover how consistent use of Folliq supports healthier-looking, fuller hair over time. Real customer results. Real confidence.
+    
+    Center aligned.
+    
+    --------------------------------------------------
+    
+    MAIN CONTENT
+    
+    Create one large interactive Before & After comparison slider.
+    
+    The comparison should display:
+    
+    LEFT
+    
+    Before
+    
+    RIGHT
+    
+    After
+    
+    Users should drag a premium circular slider to compare both images.
+    
+    The slider should be smooth and responsive.
+    
+    Large rounded corners:
+    
+    28px
+    
+    Soft shadow
+    
+    Luxury appearance.
+    
+    Maximum width:
+    
+    1200px
+    
+    Centered.
+    
+    --------------------------------------------------
+    
+    IMAGE REQUIREMENTS
+    
+    Use two high-quality portrait photos.
+    
+    Same person.
+    
+    Same angle.
+    
+    Same lighting.
+    
+    Same background.
+    
+    Only the hair should visibly improve.
+    
+    Natural results.
+    
+    No exaggerated transformations.
+    
+    No unrealistic edits.
+    
+    Premium studio photography.
+    
+    --------------------------------------------------
+    
+    BELOW THE IMAGE
+    
+    Display three premium result cards.
+    
+    Card 1
+    
+    Healthier Looking Hair
+    
+    Card 2
+    
+    Improved Shine
+    
+    Card 3
+    
+    Stronger Appearance
+    
+    Each card includes:
+    
+    Minimal outline icon
+    
+    Short description
+    
+    White background
+    
+    Rounded 20px corners
+    
+    Soft shadow
+    
+    --------------------------------------------------
+    
+    DISCLAIMER
+    
+    Below the cards display small text.
+    
+    Results may vary from person to person. Consistent use as directed is recommended.
+    
+    Use small grey typography.
+    
+    --------------------------------------------------
+    
+    TYPOGRAPHY
+    
+    Heading
+    
+    Cormorant Garamond
+    
+    56px
+    
+    Body
+    
+    Manrope
+    
+    18px
+    
+    Cards
+    
+    Manrope
+    
+    16px
+    
+    --------------------------------------------------
+    
+    ANIMATIONS
+    
+    Fade-up on scroll.
+    
+    Comparison slider moves smoothly.
+    
+    Cards animate upward with stagger.
+    
+    --------------------------------------------------
+    
+    HOVER EFFECTS
+    
+    Cards lift 6px.
+    
+    Shadow slightly increases.
+    
+    Transition
+    
+    300ms ease.
+    
+    --------------------------------------------------
+    
+    THEME EDITOR SETTINGS
+    
+    Everything must be editable.
+    
+    Section Label
+    
+    Heading
+    
+    Description
+    
+    Before Image
+    
+    After Image
+    
+    Result Cards
+    
+    Icons
+    
+    Disclaimer
+    
+    Spacing
+    
+    Border Radius
+    
+    Colors
+    
+    --------------------------------------------------
+    
+    The final design should communicate trust, transparency and premium quality.
+    
+    The section should feel clean, luxurious and modern, matching the Folliq identity with generous whitespace, elegant typography and refined botanical aesthetics.
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-before-after-{{ ai_gen_id }} {
+    display: block;
+    background-color: {{ block.settings.background_color }};
+    padding: {{ block.settings.padding_top }}px 20px {{ block.settings.padding_bottom }}px;
+    width: 100%;
+  }
+
+  .ai-before-after-container-{{ ai_gen_id }} {
+    max-width: {{ block.settings.max_width }}px;
+    margin: 0 auto;
+  }
+
+  .ai-before-after-header-{{ ai_gen_id }} {
+    text-align: center;
+    margin-bottom: 80px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .ai-before-after-header-{{ ai_gen_id }}.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .ai-before-after-label-{{ ai_gen_id }} {
+    font-family: {{ block.settings.body_font.family }}, sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: {{ block.settings.accent_color }};
+    margin-bottom: 16px;
+  }
+
+  .ai-before-after-heading-{{ ai_gen_id }} {
+    font-family: {{ block.settings.heading_font.family }}, serif;
+    font-size: {{ block.settings.heading_size }}px;
+    font-weight: 400;
+    color: {{ block.settings.text_color }};
+    margin: 0 0 24px;
+    line-height: 1.2;
+  }
+
+  .ai-before-after-description-{{ ai_gen_id }} {
+    font-family: {{ block.settings.body_font.family }}, sans-serif;
+    font-size: {{ block.settings.body_size }}px;
+    color: {{ block.settings.text_color }};
+    max-width: 680px;
+    margin: 0 auto;
+    line-height: 1.6;
+    opacity: 0.8;
+  }
+
+  .ai-before-after-comparison-wrapper-{{ ai_gen_id }} {
+    max-width: {{ block.settings.comparison_max_width }}px;
+    margin: 0 auto 80px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
+  }
+
+  .ai-before-after-comparison-wrapper-{{ ai_gen_id }}.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .ai-before-after-comparison-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: {{ block.settings.image_border_radius }}px;
+    box-shadow: 0 20px 60px rgba(31, 35, 29, 0.08);
+    background-color: #f4f4f4;
+  }
+
+  .ai-before-after-image-container-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    padding-bottom: 133.33%;
+  }
+
+  .ai-before-after-image-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-before-after-after-container-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    clip-path: inset(0 0 0 0);
+  }
+
+  .ai-before-after-slider-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 4px;
+    background-color: {{ block.settings.slider_color }};
+    cursor: ew-resize;
+    z-index: 10;
+    transform: translateX(-50%);
+  }
+
+  .ai-before-after-slider-handle-{{ ai_gen_id }} {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 56px;
+    height: 56px;
+    background-color: {{ block.settings.slider_color }};
+    border-radius: 50%;
+    box-shadow: 0 4px 20px rgba(31, 35, 29, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+  }
+
+  .ai-before-after-slider-{{ ai_gen_id }}:hover .ai-before-after-slider-handle-{{ ai_gen_id }} {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+
+  .ai-before-after-slider-arrows-{{ ai_gen_id }} {
+    display: flex;
+    gap: 4px;
+  }
+
+  .ai-before-after-slider-arrows-{{ ai_gen_id }} svg {
+    width: 12px;
+    height: 12px;
+    stroke: {{ block.settings.background_color }};
+    stroke-width: 2;
+  }
+
+  .ai-before-after-label-overlay-{{ ai_gen_id }} {
+    position: absolute;
+    top: 24px;
+    font-family: {{ block.settings.body_font.family }}, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: {{ block.settings.background_color }};
+    background-color: rgba(31, 35, 29, 0.7);
+    padding: 8px 16px;
+    border-radius: 20px;
+    backdrop-filter: blur(8px);
+  }
+
+  .ai-before-after-label-before-{{ ai_gen_id }} {
+    left: 24px;
+  }
+
+  .ai-before-after-label-after-{{ ai_gen_id }} {
+    right: 24px;
+  }
+
+  .ai-before-after-cards-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-bottom: 60px;
+  }
+
+  .ai-before-after-card-{{ ai_gen_id }} {
+    background-color: {{ block.settings.card_background }};
+    border-radius: {{ block.settings.card_border_radius }}px;
+    padding: 40px 32px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(31, 35, 29, 0.04);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  .ai-before-after-card-{{ ai_gen_id }}.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .ai-before-after-card-{{ ai_gen_id }}:nth-child(1) {
+    transition-delay: 0.4s;
+  }
+
+  .ai-before-after-card-{{ ai_gen_id }}:nth-child(2) {
+    transition-delay: 0.5s;
+  }
+
+  .ai-before-after-card-{{ ai_gen_id }}:nth-child(3) {
+    transition-delay: 0.6s;
+  }
+
+  .ai-before-after-card-{{ ai_gen_id }}:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 30px rgba(31, 35, 29, 0.08);
+  }
+
+  .ai-before-after-card-icon-{{ ai_gen_id }} {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 24px;
+    stroke: {{ block.settings.primary_color }};
+    stroke-width: 1.5;
+  }
+
+  .ai-before-after-card-title-{{ ai_gen_id }} {
+    font-family: {{ block.settings.body_font.family }}, sans-serif;
+    font-size: {{ block.settings.card_size }}px;
+    font-weight: 600;
+    color: {{ block.settings.text_color }};
+    margin: 0 0 12px;
+  }
+
+  .ai-before-after-card-description-{{ ai_gen_id }} {
+    font-family: {{ block.settings.body_font.family }}, sans-serif;
+    font-size: 14px;
+    color: {{ block.settings.text_color }};
+    opacity: 0.7;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .ai-before-after-disclaimer-{{ ai_gen_id }} {
+    text-align: center;
+    font-family: {{ block.settings.body_font.family }}, sans-serif;
+    font-size: 13px;
+    color: {{ block.settings.text_color }};
+    opacity: 0.5;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .ai-before-after-placeholder-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-before-after-placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    max-width: 200px;
+    max-height: 200px;
+    opacity: 0.3;
+  }
+
+  @media screen and (max-width: 989px) {
+    .ai-before-after-{{ ai_gen_id }} {
+      padding: {{ block.settings.padding_top | times: 0.6 }}px 20px {{ block.settings.padding_bottom | times: 0.6 }}px;
+    }
+
+    .ai-before-after-heading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.heading_size | times: 0.7 }}px;
+    }
+
+    .ai-before-after-description-{{ ai_gen_id }} {
+      font-size: {{ block.settings.body_size | times: 0.9 }}px;
+    }
+
+    .ai-before-after-header-{{ ai_gen_id }} {
+      margin-bottom: 60px;
+    }
+
+    .ai-before-after-comparison-wrapper-{{ ai_gen_id }} {
+      margin-bottom: 60px;
+    }
+
+    .ai-before-after-cards-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .ai-before-after-label-overlay-{{ ai_gen_id }} {
+      font-size: 12px;
+      padding: 6px 12px;
+      top: 16px;
+    }
+
+    .ai-before-after-label-before-{{ ai_gen_id }} {
+      left: 16px;
+    }
+
+    .ai-before-after-label-after-{{ ai_gen_id }} {
+      right: 16px;
+    }
+  }
+{% endstyle %}
+
+<before-after-slider-{{ ai_gen_id }}
+  class="ai-before-after-{{ ai_gen_id }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="ai-before-after-container-{{ ai_gen_id }}">
+    <div class="ai-before-after-header-{{ ai_gen_id }}">
+      {% if block.settings.label != blank %}
+        <div class="ai-before-after-label-{{ ai_gen_id }}">{{ block.settings.label }}</div>
+      {% endif %}
+      {% if block.settings.heading != blank %}
+        <h2 class="ai-before-after-heading-{{ ai_gen_id }}">{{ block.settings.heading }}</h2>
+      {% endif %}
+      {% if block.settings.description != blank %}
+        <div class="ai-before-after-description-{{ ai_gen_id }}">{{ block.settings.description }}</div>
+      {% endif %}
+    </div>
+
+    <div class="ai-before-after-comparison-wrapper-{{ ai_gen_id }}">
+      <div class="ai-before-after-comparison-{{ ai_gen_id }}">
+        <div class="ai-before-after-image-container-{{ ai_gen_id }}">
+          {% if block.settings.before_image %}
+            <img
+              src="{{ block.settings.before_image | image_url: width: 2400 }}"
+              alt="{{ block.settings.before_image.alt | escape }}"
+              class="ai-before-after-image-{{ ai_gen_id }}"
+              loading="lazy"
+              width="{{ block.settings.before_image.width }}"
+              height="{{ block.settings.before_image.height }}"
+            >
+          {% else %}
+            <div class="ai-before-after-placeholder-{{ ai_gen_id }}">
+              {{ 'image' | placeholder_svg_tag }}
+            </div>
+          {% endif %}
+
+          <div class="ai-before-after-after-container-{{ ai_gen_id }}" data-after-container>
+            {% if block.settings.after_image %}
+              <img
+                src="{{ block.settings.after_image | image_url: width: 2400 }}"
+                alt="{{ block.settings.after_image.alt | escape }}"
+                class="ai-before-after-image-{{ ai_gen_id }}"
+                loading="lazy"
+                width="{{ block.settings.after_image.width }}"
+                height="{{ block.settings.after_image.height }}"
+              >
+            {% else %}
+              <div class="ai-before-after-placeholder-{{ ai_gen_id }}">
+                {{ 'image' | placeholder_svg_tag }}
+              </div>
+            {% endif %}
+          </div>
+
+          <div class="ai-before-after-slider-{{ ai_gen_id }}" data-slider>
+            <div class="ai-before-after-slider-handle-{{ ai_gen_id }}">
+              <div class="ai-before-after-slider-arrows-{{ ai_gen_id }}">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+                <svg viewBox="0 0 24 24" fill="none">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="ai-before-after-label-overlay-{{ ai_gen_id }} ai-before-after-label-before-{{ ai_gen_id }}">
+            {{ block.settings.before_label }}
+          </div>
+          <div class="ai-before-after-label-overlay-{{ ai_gen_id }} ai-before-after-label-after-{{ ai_gen_id }}">
+            {{ block.settings.after_label }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ai-before-after-cards-{{ ai_gen_id }}">
+      <div class="ai-before-after-card-{{ ai_gen_id }}">
+        <svg class="ai-before-after-card-icon-{{ ai_gen_id }}" viewBox="0 0 24 24" fill="none">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+          <circle cx="12" cy="12" r="3"/>
+        </svg>
+        <h3 class="ai-before-after-card-title-{{ ai_gen_id }}">{{ block.settings.card_1_title }}</h3>
+        <p class="ai-before-after-card-description-{{ ai_gen_id }}">{{ block.settings.card_1_description }}</p>
+      </div>
+
+      <div class="ai-before-after-card-{{ ai_gen_id }}">
+        <svg class="ai-before-after-card-icon-{{ ai_gen_id }}" viewBox="0 0 24 24" fill="none">
+          <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+        </svg>
+        <h3 class="ai-before-after-card-title-{{ ai_gen_id }}">{{ block.settings.card_2_title }}</h3>
+        <p class="ai-before-after-card-description-{{ ai_gen_id }}">{{ block.settings.card_2_description }}</p>
+      </div>
+
+      <div class="ai-before-after-card-{{ ai_gen_id }}">
+        <svg class="ai-before-after-card-icon-{{ ai_gen_id }}" viewBox="0 0 24 24" fill="none">
+          <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+        </svg>
+        <h3 class="ai-before-after-card-title-{{ ai_gen_id }}">{{ block.settings.card_3_title }}</h3>
+        <p class="ai-before-after-card-description-{{ ai_gen_id }}">{{ block.settings.card_3_description }}</p>
+      </div>
+    </div>
+
+    {% if block.settings.disclaimer != blank %}
+      <div class="ai-before-after-disclaimer-{{ ai_gen_id }}">{{ block.settings.disclaimer }}</div>
+    {% endif %}
+  </div>
+</before-after-slider-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class BeforeAfterSlider{{ai_gen_id}} extends HTMLElement {
+      constructor() {
+        super();
+        this.slider = null;
+        this.afterContainer = null;
+        this.comparison = null;
+        this.isDragging = false;
+      }
+
+      connectedCallback() {
+        this.slider = this.querySelector('[data-slider]');
+        this.afterContainer = this.querySelector('[data-after-container]');
+        this.comparison = this.querySelector('.ai-before-after-comparison-{{ ai_gen_id }}');
+
+        if (this.slider && this.afterContainer && this.comparison) {
+          this.setupSlider();
+          this.setupScrollAnimation();
+        }
+      }
+
+      setupSlider() {
+        this.slider.addEventListener('mousedown', this.startDrag.bind(this));
+        this.slider.addEventListener('touchstart', this.startDrag.bind(this));
+        document.addEventListener('mousemove', this.onDrag.bind(this));
+        document.addEventListener('touchmove', this.onDrag.bind(this));
+        document.addEventListener('mouseup', this.stopDrag.bind(this));
+        document.addEventListener('touchend', this.stopDrag.bind(this));
+      }
+
+      startDrag(e) {
+        this.isDragging = true;
+        e.preventDefault();
+      }
+
+      stopDrag() {
+        this.isDragging = false;
+      }
+
+      onDrag(e) {
+        if (!this.isDragging) return;
+
+        const rect = this.comparison.getBoundingClientRect();
+        const x = (e.type.includes('mouse') ? e.clientX : e.touches[0].clientX) - rect.left;
+        const percentage = Math.max(0, Math.min(100, (x / rect.width) * 100));
+
+        this.slider.style.left = percentage + '%';
+        this.afterContainer.style.clipPath = `inset(0 ${100 - percentage}% 0 0)`;
+      }
+
+      setupScrollAnimation() {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const header = this.querySelector('.ai-before-after-header-{{ ai_gen_id }}');
+              const wrapper = this.querySelector('.ai-before-after-comparison-wrapper-{{ ai_gen_id }}');
+              const cards = this.querySelectorAll('.ai-before-after-card-{{ ai_gen_id }}');
+
+              if (header) {
+                setTimeout(() => header.classList.add('visible'), 100);
+              }
+              if (wrapper) {
+                setTimeout(() => wrapper.classList.add('visible'), 200);
+              }
+              cards.forEach((card, index) => {
+                setTimeout(() => card.classList.add('visible'), 400 + (index * 100));
+              });
+
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1 });
+
+        observer.observe(this);
+      }
+    }
+
+    customElements.define('before-after-slider-{{ ai_gen_id }}', BeforeAfterSlider{{ai_gen_id}});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Before & After Results",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section header"
+    },
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Label",
+      "default": "REAL RESULTS"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "See the Folliq Difference"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Discover how consistent use of Folliq supports healthier-looking, fuller hair over time. Real customer results. Real confidence."
+    },
+    {
+      "type": "header",
+      "content": "Comparison images"
+    },
+    {
+      "type": "image_picker",
+      "id": "before_image",
+      "label": "Before image"
+    },
+    {
+      "type": "image_picker",
+      "id": "after_image",
+      "label": "After image"
+    },
+    {
+      "type": "text",
+      "id": "before_label",
+      "label": "Before label",
+      "default": "Before"
+    },
+    {
+      "type": "text",
+      "id": "after_label",
+      "label": "After label",
+      "default": "After"
+    },
+    {
+      "type": "header",
+      "content": "Result card 1"
+    },
+    {
+      "type": "text",
+      "id": "card_1_title",
+      "label": "Title",
+      "default": "Healthier Looking Hair"
+    },
+    {
+      "type": "textarea",
+      "id": "card_1_description",
+      "label": "Description",
+      "default": "Visibly improved hair health with consistent use"
+    },
+    {
+      "type": "header",
+      "content": "Result card 2"
+    },
+    {
+      "type": "text",
+      "id": "card_2_title",
+      "label": "Title",
+      "default": "Improved Shine"
+    },
+    {
+      "type": "textarea",
+      "id": "card_2_description",
+      "label": "Description",
+      "default": "Natural radiance and luminosity restored"
+    },
+    {
+      "type": "header",
+      "content": "Result card 3"
+    },
+    {
+      "type": "text",
+      "id": "card_3_title",
+      "label": "Title",
+      "default": "Stronger Appearance"
+    },
+    {
+      "type": "textarea",
+      "id": "card_3_description",
+      "label": "Description",
+      "default": "Hair looks fuller and more resilient"
+    },
+    {
+      "type": "header",
+      "content": "Disclaimer"
+    },
+    {
+      "type": "textarea",
+      "id": "disclaimer",
+      "label": "Disclaimer text",
+      "default": "Results may vary from person to person. Consistent use as directed is recommended."
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Maximum width",
+      "min": 1000,
+      "max": 1600,
+      "step": 20,
+      "unit": "px",
+      "default": 1480
+    },
+    {
+      "type": "range",
+      "id": "comparison_max_width",
+      "label": "Comparison width",
+      "min": 800,
+      "max": 1400,
+      "step": 20,
+      "unit": "px",
+      "default": 1200
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 40,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 120
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 40,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 120
+    },
+    {
+      "type": "range",
+      "id": "image_border_radius",
+      "label": "Image border radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "label": "Card border radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#FAF8F3"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#1F231D"
+    },
+    {
+      "type": "color",
+      "id": "primary_color",
+      "label": "Primary",
+      "default": "#33452D"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent",
+      "default": "#56694B"
+    },
+    {
+      "type": "color",
+      "id": "card_background",
+      "label": "Card background",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "slider_color",
+      "label": "Slider",
+      "default": "#FAF8F3"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "font_picker",
+      "id": "heading_font",
+      "label": "Heading font",
+      "default": "serif"
+    },
+    {
+      "type": "font_picker",
+      "id": "body_font",
+      "label": "Body font",
+      "default": "sans-serif"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Heading size",
+      "min": 32,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "default": 56
+    },
+    {
+      "type": "range",
+      "id": "body_size",
+      "label": "Body size",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "card_size",
+      "label": "Card title size",
+      "min": 14,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    }
+  ],
+  "presets": [
+    {
+      "name": "Before & After Results"
+    }
+  ]
+}
+{% endschema %}

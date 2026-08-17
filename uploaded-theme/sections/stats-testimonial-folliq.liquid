@@ -1,0 +1,90 @@
+{{ 'component-folliq-pdp-final.css' | asset_url | stylesheet_tag }}
+
+<div class="folliq-stats2 color-{{ section.settings.color_scheme }}">
+  <div class="folliq-stats2__grid">
+    <div>
+      <h2 class="folliq-stats2__heading">{{ section.settings.heading }}</h2>
+      {%- if section.settings.subheading != blank -%}
+        <p class="folliq-stats2__subheading">{{ section.settings.subheading }}</p>
+      {%- endif -%}
+
+      {%- assign stat_blocks = section.blocks | where: 'type', 'stat' -%}
+      {%- if stat_blocks.size > 0 -%}
+        <div class="folliq-stats2__items">
+          {%- for block in stat_blocks -%}
+            <div class="folliq-stats2__item" {{ block.shopify_attributes }}>
+              <p class="folliq-stats2__item-value">
+                {%- render 'icon-stats-folliq', icon: 'arrow-up' -%}
+                {{ block.settings.percent }}%
+              </p>
+              <p class="folliq-stats2__item-text">{{ block.settings.text }}</p>
+            </div>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+
+      {%- assign testimonial = section.blocks | where: 'type', 'testimonial' | first -%}
+      {%- if testimonial -%}
+        <div class="folliq-stats2__testimonial" {{ testimonial.shopify_attributes }}>
+          {%- if testimonial.settings.avatar -%}
+            <img class="folliq-stats2__testimonial-avatar" src="{{ testimonial.settings.avatar | image_url: width: 120 }}" alt="{{ testimonial.settings.author | escape }}" loading="lazy">
+          {%- endif -%}
+          <div>
+            <p class="folliq-stats2__testimonial-quote">"{{ testimonial.settings.quote }}"</p>
+            <p class="folliq-stats2__testimonial-author">{{ testimonial.settings.author }}</p>
+          </div>
+        </div>
+      {%- endif -%}
+    </div>
+    <div>
+      {%- if section.settings.image -%}
+        <img class="folliq-stats2__img" src="{{ section.settings.image | image_url: width: 700 }}" alt="{{ section.settings.image.alt | escape }}" loading="lazy">
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Folliq Stats + Quote",
+  "tag": "section",
+  "class": "section-folliq-stats-2",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "The numbers don't lie" },
+    { "type": "richtext", "id": "subheading", "label": "Subheading", "default": "<p>Backed by real customer results, the difference speaks for itself.</p>" },
+    { "type": "image_picker", "id": "image", "label": "Side image" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-2" }
+  ],
+  "blocks": [
+    {
+      "type": "stat",
+      "name": "Stat",
+      "settings": [
+        { "type": "range", "id": "percent", "label": "Percent", "min": 0, "max": 100, "step": 1, "default": 92 },
+        { "type": "text", "id": "text", "label": "Text", "default": "Felt noticeable improvement within the first week." }
+      ]
+    },
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        { "type": "image_picker", "id": "avatar", "label": "Avatar" },
+        { "type": "textarea", "id": "quote", "label": "Quote", "default": "I've tried so many products before, but this actually made a difference. Within a couple of weeks my hair finally felt stronger again." },
+        { "type": "text", "id": "author", "label": "Author", "default": "Ron M." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Folliq Stats + Quote",
+      "blocks": [
+        { "type": "stat", "settings": { "percent": 92, "text": "Felt noticeable improvement within the first week." } },
+        { "type": "stat", "settings": { "percent": 94, "text": "Saw less shedding and breakage." } },
+        { "type": "stat", "settings": { "percent": 99, "text": "Stopped using additional products." } },
+        { "type": "stat", "settings": { "percent": 95, "text": "Felt more confident in their hair." } },
+        { "type": "testimonial" }
+      ]
+    }
+  ]
+}
+{% endschema %}

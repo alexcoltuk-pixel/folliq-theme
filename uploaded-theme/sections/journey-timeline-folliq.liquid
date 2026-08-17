@@ -1,0 +1,65 @@
+{{ 'component-folliq-sections.css' | asset_url | stylesheet_tag }}
+
+<section class="folliq-section color-{{ section.settings.color_scheme }}">
+  {%- if section.settings.eyebrow != blank -%}
+    <p class="folliq-eyebrow">{{ section.settings.eyebrow }}</p>
+  {%- endif -%}
+  <h2 class="folliq-heading">{{ section.settings.heading }}</h2>
+  {%- if section.settings.subheading != blank -%}
+    <p class="folliq-subheading">{{ section.settings.subheading }}</p>
+  {%- endif -%}
+
+  <div class="folliq-journey">
+    {%- for block in section.blocks -%}
+      <div class="folliq-journey-step" {{ block.shopify_attributes }}>
+        {%- if block.settings.image -%}
+          <img class="folliq-journey-step__img" src="{{ block.settings.image | image_url: width: 400 }}" alt="{{ block.settings.title | escape }}" loading="lazy">
+        {%- endif -%}
+        <p class="folliq-journey-step__label">{{ block.settings.week }}</p>
+        <h3 class="folliq-journey-step__title">{{ block.settings.title }}</h3>
+        <p class="folliq-journey-step__text">{{ block.settings.text }}</p>
+        {%- if block.settings.stat != blank -%}
+          <p class="folliq-journey-step__stat">{{ block.settings.stat }}</p>
+        {%- endif -%}
+      </div>
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Folliq Journey Timeline",
+  "tag": "section",
+  "class": "section-folliq-journey",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "The Process" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Your Journey to Stronger Hair" },
+    { "type": "richtext", "id": "subheading", "label": "Subheading", "default": "<p>What most customers notice when using Folliq consistently.</p>" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-1" }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Timeline step",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "text", "id": "week", "label": "Week label", "default": "Week 1" },
+        { "type": "text", "id": "title", "label": "Title", "default": "Deep Cleanse" },
+        { "type": "text", "id": "text", "label": "Text", "default": "Removes buildup and residue from styling products" },
+        { "type": "text", "id": "stat", "label": "Stat line", "default": "93% reported less shedding" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Folliq Journey Timeline",
+      "blocks": [
+        { "type": "step", "settings": { "week": "Week 1", "title": "Deep Cleanse", "text": "Removes buildup and residue from styling products", "stat": "93% reported less shedding" } },
+        { "type": "step", "settings": { "week": "Week 2", "title": "Root Strengthening", "text": "Biotin and rosemary begin nourishing the scalp", "stat": "88% noticed less breakage" } },
+        { "type": "step", "settings": { "week": "Week 4", "title": "Visible Growth", "text": "New, finer hairs begin appearing along the hairline", "stat": "96% saw new growth" } },
+        { "type": "step", "settings": { "week": "Week 6+", "title": "Stronger, Fuller Hair", "text": "Consistent use builds lasting strength and thickness", "stat": "91% reported fuller-looking hair" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

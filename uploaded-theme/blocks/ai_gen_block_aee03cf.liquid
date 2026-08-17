@@ -1,0 +1,663 @@
+{% doc %}
+  @prompt
+     Create a clean Shopify OS 2.0 section with only the layout. Do not generate placeholder text, copy, or images.
+    
+    Layout:
+    
+    - Two-column layout (50% / 50%) on desktop.
+    - Left column is for content.
+    - Right column is for one large image.
+    - Maximum container width: 1400px.
+    - Rounded outer container (24px).
+    - Overflow hidden.
+    - Desktop gap: 64px.
+    - Mobile: stack vertically with the content first and image second.
+    
+    Left column:
+    - Vertical layout.
+    - Placeholder blocks only:
+      - Heading placeholder
+      - Description placeholder
+      - 2×2 grid for four feature cards
+      - Full-width CTA button placeholder
+      - Small guarantee text placeholder
+    - Equal spacing between all elements.
+    
+    Feature grid:
+    - Two columns.
+    - Four identical cards.
+    - Rounded corners (16px).
+    - Equal height.
+    - Centered alignment.
+    - Each card contains:
+      - icon placeholder
+      - title placeholder
+    
+    Right column:
+    - Single image placeholder.
+    - Image fills the entire column.
+    - Object-fit: cover.
+    - Rounded corners.
+    - Same height as the left content.
+    
+    Theme Editor settings:
+    - Image picker
+    - Background color
+    - Container max width
+    - Section padding
+    - Column gap
+    - Border radius
+    - Card border radius
+    - Button border radius
+    
+    Do not generate any text, icons, colors, or branding. Create only the responsive layout and editable structure., Create a premium Shopify OS 2.0 section inspired by modern skincare and wellness brands. Replicate only the layout and visual hierarchy. Do not copy any existing brand, wording, or design assets.
+    
+    Layout:
+    - Two-column layout (50% / 50%) on desktop.
+    - Left side for content.
+    - Right side for one large image.
+    - Maximum width: 1400px.
+    - Rounded container (24px).
+    - Overflow hidden.
+    - Responsive (stack on mobile).
+    
+    Left Column:
+    - Large heading.
+    - Small description below the heading.
+    - A 2×2 grid of feature cards.
+    - One full-width CTA button.
+    - Small guarantee text below the button.
+    
+    Use placeholder demo content that can easily be replaced later.
+    
+    Heading:
+    Why Choose Our Brand
+    
+    Description:
+    Experience premium quality with thoughtfully designed products made for everyday use.
+    
+    Feature Cards:
+    • Premium Quality
+    • Natural Ingredients
+    • Everyday Performance
+    • Trusted Formula
+    
+    Each feature card should contain:
+    - minimalist icon
+    - short title
+    - rounded corners
+    - subtle hover effect
+    
+    CTA Button:
+    Discover More
+    
+    Guarantee Text:
+    30-Day Satisfaction Guarantee
+    
+    Right Column:
+    - One large lifestyle or product image placeholder.
+    - Rounded corners.
+    - Object-fit: cover.
+    
+    Theme Editor:
+    Make every text editable:
+    - Heading
+    - Description
+    - Four feature titles
+    - Button text
+    - Guarantee text
+    - Image
+    - Background color
+    - Button color
+    - Border radius
+    - Section spacing
+    - Card spacing
+    
+    Style:
+    Minimal, premium, modern, clean, soft shadows, subtle animations, glassmorphism-inspired feature cards, Shopify Online Store 2.0 compatible.
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-premium-section-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    padding: {{ block.settings.section_padding }}px 20px;
+  }
+
+  .ai-premium-container-{{ ai_gen_id }} {
+    max-width: {{ block.settings.container_max_width }}px;
+    margin: 0 auto;
+    background-color: {{ block.settings.background_color }};
+    border-radius: {{ block.settings.border_radius }}px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  .ai-premium-grid-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+
+  .ai-premium-content-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding: 80px 64px;
+    justify-content: center;
+  }
+
+  .ai-premium-heading-{{ ai_gen_id }} {
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin: 0;
+    color: {{ block.settings.heading_color }};
+  }
+
+  .ai-premium-description-{{ ai_gen_id }} {
+    font-size: 16px;
+    line-height: 1.6;
+    color: {{ block.settings.text_color }};
+    opacity: 0.8;
+    margin: 0;
+  }
+
+  .ai-premium-features-grid-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: {{ block.settings.card_gap }}px;
+  }
+
+  .ai-premium-feature-card-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 32px 24px;
+    background: {{ block.settings.card_background }};
+    backdrop-filter: blur(10px);
+    border-radius: {{ block.settings.card_border_radius }}px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    text-align: center;
+  }
+
+  .ai-premium-feature-card-{{ ai_gen_id }}:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  }
+
+  .ai-premium-icon-{{ ai_gen_id }} {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: {{ block.settings.icon_background }};
+    border-radius: 50%;
+    color: {{ block.settings.icon_color }};
+  }
+
+  .ai-premium-icon-{{ ai_gen_id }} svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .ai-premium-feature-title-{{ ai_gen_id }} {
+    font-size: 14px;
+    font-weight: 600;
+    color: {{ block.settings.text_color }};
+    margin: 0;
+  }
+
+  .ai-premium-button-{{ ai_gen_id }} {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 16px 32px;
+    background-color: {{ block.settings.button_color }};
+    color: {{ block.settings.button_text_color }};
+    border: none;
+    border-radius: {{ block.settings.button_border_radius }}px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .ai-premium-button-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_hover_color }};
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  }
+
+  .ai-premium-guarantee-{{ ai_gen_id }} {
+    font-size: 13px;
+    color: {{ block.settings.text_color }};
+    opacity: 0.7;
+    text-align: center;
+    margin: 0;
+  }
+
+  .ai-premium-image-column-{{ ai_gen_id }} {
+    position: relative;
+    min-height: 700px;
+  }
+
+  .ai-premium-image-wrapper-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .ai-premium-image-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-premium-image-placeholder-wrapper-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.02) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-premium-image-placeholder-wrapper-{{ ai_gen_id }} svg {
+    width: 120px;
+    height: 120px;
+    opacity: 0.2;
+  }
+
+  @media screen and (max-width: 989px) {
+    .ai-premium-grid-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+    }
+
+    .ai-premium-content-{{ ai_gen_id }} {
+      order: 1;
+      padding: 48px 32px;
+      gap: 24px;
+    }
+
+    .ai-premium-image-column-{{ ai_gen_id }} {
+      order: 2;
+      min-height: 500px;
+    }
+
+    .ai-premium-heading-{{ ai_gen_id }} {
+      font-size: 36px;
+    }
+
+    .ai-premium-features-grid-{{ ai_gen_id }} {
+      gap: 16px;
+    }
+
+    .ai-premium-feature-card-{{ ai_gen_id }} {
+      padding: 24px 16px;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-premium-content-{{ ai_gen_id }} {
+      padding: 32px 24px;
+    }
+
+    .ai-premium-heading-{{ ai_gen_id }} {
+      font-size: 28px;
+    }
+
+    .ai-premium-features-grid-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    .ai-premium-image-column-{{ ai_gen_id }} {
+      min-height: 400px;
+    }
+  }
+{% endstyle %}
+
+<premium-section-{{ ai_gen_id }} class="ai-premium-section-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-premium-container-{{ ai_gen_id }}">
+    <div class="ai-premium-grid-{{ ai_gen_id }}">
+      <div class="ai-premium-content-{{ ai_gen_id }}">
+        {% if block.settings.heading != blank %}
+          <h2 class="ai-premium-heading-{{ ai_gen_id }}">{{ block.settings.heading }}</h2>
+        {% endif %}
+
+        {% if block.settings.description != blank %}
+          <p class="ai-premium-description-{{ ai_gen_id }}">{{ block.settings.description }}</p>
+        {% endif %}
+
+        <div class="ai-premium-features-grid-{{ ai_gen_id }}">
+          {% if block.settings.feature_1_title != blank %}
+            <div class="ai-premium-feature-card-{{ ai_gen_id }}">
+              <div class="ai-premium-icon-{{ ai_gen_id }}">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <h3 class="ai-premium-feature-title-{{ ai_gen_id }}">{{ block.settings.feature_1_title }}</h3>
+            </div>
+          {% endif %}
+
+          {% if block.settings.feature_2_title != blank %}
+            <div class="ai-premium-feature-card-{{ ai_gen_id }}">
+              <div class="ai-premium-icon-{{ ai_gen_id }}">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                </svg>
+              </div>
+              <h3 class="ai-premium-feature-title-{{ ai_gen_id }}">{{ block.settings.feature_2_title }}</h3>
+            </div>
+          {% endif %}
+
+          {% if block.settings.feature_3_title != blank %}
+            <div class="ai-premium-feature-card-{{ ai_gen_id }}">
+              <div class="ai-premium-icon-{{ ai_gen_id }}">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <h3 class="ai-premium-feature-title-{{ ai_gen_id }}">{{ block.settings.feature_3_title }}</h3>
+            </div>
+          {% endif %}
+
+          {% if block.settings.feature_4_title != blank %}
+            <div class="ai-premium-feature-card-{{ ai_gen_id }}">
+              <div class="ai-premium-icon-{{ ai_gen_id }}">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+              </div>
+              <h3 class="ai-premium-feature-title-{{ ai_gen_id }}">{{ block.settings.feature_4_title }}</h3>
+            </div>
+          {% endif %}
+        </div>
+
+        {% if block.settings.button_text != blank %}
+          <a href="{{ block.settings.button_link }}" class="ai-premium-button-{{ ai_gen_id }}">
+            {{ block.settings.button_text }}
+          </a>
+        {% endif %}
+
+        {% if block.settings.guarantee_text != blank %}
+          <p class="ai-premium-guarantee-{{ ai_gen_id }}">{{ block.settings.guarantee_text }}</p>
+        {% endif %}
+      </div>
+
+      <div class="ai-premium-image-column-{{ ai_gen_id }}">
+        <div class="ai-premium-image-wrapper-{{ ai_gen_id }}">
+          {% if block.settings.image %}
+            <img
+              src="{{ block.settings.image | image_url: width: 1000 }}"
+              alt="{{ block.settings.image.alt | escape }}"
+              loading="lazy"
+              width="{{ block.settings.image.width }}"
+              height="{{ block.settings.image.height }}"
+              class="ai-premium-image-{{ ai_gen_id }}"
+            >
+          {% else %}
+            <div class="ai-premium-image-placeholder-wrapper-{{ ai_gen_id }}">
+              {{ 'image' | placeholder_svg_tag }}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</premium-section-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class PremiumSection{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.adjustImageHeight();
+        window.addEventListener('resize', () => this.adjustImageHeight());
+      }
+
+      adjustImageHeight() {
+        const content = this.querySelector('.ai-premium-content-{{ ai_gen_id }}');
+        const imageColumn = this.querySelector('.ai-premium-image-column-{{ ai_gen_id }}');
+        
+        if (content && imageColumn && window.innerWidth > 989) {
+          imageColumn.style.minHeight = content.offsetHeight + 'px';
+        } else if (imageColumn && window.innerWidth > 749) {
+          imageColumn.style.minHeight = '500px';
+        } else if (imageColumn) {
+          imageColumn.style.minHeight = '400px';
+        }
+      }
+    }
+
+    customElements.define('premium-section-{{ ai_gen_id }}', PremiumSection{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Premium feature section",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Why Choose Our Brand"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Experience premium quality with thoughtfully designed products made for everyday use."
+    },
+    {
+      "type": "header",
+      "content": "Features"
+    },
+    {
+      "type": "text",
+      "id": "feature_1_title",
+      "label": "Feature 1 title",
+      "default": "Premium Quality"
+    },
+    {
+      "type": "text",
+      "id": "feature_2_title",
+      "label": "Feature 2 title",
+      "default": "Natural Ingredients"
+    },
+    {
+      "type": "text",
+      "id": "feature_3_title",
+      "label": "Feature 3 title",
+      "default": "Everyday Performance"
+    },
+    {
+      "type": "text",
+      "id": "feature_4_title",
+      "label": "Feature 4 title",
+      "default": "Trusted Formula"
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Discover More"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "text",
+      "id": "guarantee_text",
+      "label": "Guarantee text",
+      "default": "30-Day Satisfaction Guarantee"
+    },
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "container_max_width",
+      "min": 1000,
+      "max": 1600,
+      "step": 100,
+      "unit": "px",
+      "label": "Container max width",
+      "default": 1400
+    },
+    {
+      "type": "range",
+      "id": "section_padding",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Section padding",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "card_gap",
+      "min": 8,
+      "max": 40,
+      "step": 4,
+      "unit": "px",
+      "label": "Card gap",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading",
+      "default": "#121212"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#121212"
+    },
+    {
+      "type": "color",
+      "id": "card_background",
+      "label": "Card background",
+      "default": "rgba(255, 255, 255, 0.6)"
+    },
+    {
+      "type": "color",
+      "id": "icon_background",
+      "label": "Icon background",
+      "default": "#f3f3f3"
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "Icon",
+      "default": "#121212"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Button background",
+      "default": "#121212"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_color",
+      "label": "Button hover background",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Border radius"
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Container",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Card",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Button",
+      "default": 8
+    }
+  ],
+  "presets": [
+    {
+      "name": "Premium feature section"
+    }
+  ]
+}
+{% endschema %}

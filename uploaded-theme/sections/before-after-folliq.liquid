@@ -1,0 +1,62 @@
+{{ 'component-folliq-sections.css' | asset_url | stylesheet_tag }}
+
+<section class="folliq-section color-{{ section.settings.color_scheme }}">
+  {%- if section.settings.eyebrow != blank -%}
+    <p class="folliq-eyebrow">{{ section.settings.eyebrow }}</p>
+  {%- endif -%}
+  <h2 class="folliq-heading">{{ section.settings.heading }}</h2>
+  {%- if section.settings.subheading != blank -%}
+    <p class="folliq-subheading">{{ section.settings.subheading }}</p>
+  {%- endif -%}
+
+  <div class="folliq-ba-grid">
+    {%- for block in section.blocks -%}
+      <div class="folliq-ba-card" {{ block.shopify_attributes }}>
+        <div class="folliq-ba-card__imgs">
+          {%- if block.settings.image_before -%}
+            <img src="{{ block.settings.image_before | image_url: width: 500 }}" alt="Before" loading="lazy">
+          {%- endif -%}
+          {%- if block.settings.image_after -%}
+            <img src="{{ block.settings.image_after | image_url: width: 500 }}" alt="After" loading="lazy">
+          {%- endif -%}
+        </div>
+        <div class="folliq-ba-card__body">
+          <p class="folliq-ba-card__text">{{ block.settings.text }}</p>
+          <p class="folliq-ba-card__author">{{ block.settings.author }}</p>
+        </div>
+      </div>
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Folliq Before/After",
+  "tag": "section",
+  "class": "section-folliq-ba",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Real Results" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "See the Difference Folliq Makes" },
+    { "type": "richtext", "id": "subheading", "label": "Subheading", "default": "<p>Discover how our customers transformed their hair with Folliq.</p>" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-2" }
+  ],
+  "blocks": [
+    {
+      "type": "case",
+      "name": "Before/After case",
+      "settings": [
+        { "type": "image_picker", "id": "image_before", "label": "Before image" },
+        { "type": "image_picker", "id": "image_after", "label": "After image" },
+        { "type": "textarea", "id": "text", "label": "Story text", "default": "After using Folliq daily for 6 weeks, my hair feels thicker and so much stronger." },
+        { "type": "text", "id": "author", "label": "Author", "default": "Verified Customer" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Folliq Before/After",
+      "blocks": [{ "type": "case" }, { "type": "case" }]
+    }
+  ]
+}
+{% endschema %}

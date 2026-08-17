@@ -1,0 +1,90 @@
+{{ 'component-folliq-pdp-extra.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'component-folliq-pdp-extra.js' | asset_url }}" defer="defer"></script>
+
+<div class="folliq-ba2 color-{{ section.settings.color_scheme }}">
+  <h2 class="folliq-ba2__heading">
+    {{ section.settings.heading }}
+    {%- if section.settings.heading_accent != blank -%}
+      <em>{{ section.settings.heading_accent }}</em>
+    {%- endif -%}
+  </h2>
+  {%- if section.settings.subheading != blank -%}
+    <p class="folliq-ba2__subheading">{{ section.settings.subheading }}</p>
+  {%- endif -%}
+
+  {%- for block in section.blocks -%}
+    <div class="folliq-ba2__slide{% if forloop.first %} is-active{% endif %}" {{ block.shopify_attributes }}>
+      <div class="folliq-ba2__imgs">
+        <div class="folliq-ba2__img-wrap">
+          {%- if block.settings.image_before -%}
+            <img src="{{ block.settings.image_before | image_url: width: 500 }}" alt="Before" loading="lazy">
+          {%- endif -%}
+          <span class="folliq-ba2__day-label">{{ block.settings.day_before | default: 'Day 1' }}</span>
+        </div>
+        <div class="folliq-ba2__img-wrap">
+          {%- if block.settings.image_after -%}
+            <img src="{{ block.settings.image_after | image_url: width: 500 }}" alt="After" loading="lazy">
+          {%- endif -%}
+          <span class="folliq-ba2__day-label folliq-ba2__day-label--after">{{ block.settings.day_after | default: 'Day 30' }}</span>
+        </div>
+      </div>
+      <div class="folliq-ba2__stars">
+        {%- for i in (1..5) -%}{%- render 'icon-star-folliq' -%}{%- endfor -%}
+      </div>
+      <p class="folliq-ba2__rating-text">{{ block.settings.rating_text | default: 'Rated 5.0 / 5.0' }}</p>
+      <h3 class="folliq-ba2__title">{{ block.settings.review_title }}</h3>
+      <p class="folliq-ba2__text">{{ block.settings.review_text }}</p>
+      <p class="folliq-ba2__author">{{ block.settings.author }}</p>
+    </div>
+  {%- endfor -%}
+
+  <div class="folliq-ba2__nav">
+    <button type="button" class="folliq-ba2__nav-btn" data-ba2-prev aria-label="Previous story">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <div class="folliq-ba2__progress"><div class="folliq-ba2__progress-fill"></div></div>
+    <button type="button" class="folliq-ba2__nav-btn" data-ba2-next aria-label="Next story">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Folliq Before/After",
+  "tag": "section",
+  "class": "section-folliq-ba-carousel",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "See the" },
+    { "type": "text", "id": "heading_accent", "label": "Heading accent", "default": "Difference Folliq Makes" },
+    { "type": "richtext", "id": "subheading", "label": "Subheading", "default": "<p>Discover how thousands are finally seeing stronger, fuller hair.</p>" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-1" }
+  ],
+  "blocks": [
+    {
+      "type": "story",
+      "name": "Before/After story",
+      "settings": [
+        { "type": "image_picker", "id": "image_before", "label": "Before image" },
+        { "type": "text", "id": "day_before", "label": "Before label", "default": "Day 1" },
+        { "type": "image_picker", "id": "image_after", "label": "After image" },
+        { "type": "text", "id": "day_after", "label": "After label", "default": "Day 45" },
+        { "type": "text", "id": "rating_text", "label": "Rating text", "default": "Rated 5.0 / 5.0" },
+        { "type": "text", "id": "review_title", "label": "Review title", "default": "Noticeably thicker in weeks." },
+        { "type": "textarea", "id": "review_text", "label": "Review text", "default": "I've dealt with thinning hair for years. Tried different treatments that barely helped. Within the first month using Folliq, the shedding had calmed down noticeably. By week six it felt fuller than it had in years." },
+        { "type": "text", "id": "author", "label": "Author", "default": "Olena K." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Folliq Before/After",
+      "blocks": [
+        { "type": "story" },
+        { "type": "story", "settings": { "day_after": "Day 40", "review_title": "Shedding finally stopped.", "review_text": "I was losing so much hair in the shower every day. My friend told me about Folliq. By day ten the shedding had dropped off. Ordered a second bar straight away.", "author": "Marta S." } },
+        { "type": "story", "settings": { "day_after": "Day 50", "review_title": "Fuller than it's been in years.", "review_text": "Tried three different treatments over 18 months. Nothing stuck. Six weeks in with Folliq and my hair is visibly thicker along the hairline.", "author": "Iryna P." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

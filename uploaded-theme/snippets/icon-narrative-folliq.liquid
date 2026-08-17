@@ -1,0 +1,19 @@
+{%- comment -%} Accepts: icon (string) — warning, search, lightbulb {%- endcomment -%}
+{%- case icon -%}
+  {%- when 'warning' -%}
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 3l10 18H2L12 3z"/>
+      <path d="M12 10v4"/>
+      <circle cx="12" cy="17" r="0.5" fill="currentColor"/>
+    </svg>
+  {%- when 'search' -%}
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="11" cy="11" r="7"/>
+      <path d="M21 21l-4.3-4.3"/>
+    </svg>
+  {%- when 'lightbulb' -%}
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M9 18h6M10 22h4M12 2a6 6 0 0 0-4 10.5c.6.6 1 1.5 1 2.5h6c0-1 .4-1.9 1-2.5A6 6 0 0 0 12 2z"/>
+    </svg>
+  {%- else -%}
+{%- endcase -%}

@@ -1,0 +1,58 @@
+{{ 'component-folliq-sections.css' | asset_url | stylesheet_tag }}
+
+<section class="folliq-section color-{{ section.settings.color_scheme }}">
+  {%- if section.settings.eyebrow != blank -%}
+    <p class="folliq-eyebrow">{{ section.settings.eyebrow }}</p>
+  {%- endif -%}
+  <h2 class="folliq-heading">{{ section.settings.heading }}</h2>
+
+  <div class="folliq-faq">
+    {%- for block in section.blocks -%}
+      <details class="folliq-faq-item" {{ block.shopify_attributes }}>
+        <summary>
+          <span>{{ block.settings.question }}</span>
+          <span class="folliq-faq-item__icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <path d="M12 5v14M5 12h14"/>
+            </svg>
+          </span>
+        </summary>
+        <p class="folliq-faq-item__answer">{{ block.settings.answer }}</p>
+      </details>
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Folliq FAQ",
+  "tag": "section",
+  "class": "section-folliq-faq",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Questions" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Frequently Asked Questions" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-2" }
+  ],
+  "blocks": [
+    {
+      "type": "faq",
+      "name": "Question",
+      "settings": [
+        { "type": "text", "id": "question", "label": "Question", "default": "What is Folliq?" },
+        { "type": "textarea", "id": "answer", "label": "Answer", "default": "Folliq is a botanical shampoo bar formulated with rosemary, ginger, and biotin to help strengthen hair from root to tip." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Folliq FAQ",
+      "blocks": [
+        { "type": "faq", "settings": { "question": "What is Folliq?", "answer": "Folliq is a botanical shampoo bar formulated with rosemary, ginger, and biotin to help strengthen hair from root to tip." } },
+        { "type": "faq", "settings": { "question": "How long until I see results?", "answer": "Many customers report improvements in hair strength and shedding within 2-4 weeks of consistent use." } },
+        { "type": "faq", "settings": { "question": "Is Folliq suitable for all hair types?", "answer": "Yes. Folliq's gentle, sulfate-free formula is designed for daily use on all hair types." } },
+        { "type": "faq", "settings": { "question": "Do you offer a satisfaction guarantee?", "answer": "Yes, we stand behind Folliq with a 30-day money-back guarantee." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

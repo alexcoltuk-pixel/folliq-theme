@@ -1,0 +1,55 @@
+{{ 'component-folliq-sections.css' | asset_url | stylesheet_tag }}
+
+<section class="folliq-section color-{{ section.settings.color_scheme }}">
+  {%- if section.settings.eyebrow != blank -%}
+    <p class="folliq-eyebrow">{{ section.settings.eyebrow }}</p>
+  {%- endif -%}
+  <h2 class="folliq-heading">{{ section.settings.heading }}</h2>
+
+  <div class="folliq-reviews-grid">
+    {%- for block in section.blocks -%}
+      <div class="folliq-review-card" {{ block.shopify_attributes }}>
+        <div class="folliq-review-card__stars">
+          {%- for i in (1..5) -%}
+            {%- render 'icon-star-folliq' -%}
+          {%- endfor -%}
+        </div>
+        <p class="folliq-review-card__text">{{ block.settings.text }}</p>
+        <p class="folliq-review-card__author">{{ block.settings.author }}</p>
+      </div>
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Folliq Reviews",
+  "tag": "section",
+  "class": "section-folliq-reviews",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Real Results" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Trusted by Thousands" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-1" }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review",
+      "settings": [
+        { "type": "textarea", "id": "text", "label": "Review text", "default": "My hair feels noticeably thicker after just a few weeks. Wish I'd found this sooner!" },
+        { "type": "text", "id": "author", "label": "Author", "default": "Verified Customer" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Folliq Reviews",
+      "blocks": [
+        { "type": "review" },
+        { "type": "review", "settings": { "text": "The shedding stopped within 2 weeks. My shower drain has never been happier.", "author": "Olena K." } },
+        { "type": "review", "settings": { "text": "Finally a natural shampoo bar that actually works. No more dry, brittle ends.", "author": "Marta S." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

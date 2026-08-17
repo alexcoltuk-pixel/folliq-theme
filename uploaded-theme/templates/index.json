@@ -1,0 +1,644 @@
+{
+  "sections": {
+    "ss_hero_pro_2_aemwxz": {
+      "type": "hero-folliq",
+      "blocks": {
+        "badge_1": {
+          "type": "badge",
+          "settings": {
+            "text": "★ Premium Quality Guaranteed"
+          }
+        },
+        "heading_1": {
+          "type": "heading",
+          "settings": {
+            "heading": "<h1>Botanical Care for Hair That Looks Fuller, Feels Stronger.</h1>"
+          }
+        },
+        "rating_1": {
+          "type": "rating",
+          "settings": {
+            "text": "4.9/5 based on 10,000+ reviews"
+          }
+        },
+        "buttons_1": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Shop Folliq",
+            "button_url_1": "shopify://collections/all",
+            "button_label_2": "",
+            "button_url_2": ""
+          }
+        },
+        "features_1": {
+          "type": "features",
+          "settings": {
+            "feature_icon_1": "truck",
+            "feature_text_1": "Free Worldwide Shipping",
+            "feature_icon_2": "leaf",
+            "feature_text_2": "Natural Botanical Ingredients",
+            "feature_icon_3": "shield",
+            "feature_text_3": "30-Day Money-Back Guarantee",
+            "feature_icon_4": "none",
+            "feature_text_4": ""
+          }
+        },
+        "stats_1": {
+          "type": "stats",
+          "settings": {
+            "stat_percent_1": 95,
+            "stat_heading_1": "Satisfaction rate",
+            "stat_text_1": "From verified buyers",
+            "stat_percent_2": 85,
+            "stat_heading_2": "Repeat customers",
+            "stat_text_2": "Returning within 6 months",
+            "stat_percent_3": 0,
+            "stat_heading_3": "",
+            "stat_text_3": ""
+          }
+        }
+      },
+      "block_order": [
+        "badge_1",
+        "heading_1",
+        "rating_1",
+        "buttons_1",
+        "features_1",
+        "stats_1"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/ChatGPT_Image_Aug_11_2026_03_06_58_PM.png",
+        "image_mobile": "shopify://shop_images/ChatGPT_Image_Aug_11_2026_03_06_58_PM.png",
+        "overlay_opacity": 40,
+        "content_align": "left",
+        "color_scheme": "scheme-3",
+        "padding_top": 96,
+        "padding_bottom": 96
+      }
+    },
+    "featured_product_MtGgVW": {
+      "type": "featured-product",
+      "blocks": {
+        "text_dCje8A": {
+          "type": "text",
+          "settings": {
+            "text": "{{ section.settings.product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title_MpGARb": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "price_GUGN76": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker_9keFCr": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "buy_buttons_Xp7nPb": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "icon_with_text_TUYrBQ": {
+          "type": "icon-with-text",
+          "settings": {
+            "layout": "horizontal",
+            "icon_1": "heart",
+            "heading_1": "Heading",
+            "icon_2": "return",
+            "heading_2": "Heading",
+            "icon_3": "truck",
+            "heading_3": "Heading"
+          }
+        }
+      },
+      "block_order": [
+        "text_dCje8A",
+        "title_MpGARb",
+        "price_GUGN76",
+        "variant_picker_9keFCr",
+        "buy_buttons_Xp7nPb",
+        "icon_with_text_TUYrBQ"
+      ],
+      "name": "t:sections.featured-product.presets.name",
+      "settings": {
+        "product": "usman-grass-smooth-triangle-shampoo-bar-deeply-moisturizing-herbal-soap-deeply-cleanses-and-removes-odors-smooths-frizz",
+        "color_scheme": "",
+        "secondary_background": false,
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 28,
+        "padding_bottom": 24
+      }
+    },
+    "blocks_EjeJME": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_a116626_gKCGGw": {
+          "type": "ai_gen_block_a116626",
+          "settings": {
+            "max_width": 1280,
+            "padding_top": 120,
+            "padding_bottom": 120,
+            "show_rating_label": true,
+            "rating_label": "4.9/5 CUSTOMER RATING",
+            "heading": "Trusted by Thousands",
+            "heading_size": 48,
+            "subheading": "<p>Join thousands of customers who have transformed their hair with Folliq. Read real experiences from people who chose healthier, stronger-looking hair.</p>",
+            "subheading_size": 16,
+            "card_border_radius": 40,
+            "section_background": "#f2eee3",
+            "card_background": "#ffffff",
+            "heading_color": "#33452d",
+            "subheading_color": "#56694b",
+            "text_color": "#273522",
+            "label_color": "#56694b",
+            "star_color": "#56694b",
+            "accent_color": "#56694b",
+            "testimonial_1_enabled": true,
+            "testimonial_1_name": "Emma S.",
+            "testimonial_1_image": "shopify://shop_images/ChatGPT_Image_Aug_2_2026_11_56_34_PM.png",
+            "testimonial_1_review": "After just 3 months, my hair feels thicker and healthier. The botanical formula is gentle yet effective. I've tried many products, but Folliq truly delivers results.",
+            "testimonial_1_usage": "Used for 3 months",
+            "testimonial_1_country": "🇺🇸",
+            "testimonial_2_enabled": true,
+            "testimonial_2_name": "Sophie M.",
+            "testimonial_2_image": "shopify://shop_images/ChatGPT_Image_Aug_2_2026_11_58_11_PM.png",
+            "testimonial_2_review": "I love the minimalist packaging and clean ingredients. My hair has never looked better. The results speak for themselves – stronger, shinier, and more voluminous.",
+            "testimonial_2_usage": "Used for 6 months",
+            "testimonial_2_country": "🇬🇧",
+            "testimonial_3_enabled": true,
+            "testimonial_3_name": "Lisa K.",
+            "testimonial_3_image": "shopify://shop_images/Girl.jpg",
+            "testimonial_3_review": "Finally, a hair care brand that combines science with nature. The transformation has been incredible. My hairdresser even noticed the difference!",
+            "testimonial_3_usage": "Used for 4 months",
+            "testimonial_3_country": "🇩🇪",
+            "testimonial_4_enabled": true,
+            "testimonial_4_name": "Anna L.",
+            "testimonial_4_image": "shopify://shop_images/ChatGPT_Image_Aug_2_2026_11_59_00_PM.png",
+            "testimonial_4_review": "The quality is exceptional. I appreciate the transparency in ingredients and the sustainable approach. My hair has regained its natural vitality.",
+            "testimonial_4_usage": "Used for 5 months",
+            "testimonial_4_country": "🇸🇪",
+            "testimonial_5_enabled": true,
+            "testimonial_5_name": "Maria R.",
+            "testimonial_5_image": "shopify://shop_images/ChatGPT_Image_Aug_3_2026_12_01_37_AM.png",
+            "testimonial_5_review": "Folliq has become an essential part of my routine. The premium quality is evident in every detail. I'm seeing real, lasting improvements.",
+            "testimonial_5_usage": "Used for 2 months",
+            "testimonial_5_country": "🇫🇷",
+            "testimonial_6_enabled": true,
+            "testimonial_6_name": "Julia H.",
+            "testimonial_6_image": "shopify://shop_images/ChatGPT_Image_Aug_3_2026_12_06_22_AM.png",
+            "testimonial_6_review": "The best investment I've made for my hair. Clean, effective, and beautifully designed. I recommend Folliq to everyone who asks about my hair.",
+            "testimonial_6_usage": "Used for 7 months",
+            "testimonial_6_country": "🇨🇭"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_a116626_gKCGGw"
+      ],
+      "name": "Folliq testimonials",
+      "settings": {}
+    },
+    "problem_folliq_1": {
+      "type": "problem-folliq",
+      "settings": {
+        "eyebrow": "The Struggle",
+        "heading": "Hair Problems That Won't Go Away?",
+        "subheading": "<p>Stress, harsh products, and buildup can slowly weaken hair at the root.</p>",
+        "color_scheme": "scheme-1"
+      },
+      "blocks": {
+        "problem_1": {
+          "type": "problem",
+          "settings": {
+            "title": "Excessive Shedding",
+            "text": "Losing more strands than usual in the shower or brush."
+          }
+        },
+        "problem_2": {
+          "type": "problem",
+          "settings": {
+            "title": "Thinning Hair",
+            "text": "Noticeably less volume and density over time."
+          }
+        },
+        "problem_3": {
+          "type": "problem",
+          "settings": {
+            "title": "Dry, Brittle Strands",
+            "text": "Hair that snaps and breaks before it can grow long."
+          }
+        },
+        "problem_4": {
+          "type": "problem",
+          "settings": {
+            "title": "Ineffective Products",
+            "text": "Shampoos loaded with sulfates that strip, not strengthen."
+          }
+        }
+      },
+      "block_order": [
+        "problem_1",
+        "problem_2",
+        "problem_3",
+        "problem_4"
+      ]
+    },
+    "product_grid_folliq_1": {
+      "type": "product-grid-folliq",
+      "settings": {
+        "eyebrow": "Best Sellers",
+        "heading": "The Folliq Solution",
+        "subheading": "<p>Formulas designed to cleanse, strengthen, and protect from root to tip.</p>",
+        "collection": "all",
+        "products_to_show": 4,
+        "show_rating": true,
+        "rating_text": "Rated 4.9 / 5.0",
+        "button_label": "Add To Cart",
+        "color_scheme": "scheme-2"
+      },
+      "blocks": {},
+      "block_order": []
+    },
+    "reviews_folliq_1": {
+      "type": "reviews-folliq",
+      "settings": {
+        "eyebrow": "Real Results",
+        "heading": "Trusted by Thousands",
+        "color_scheme": "scheme-1"
+      },
+      "blocks": {
+        "review_1": {
+          "type": "review",
+          "settings": {
+            "text": "My hair feels noticeably thicker after just a few weeks. Wish I'd found this sooner!",
+            "author": "Verified Customer"
+          }
+        },
+        "review_2": {
+          "type": "review",
+          "settings": {
+            "text": "The shedding stopped within 2 weeks. My shower drain has never been happier.",
+            "author": "Olena K."
+          }
+        },
+        "review_3": {
+          "type": "review",
+          "settings": {
+            "text": "Finally a natural shampoo bar that actually works. No more dry, brittle ends.",
+            "author": "Marta S."
+          }
+        }
+      },
+      "block_order": [
+        "review_1",
+        "review_2",
+        "review_3"
+      ]
+    },
+    "why_choose_folliq_1": {
+      "type": "why-choose-folliq",
+      "settings": {
+        "eyebrow": "Why Folliq",
+        "heading": "A Smarter Way to Care for Your Hair",
+        "color_scheme": "scheme-2"
+      },
+      "blocks": {
+        "item_1": {
+          "type": "item",
+          "settings": {
+            "text": "Targets the root cause of weak, thinning hair"
+          }
+        },
+        "item_2": {
+          "type": "item",
+          "settings": {
+            "text": "Rosemary, ginger & biotin — botanical, not synthetic"
+          }
+        },
+        "item_3": {
+          "type": "item",
+          "settings": {
+            "text": "Strengthens strands with every wash"
+          }
+        },
+        "item_4": {
+          "type": "item",
+          "settings": {
+            "text": "Sulfate-free, gentle for daily use"
+          }
+        }
+      },
+      "block_order": [
+        "item_1",
+        "item_2",
+        "item_3",
+        "item_4"
+      ]
+    },
+    "symptom_picker_folliq_1": {
+      "type": "symptom-picker-folliq",
+      "settings": {
+        "eyebrow": "Find Your Fit",
+        "heading": "Start With Your Hair Concern",
+        "subheading": "<p>Find the Folliq routine designed for your specific concern.</p>",
+        "color_scheme": "scheme-1"
+      },
+      "blocks": {
+        "symptom_1": {
+          "type": "symptom",
+          "settings": {
+            "title": "Hair Thinning",
+            "text": "Noticeably less volume and density over time.",
+            "link_label": "Shop the Solution"
+          }
+        },
+        "symptom_2": {
+          "type": "symptom",
+          "settings": {
+            "title": "Excessive Shedding",
+            "text": "Losing more strands than usual.",
+            "link_label": "Shop the Solution"
+          }
+        },
+        "symptom_3": {
+          "type": "symptom",
+          "settings": {
+            "title": "Dry & Brittle",
+            "text": "Strands that snap before they can grow.",
+            "link_label": "Shop the Solution"
+          }
+        }
+      },
+      "block_order": [
+        "symptom_1",
+        "symptom_2",
+        "symptom_3"
+      ]
+    },
+    "before_after_folliq_1": {
+      "type": "before-after-folliq",
+      "settings": {
+        "eyebrow": "Real Results",
+        "heading": "See the Difference Folliq Makes",
+        "subheading": "<p>Discover how our customers transformed their hair with Folliq.</p>",
+        "color_scheme": "scheme-2"
+      },
+      "blocks": {
+        "case_1": {
+          "type": "case",
+          "settings": {
+            "text": "After using Folliq daily for 6 weeks, my hair feels thicker and so much stronger.",
+            "author": "Verified Customer"
+          }
+        },
+        "case_2": {
+          "type": "case",
+          "settings": {
+            "text": "I've tried everything. Folliq is the first thing that actually reduced my shedding.",
+            "author": "Verified Customer"
+          }
+        }
+      },
+      "block_order": [
+        "case_1",
+        "case_2"
+      ]
+    },
+    "journey_timeline_folliq_1": {
+      "type": "journey-timeline-folliq",
+      "settings": {
+        "eyebrow": "The Process",
+        "heading": "Your Journey to Stronger Hair",
+        "subheading": "<p>What most customers notice when using Folliq consistently.</p>",
+        "color_scheme": "scheme-1"
+      },
+      "blocks": {
+        "step_1": {
+          "type": "step",
+          "settings": {
+            "week": "Week 1",
+            "title": "Deep Cleanse",
+            "text": "Removes buildup and residue from styling products",
+            "stat": "93% reported less shedding"
+          }
+        },
+        "step_2": {
+          "type": "step",
+          "settings": {
+            "week": "Week 2",
+            "title": "Root Strengthening",
+            "text": "Biotin and rosemary begin nourishing the scalp",
+            "stat": "88% noticed less breakage"
+          }
+        },
+        "step_3": {
+          "type": "step",
+          "settings": {
+            "week": "Week 4",
+            "title": "Visible Growth",
+            "text": "New, finer hairs begin appearing along the hairline",
+            "stat": "96% saw new growth"
+          }
+        },
+        "step_4": {
+          "type": "step",
+          "settings": {
+            "week": "Week 6+",
+            "title": "Stronger, Fuller Hair",
+            "text": "Consistent use builds lasting strength and thickness",
+            "stat": "91% reported fuller-looking hair"
+          }
+        }
+      },
+      "block_order": [
+        "step_1",
+        "step_2",
+        "step_3",
+        "step_4"
+      ]
+    },
+    "comparison_table_folliq_1": {
+      "type": "comparison-table-folliq",
+      "settings": {
+        "eyebrow": "The Difference",
+        "heading": "Why Folliq Works When Others Don't",
+        "subheading": "<p>See how Folliq compares to regular shampoos and generic hair treatments.</p>",
+        "them_title": "Regular Shampoo",
+        "us_title": "Folliq",
+        "color_scheme": "scheme-2"
+      },
+      "blocks": {
+        "row_1": {
+          "type": "row",
+          "settings": {
+            "them_text": "Strips natural oils and weakens strands",
+            "us_text": "Gently cleanses while strengthening every strand"
+          }
+        },
+        "row_2": {
+          "type": "row",
+          "settings": {
+            "them_text": "Doesn't address the root cause of thinning",
+            "us_text": "Targets the root cause with rosemary and biotin"
+          }
+        },
+        "row_3": {
+          "type": "row",
+          "settings": {
+            "them_text": "Harsh sulfates irritate the scalp",
+            "us_text": "Sulfate-free, gentle for daily use"
+          }
+        },
+        "row_4": {
+          "type": "row",
+          "settings": {
+            "them_text": "Plastic bottle, single use",
+            "us_text": "Zero-waste bar, lasts 2x longer"
+          }
+        },
+        "row_5": {
+          "type": "row",
+          "settings": {
+            "them_text": "Generic, one-size-fits-all formula",
+            "us_text": "Botanical formula backed by natural science"
+          }
+        }
+      },
+      "block_order": [
+        "row_1",
+        "row_2",
+        "row_3",
+        "row_4",
+        "row_5"
+      ]
+    },
+    "ugc_gallery_folliq_1": {
+      "type": "ugc-gallery-folliq",
+      "settings": {
+        "eyebrow": "Community",
+        "heading": "Folliq in Real Life",
+        "color_scheme": "scheme-1"
+      },
+      "blocks": {
+        "media_1": {
+          "type": "media",
+          "settings": {}
+        },
+        "media_2": {
+          "type": "media",
+          "settings": {}
+        },
+        "media_3": {
+          "type": "media",
+          "settings": {}
+        },
+        "media_4": {
+          "type": "media",
+          "settings": {}
+        },
+        "media_5": {
+          "type": "media",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "media_1",
+        "media_2",
+        "media_3",
+        "media_4",
+        "media_5"
+      ]
+    },
+    "guarantee_banner_folliq_1": {
+      "type": "guarantee-banner-folliq",
+      "settings": {
+        "heading": "30-Day Money-Back Guarantee",
+        "text": "<p>Try Folliq risk-free. If you're not satisfied within 30 days, we'll refund your purchase, no questions asked.</p>",
+        "button_label": "Shop Folliq Risk Free",
+        "button_url": "shopify://collections/all",
+        "color_scheme": "scheme-3"
+      },
+      "blocks": {},
+      "block_order": []
+    },
+    "faq_folliq_1": {
+      "type": "faq-folliq",
+      "settings": {
+        "eyebrow": "Questions",
+        "heading": "Frequently Asked Questions",
+        "color_scheme": "scheme-2"
+      },
+      "blocks": {
+        "faq_1": {
+          "type": "faq",
+          "settings": {
+            "question": "What is Folliq?",
+            "answer": "Folliq is a botanical shampoo bar formulated with rosemary, ginger, and biotin to help strengthen hair from root to tip."
+          }
+        },
+        "faq_2": {
+          "type": "faq",
+          "settings": {
+            "question": "How long until I see results?",
+            "answer": "Many customers report improvements in hair strength and shedding within 2-4 weeks of consistent use."
+          }
+        },
+        "faq_3": {
+          "type": "faq",
+          "settings": {
+            "question": "Is Folliq suitable for all hair types?",
+            "answer": "Yes. Folliq's gentle, sulfate-free formula is designed for daily use on all hair types."
+          }
+        },
+        "faq_4": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you offer a satisfaction guarantee?",
+            "answer": "Yes, we stand behind Folliq with a 30-day money-back guarantee."
+          }
+        }
+      },
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4"
+      ]
+    }
+  },
+  "order": [
+    "ss_hero_pro_2_aemwxz",
+    "problem_folliq_1",
+    "featured_product_MtGgVW",
+    "blocks_EjeJME",
+    "product_grid_folliq_1",
+    "reviews_folliq_1",
+    "why_choose_folliq_1",
+    "symptom_picker_folliq_1",
+    "before_after_folliq_1",
+    "journey_timeline_folliq_1",
+    "comparison_table_folliq_1",
+    "ugc_gallery_folliq_1",
+    "guarantee_banner_folliq_1",
+    "faq_folliq_1"
+  ]
+}

@@ -1,0 +1,1496 @@
+{% doc %}
+  @prompt
+    Create a premium comparison section for the Folliq hair care brand.
+    
+    IMPORTANT:
+    Follow the official Folliq Brand Guidelines exactly.
+    
+    The section must NOT make medical claims.
+    
+    Instead, compare daily hair care solutions and highlight the advantages of Folliq in a premium, trustworthy way.
+    
+    --------------------------------------------------
+    
+    Brand Style
+    
+    • Premium
+    
+    • Luxury
+    
+    • Botanical
+    
+    • Scandinavian
+    
+    • Clinical
+    
+    • Minimal
+    
+    Inspired by
+    
+    Apple
+    
+    Rhode
+    
+    Aesop
+    
+    Act+Acre
+    
+    Vegamour
+    
+    --------------------------------------------------
+    
+    COLOR PALETTE
+    
+    Primary Green
+    
+    #33452D
+    
+    Dark Green
+    
+    #273522
+    
+    Accent Green
+    
+    #56694B
+    
+    Warm Ivory
+    
+    #F2EEE3
+    
+    Soft Ivory
+    
+    #FAF8F3
+    
+    Text
+    
+    #1F231D
+    
+    Border
+    
+    rgba(255,255,255,.12)
+    
+    White
+    
+    #FFFFFF
+    
+    --------------------------------------------------
+    
+    BACKGROUND
+    
+    Background
+    
+    #273522
+    
+    Add a premium botanical organic texture with 5% opacity.
+    
+    Maximum Width
+    
+    1480px
+    
+    Padding
+    
+    120px Top
+    
+    120px Bottom
+    
+    --------------------------------------------------
+    
+    SECTION HEADER
+    
+    Small Label
+    
+    WHY CHOOSE FOLLIQ
+    
+    Heading
+    
+    Why Folliq Stands Apart
+    
+    Description
+    
+    See how Folliq compares with traditional hair care products and why thousands of customers choose it as part of their daily routine.
+    
+    Center aligned.
+    
+    --------------------------------------------------
+    
+    COMPARISON TABLE
+    
+    Create a premium comparison table.
+    
+    Desktop
+    
+    5 Columns
+    
+    Column 1
+    
+    Feature Labels
+    
+    Column 2
+    
+    Folliq
+    
+    Highlight this column.
+    
+    Columns 3–5
+    
+    Regular Shampoo
+    
+    Conditioner Only
+    
+    Generic Hair Products
+    
+    --------------------------------------------------
+    
+    FOLLIQ COLUMN
+    
+    White card
+    
+    Rounded Corners
+    
+    24px
+    
+    Soft Shadow
+    
+    Slightly larger than the other columns.
+    
+    Display uploaded product image above the column.
+    
+    IMPORTANT
+    
+    The product image MUST NOT be hardcoded.
+    
+    Use a Shopify Image Picker so the merchant can upload any product image from the Theme Editor.
+    
+    Include settings for:
+    
+    • Product Image Upload
+    
+    • Image Width
+    
+    • Image Position
+    
+    --------------------------------------------------
+    
+    FEATURES
+    
+    Supports healthier-looking hair
+    
+    ✓
+    
+    Daily scalp care
+    
+    ✓
+    
+    Botanical ingredients
+    
+    ✓
+    
+    Sulfate Free
+    
+    ✓
+    
+    Suitable for all hair types
+    
+    ✓
+    
+    Easy daily routine
+    
+    ✓
+    
+    Premium formulation
+    
+    ✓
+    
+    Trusted by thousands
+    
+    ✓
+    
+    Every row should contain either
+    
+    ✓
+    
+    or
+    
+    —
+    
+    using premium circular icons.
+    
+    --------------------------------------------------
+    
+    TABLE STYLE
+    
+    Rounded Cards
+    
+    24px
+    
+    Soft Borders
+    
+    Premium spacing
+    
+    Hover lift
+    
+    Folliq column slightly elevated
+    
+    Smooth animations
+    
+    --------------------------------------------------
+    
+    TYPOGRAPHY
+    
+    Heading
+    
+    Cormorant Garamond
+    
+    56px
+    
+    Table Headings
+    
+    Cormorant Garamond
+    
+    28px
+    
+    Rows
+    
+    Manrope
+    
+    18px
+    
+    --------------------------------------------------
+    
+    BOTTOM CTA
+    
+    Centered.
+    
+    Heading
+    
+    Ready to Upgrade Your Hair Care Routine?
+    
+    Description
+    
+    Experience premium botanical care designed to support healthier-looking hair every day.
+    
+    Button
+    
+    Shop Folliq
+    
+    Background
+    
+    #56694B
+    
+    Hover
+    
+    #33452D
+    
+    Rounded
+    
+    16px
+    
+    --------------------------------------------------
+    
+    THEME EDITOR SETTINGS
+    
+    Everything must be editable.
+    
+    Section Label
+    
+    Heading
+    
+    Description
+    
+    Product Image Upload
+    
+    Product Image Width
+    
+    Column Titles
+    
+    Feature Names
+    
+    Checkmarks
+    
+    Icons
+    
+    CTA Heading
+    
+    CTA Description
+    
+    Button Text
+    
+    Button URL
+    
+    Spacing
+    
+    Colors
+    
+    Border Radius
+    
+    Typography
+    
+    --------------------------------------------------
+    
+    DESIGN GOAL
+    
+    The section should feel like a premium comparison used by luxury DTC beauty brands.
+    
+    Avoid exaggerated claims.
+    
+    Use generous whitespace, elegant typography and refined botanical styling.
+    
+    The entire section should reinforce trust, premium quality and modern hair care while remaining fully responsive and completely editable through the Shopify Theme Editor.
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-folliq-comparison-{{ ai_gen_id }} {
+    display: block;
+    background-color: {{ block.settings.background_color }};
+    background-image: {{ block.settings.background_texture }};
+    background-size: cover;
+    background-position: center;
+    padding: {{ block.settings.padding_top }}px 20px {{ block.settings.padding_bottom }}px;
+    width: 100%;
+  }
+
+  .ai-folliq-comparison-container-{{ ai_gen_id }} {
+    max-width: {{ block.settings.max_width }}px;
+    margin: 0 auto;
+  }
+
+  .ai-folliq-comparison-header-{{ ai_gen_id }} {
+    text-align: center;
+    margin-bottom: {{ block.settings.header_spacing }}px;
+  }
+
+  .ai-folliq-comparison-label-{{ ai_gen_id }} {
+    font-family: {{ block.settings.body_font.family }}, {{ block.settings.body_font.fallback_families }};
+    font-weight: {{ block.settings.body_font.weight }};
+    font-size: {{ block.settings.label_size }}px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: {{ block.settings.label_color }};
+    margin-bottom: 16px;
+    opacity: 0.8;
+  }
+
+  .ai-folliq-comparison-heading-{{ ai_gen_id }} {
+    font-family: {{ block.settings.heading_font.family }}, {{ block.settings.heading_font.fallback_families }};
+    font-weight: {{ block.settings.heading_font.weight }};
+    font-size: {{ block.settings.heading_size }}px;
+    line-height: 1.2;
+    color: {{ block.settings.heading_color }};
+    margin-bottom: 24px;
+  }
+
+  .ai-folliq-comparison-description-{{ ai_gen_id }} {
+    font-family: {{ block.settings.body_font.family }}, {{ block.settings.body_font.fallback_families }};
+    font-weight: {{ block.settings.body_font.weight }};
+    font-size: {{ block.settings.description_size }}px;
+    line-height: 1.6;
+    color: {{ block.settings.description_color }};
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .ai-folliq-comparison-table-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: 1.2fr repeat(4, 1fr);
+    gap: {{ block.settings.column_gap }}px;
+    margin-bottom: {{ block.settings.table_bottom_spacing }}px;
+  }
+
+  .ai-folliq-comparison-column-{{ ai_gen_id }} {
+    background: {{ block.settings.column_bg }};
+    border-radius: {{ block.settings.border_radius }}px;
+    padding: {{ block.settings.column_padding }}px;
+    border: 1px solid {{ block.settings.border_color }};
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .ai-folliq-comparison-column-{{ ai_gen_id }}:hover {
+    transform: translateY(-4px);
+  }
+
+  .ai-folliq-comparison-column-folliq-{{ ai_gen_id }} {
+    background: {{ block.settings.folliq_column_bg }};
+    border-radius: {{ block.settings.border_radius }}px;
+    padding: {{ block.settings.column_padding }}px;
+    border: 1px solid {{ block.settings.folliq_border_color }};
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    transform: translateY(-8px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+  }
+
+  .ai-folliq-comparison-column-folliq-{{ ai_gen_id }}:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.16);
+  }
+
+  .ai-folliq-comparison-product-image-{{ ai_gen_id }} {
+    width: 100%;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+
+  .ai-folliq-comparison-product-image-{{ ai_gen_id }} img {
+    width: {{ block.settings.product_image_width }}%;
+    height: auto;
+    border-radius: {{ block.settings.image_border_radius }}px;
+  }
+
+  .ai-folliq-comparison-column-header-{{ ai_gen_id }} {
+    font-family: {{ block.settings.heading_font.family }}, {{ block.settings.heading_font.fallback_families }};
+    font-weight: {{ block.settings.heading_font.weight }};
+    font-size: {{ block.settings.column_heading_size }}px;
+    line-height: 1.3;
+    color: {{ block.settings.column_heading_color }};
+    text-align: center;
+    margin-bottom: 32px;
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-folliq-comparison-column-header-folliq-{{ ai_gen_id }} {
+    color: {{ block.settings.folliq_heading_color }};
+  }
+
+  .ai-folliq-comparison-row-{{ ai_gen_id }} {
+    display: contents;
+  }
+
+  .ai-folliq-comparison-feature-{{ ai_gen_id }} {
+    font-family: {{ block.settings.body_font.family }}, {{ block.settings.body_font.fallback_families }};
+    font-weight: {{ block.settings.body_font.weight }};
+    font-size: {{ block.settings.feature_size }}px;
+    line-height: 1.5;
+    color: {{ block.settings.feature_color }};
+    padding: {{ block.settings.row_padding }}px 0;
+    border-bottom: 1px solid {{ block.settings.row_border_color }};
+    display: flex;
+    align-items: center;
+  }
+
+  .ai-folliq-comparison-cell-{{ ai_gen_id }} {
+    padding: {{ block.settings.row_padding }}px 0;
+    border-bottom: 1px solid {{ block.settings.row_border_color }};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-folliq-comparison-icon-{{ ai_gen_id }} {
+    width: {{ block.settings.icon_size }}px;
+    height: {{ block.settings.icon_size }}px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: {{ block.settings.icon_size | times: 0.6 }}px;
+    font-weight: 600;
+  }
+
+  .ai-folliq-comparison-icon-check-{{ ai_gen_id }} {
+    background: {{ block.settings.check_bg }};
+    color: {{ block.settings.check_color }};
+  }
+
+  .ai-folliq-comparison-icon-dash-{{ ai_gen_id }} {
+    background: {{ block.settings.dash_bg }};
+    color: {{ block.settings.dash_color }};
+  }
+
+  .ai-folliq-comparison-cta-{{ ai_gen_id }} {
+    text-align: center;
+    background: {{ block.settings.cta_bg }};
+    border-radius: {{ block.settings.cta_border_radius }}px;
+    padding: {{ block.settings.cta_padding }}px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .ai-folliq-comparison-cta-heading-{{ ai_gen_id }} {
+    font-family: {{ block.settings.heading_font.family }}, {{ block.settings.heading_font.fallback_families }};
+    font-weight: {{ block.settings.heading_font.weight }};
+    font-size: {{ block.settings.cta_heading_size }}px;
+    line-height: 1.3;
+    color: {{ block.settings.cta_heading_color }};
+    margin-bottom: 16px;
+  }
+
+  .ai-folliq-comparison-cta-description-{{ ai_gen_id }} {
+    font-family: {{ block.settings.body_font.family }}, {{ block.settings.body_font.fallback_families }};
+    font-weight: {{ block.settings.body_font.weight }};
+    font-size: {{ block.settings.cta_description_size }}px;
+    line-height: 1.6;
+    color: {{ block.settings.cta_description_color }};
+    margin-bottom: 32px;
+  }
+
+  .ai-folliq-comparison-cta-button-{{ ai_gen_id }} {
+    display: inline-block;
+    font-family: {{ block.settings.body_font.family }}, {{ block.settings.body_font.fallback_families }};
+    font-weight: 600;
+    font-size: {{ block.settings.button_size }}px;
+    color: {{ block.settings.button_text_color }};
+    background: {{ block.settings.button_bg }};
+    padding: 16px 48px;
+    border-radius: {{ block.settings.button_border_radius }}px;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+
+  .ai-folliq-comparison-cta-button-{{ ai_gen_id }}:hover {
+    background: {{ block.settings.button_hover_bg }};
+    transform: translateY(-2px);
+  }
+
+  @media screen and (max-width: 989px) {
+    .ai-folliq-comparison-table-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .ai-folliq-comparison-row-{{ ai_gen_id }} {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 24px;
+      background: {{ block.settings.column_bg }};
+      border-radius: {{ block.settings.border_radius }}px;
+      padding: 20px;
+      border: 1px solid {{ block.settings.border_color }};
+    }
+
+    .ai-folliq-comparison-feature-{{ ai_gen_id }} {
+      grid-column: 1 / -1;
+      border-bottom: 1px solid {{ block.settings.row_border_color }};
+      padding-bottom: 12px;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .ai-folliq-comparison-cell-{{ ai_gen_id }} {
+      border-bottom: none;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 14px;
+    }
+
+    .ai-folliq-comparison-column-{{ ai_gen_id }},
+    .ai-folliq-comparison-column-folliq-{{ ai_gen_id }} {
+      display: none;
+    }
+
+    .ai-folliq-comparison-column-folliq-{{ ai_gen_id }} {
+      display: block;
+      transform: none;
+      margin-bottom: 32px;
+    }
+
+    .ai-folliq-comparison-heading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.heading_size | times: 0.6 }}px;
+    }
+
+    .ai-folliq-comparison-cta-heading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.cta_heading_size | times: 0.7 }}px;
+    }
+  }
+{% endstyle %}
+
+<div class="ai-folliq-comparison-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-folliq-comparison-container-{{ ai_gen_id }}">
+    <div class="ai-folliq-comparison-header-{{ ai_gen_id }}">
+      {% if block.settings.label != blank %}
+        <div class="ai-folliq-comparison-label-{{ ai_gen_id }}">{{ block.settings.label }}</div>
+      {% endif %}
+      {% if block.settings.heading != blank %}
+        <h2 class="ai-folliq-comparison-heading-{{ ai_gen_id }}">{{ block.settings.heading }}</h2>
+      {% endif %}
+      {% if block.settings.description != blank %}
+        <div class="ai-folliq-comparison-description-{{ ai_gen_id }}">{{ block.settings.description }}</div>
+      {% endif %}
+    </div>
+
+    <div class="ai-folliq-comparison-table-{{ ai_gen_id }}">
+      <div class="ai-folliq-comparison-column-{{ ai_gen_id }}">
+        <div class="ai-folliq-comparison-column-header-{{ ai_gen_id }}"></div>
+      </div>
+
+      <div class="ai-folliq-comparison-column-folliq-{{ ai_gen_id }}">
+        {% if block.settings.product_image %}
+          <div class="ai-folliq-comparison-product-image-{{ ai_gen_id }}">
+            <img
+              src="{{ block.settings.product_image | image_url: width: 600 }}"
+              alt="{{ block.settings.product_image.alt | escape }}"
+              loading="lazy"
+              width="{{ block.settings.product_image.width }}"
+              height="{{ block.settings.product_image.height }}"
+            >
+          </div>
+        {% endif %}
+        <div class="ai-folliq-comparison-column-header-{{ ai_gen_id }} ai-folliq-comparison-column-header-folliq-{{ ai_gen_id }}">
+          {{ block.settings.folliq_title }}
+        </div>
+      </div>
+
+      <div class="ai-folliq-comparison-column-{{ ai_gen_id }}">
+        <div class="ai-folliq-comparison-column-header-{{ ai_gen_id }}">{{ block.settings.column_2_title }}</div>
+      </div>
+
+      <div class="ai-folliq-comparison-column-{{ ai_gen_id }}">
+        <div class="ai-folliq-comparison-column-header-{{ ai_gen_id }}">{{ block.settings.column_3_title }}</div>
+      </div>
+
+      <div class="ai-folliq-comparison-column-{{ ai_gen_id }}">
+        <div class="ai-folliq-comparison-column-header-{{ ai_gen_id }}">{{ block.settings.column_4_title }}</div>
+      </div>
+
+      {% for i in (1..8) %}
+        {% liquid
+          assign feature_key = 'feature_' | append: i
+          assign folliq_key = 'feature_' | append: i | append: '_folliq'
+          assign col2_key = 'feature_' | append: i | append: '_col2'
+          assign col3_key = 'feature_' | append: i | append: '_col3'
+          assign col4_key = 'feature_' | append: i | append: '_col4'
+
+          assign feature_name = block.settings[feature_key]
+          assign folliq_value = block.settings[folliq_key]
+          assign col2_value = block.settings[col2_key]
+          assign col3_value = block.settings[col3_key]
+          assign col4_value = block.settings[col4_key]
+        %}
+
+        {% if feature_name != blank %}
+          <div class="ai-folliq-comparison-row-{{ ai_gen_id }}">
+            <div class="ai-folliq-comparison-feature-{{ ai_gen_id }}">{{ feature_name }}</div>
+
+            <div class="ai-folliq-comparison-cell-{{ ai_gen_id }}">
+              {% if folliq_value %}
+                <div class="ai-folliq-comparison-icon-{{ ai_gen_id }} ai-folliq-comparison-icon-check-{{ ai_gen_id }}">✓</div>
+              {% else %}
+                <div class="ai-folliq-comparison-icon-{{ ai_gen_id }} ai-folliq-comparison-icon-dash-{{ ai_gen_id }}">—</div>
+              {% endif %}
+            </div>
+
+            <div class="ai-folliq-comparison-cell-{{ ai_gen_id }}">
+              {% if col2_value %}
+                <div class="ai-folliq-comparison-icon-{{ ai_gen_id }} ai-folliq-comparison-icon-check-{{ ai_gen_id }}">✓</div>
+              {% else %}
+                <div class="ai-folliq-comparison-icon-{{ ai_gen_id }} ai-folliq-comparison-icon-dash-{{ ai_gen_id }}">—</div>
+              {% endif %}
+            </div>
+
+            <div class="ai-folliq-comparison-cell-{{ ai_gen_id }}">
+              {% if col3_value %}
+                <div class="ai-folliq-comparison-icon-{{ ai_gen_id }} ai-folliq-comparison-icon-check-{{ ai_gen_id }}">✓</div>
+              {% else %}
+                <div class="ai-folliq-comparison-icon-{{ ai_gen_id }} ai-folliq-comparison-icon-dash-{{ ai_gen_id }}">—</div>
+              {% endif %}
+            </div>
+
+            <div class="ai-folliq-comparison-cell-{{ ai_gen_id }}">
+              {% if col4_value %}
+                <div class="ai-folliq-comparison-icon-{{ ai_gen_id }} ai-folliq-comparison-icon-check-{{ ai_gen_id }}">✓</div>
+              {% else %}
+                <div class="ai-folliq-comparison-icon-{{ ai_gen_id }} ai-folliq-comparison-icon-dash-{{ ai_gen_id }}">—</div>
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    {% if block.settings.show_cta %}
+      <div class="ai-folliq-comparison-cta-{{ ai_gen_id }}">
+        {% if block.settings.cta_heading != blank %}
+          <h3 class="ai-folliq-comparison-cta-heading-{{ ai_gen_id }}">{{ block.settings.cta_heading }}</h3>
+        {% endif %}
+        {% if block.settings.cta_description != blank %}
+          <div class="ai-folliq-comparison-cta-description-{{ ai_gen_id }}">{{ block.settings.cta_description }}</div>
+        {% endif %}
+        {% if block.settings.button_text != blank %}
+          <a href="{{ block.settings.button_url }}" class="ai-folliq-comparison-cta-button-{{ ai_gen_id }}">
+            {{ block.settings.button_text }}
+          </a>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Folliq comparison",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section header"
+    },
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Label",
+      "default": "WHY CHOOSE FOLLIQ"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Why Folliq Stands Apart"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "See how Folliq compares with traditional hair care products and why thousands of customers choose it as part of their daily routine."
+    },
+    {
+      "type": "header",
+      "content": "Product image"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_image",
+      "label": "Product image"
+    },
+    {
+      "type": "range",
+      "id": "product_image_width",
+      "label": "Image width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "image_border_radius",
+      "label": "Image border radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Column titles"
+    },
+    {
+      "type": "text",
+      "id": "folliq_title",
+      "label": "Folliq column",
+      "default": "Folliq"
+    },
+    {
+      "type": "text",
+      "id": "column_2_title",
+      "label": "Column 2",
+      "default": "Regular Shampoo"
+    },
+    {
+      "type": "text",
+      "id": "column_3_title",
+      "label": "Column 3",
+      "default": "Conditioner Only"
+    },
+    {
+      "type": "text",
+      "id": "column_4_title",
+      "label": "Column 4",
+      "default": "Generic Hair Products"
+    },
+    {
+      "type": "header",
+      "content": "Feature 1"
+    },
+    {
+      "type": "text",
+      "id": "feature_1",
+      "label": "Feature name",
+      "default": "Supports healthier-looking hair"
+    },
+    {
+      "type": "checkbox",
+      "id": "feature_1_folliq",
+      "label": "Folliq",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "feature_1_col2",
+      "label": "Column 2",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "feature_1_col3",
+      "label": "Column 3",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "feature_1_col4",
+      "label": "Column 4",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Feature 2"
+    },
+    {
+      "type": "text",
+      "id": "feature_2",
+      "label": "Feature name",
+      "default": "Daily scalp care"
+    },
+    {
+      "type": "checkbox",
+      "id": "feature_2_folliq",
+      "label": "Folliq",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "feature_2_col2",
+      "label": "Column 2",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "feature_2_col3",
+      "label": "Column 3",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "feature_2_col4",
+      "label": "Column 4",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Feature 3"
+    },
+    {
+      "type": "text",
+      "id": "feature_3",
+      "label": "Feature name",
+      "default": "Botanical ingredients"
+    },
+    {
+      "type": "checkbox",
+      "id": "feature_3_folliq",
+      "label": "Folliq",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "feature_3_col2",
+      "label": "Column 2",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "feature_3_col3",
+      "label": "Column 3",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "feature_3_col4",
+      "label": "Column 4",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Feature 4"
+    },
+    {
+      "type": "text",
+      "id": "feature_4",
+      "label": "Feature name",
+      "default": "Sulfate free"
+    },
+    {
+      "type": "checkbox",
+      "id": "feature_4_folliq",
+      "label": "Folliq",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "feature_4_col2",
+      "label": "Column 2",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "feature_4_col3",
+      "label": "Column 3",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "feature_4_col4",
+      "label": "Column 4",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Feature 5"
+    },
+    {
+      "type": "text",
+      "id": "feature_5",
+      "label": "Feature name",
+      "default": "Suitable for all hair types"
+    },
+    {
+      "type": "checkbox",
+      "id": "feature_5_folliq",
+      "label": "Folliq",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "feature_5_col2",
+      "label": "Column 2",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "feature_5_col3",
+      "label": "Column 3",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "feature_5_col4",
+      "label": "Column 4",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Feature 6"
+    },
+    {
+      "type": "text",
+      "id": "feature_6",
+      "label": "Feature name",
+      "default": "Easy daily routine"
+    },
+    {
+      "type": "checkbox",
+      "id": "feature_6_folliq",
+      "label": "Folliq",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "feature_6_col2",
+      "label": "Column 2",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "feature_6_col3",
+      "label": "Column 3",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "feature_6_col4",
+      "label": "Column 4",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Feature 7"
+    },
+    {
+      "type": "text",
+      "id": "feature_7",
+      "label": "Feature name",
+      "default": "Premium formulation"
+    },
+    {
+      "type": "checkbox",
+      "id": "feature_7_folliq",
+      "label": "Folliq",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "feature_7_col2",
+      "label": "Column 2",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "feature_7_col3",
+      "label": "Column 3",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "feature_7_col4",
+      "label": "Column 4",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Feature 8"
+    },
+    {
+      "type": "text",
+      "id": "feature_8",
+      "label": "Feature name",
+      "default": "Trusted by thousands"
+    },
+    {
+      "type": "checkbox",
+      "id": "feature_8_folliq",
+      "label": "Folliq",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "feature_8_col2",
+      "label": "Column 2",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "feature_8_col3",
+      "label": "Column 3",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "feature_8_col4",
+      "label": "Column 4",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Call to action"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_cta",
+      "label": "Show CTA section",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "cta_heading",
+      "label": "CTA heading",
+      "default": "Ready to Upgrade Your Hair Care Routine?"
+    },
+    {
+      "type": "textarea",
+      "id": "cta_description",
+      "label": "CTA description",
+      "default": "Experience premium botanical care designed to support healthier-looking hair every day."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Shop Folliq"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Maximum width",
+      "min": 1000,
+      "max": 1600,
+      "step": 20,
+      "unit": "px",
+      "default": 1480
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top padding",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 120
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 120
+    },
+    {
+      "type": "range",
+      "id": "header_spacing",
+      "label": "Header spacing",
+      "min": 20,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "column_gap",
+      "label": "Column gap",
+      "min": 10,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "column_padding",
+      "label": "Column padding",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "row_padding",
+      "label": "Row padding",
+      "min": 10,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "table_bottom_spacing",
+      "label": "Table bottom spacing",
+      "min": 20,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "cta_padding",
+      "label": "CTA padding",
+      "min": 20,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#273522"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_texture",
+      "label": "Background texture"
+    },
+    {
+      "type": "color",
+      "id": "label_color",
+      "label": "Label",
+      "default": "#F2EEE3"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading",
+      "default": "#FAF8F3"
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "Description",
+      "default": "#F2EEE3"
+    },
+    {
+      "type": "color",
+      "id": "column_bg",
+      "label": "Column background",
+      "default": "#33452D"
+    },
+    {
+      "type": "color",
+      "id": "folliq_column_bg",
+      "label": "Folliq column background",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border",
+      "default": "rgba(255,255,255,0.12)"
+    },
+    {
+      "type": "color",
+      "id": "folliq_border_color",
+      "label": "Folliq border",
+      "default": "#F2EEE3"
+    },
+    {
+      "type": "color",
+      "id": "row_border_color",
+      "label": "Row border",
+      "default": "rgba(255,255,255,0.08)"
+    },
+    {
+      "type": "color",
+      "id": "column_heading_color",
+      "label": "Column heading",
+      "default": "#FAF8F3"
+    },
+    {
+      "type": "color",
+      "id": "folliq_heading_color",
+      "label": "Folliq heading",
+      "default": "#273522"
+    },
+    {
+      "type": "color",
+      "id": "feature_color",
+      "label": "Feature text",
+      "default": "#F2EEE3"
+    },
+    {
+      "type": "color",
+      "id": "check_bg",
+      "label": "Check background",
+      "default": "#56694B"
+    },
+    {
+      "type": "color",
+      "id": "check_color",
+      "label": "Check icon",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "dash_bg",
+      "label": "Dash background",
+      "default": "rgba(255,255,255,0.1)"
+    },
+    {
+      "type": "color",
+      "id": "dash_color",
+      "label": "Dash icon",
+      "default": "#F2EEE3"
+    },
+    {
+      "type": "color",
+      "id": "cta_bg",
+      "label": "CTA background",
+      "default": "#33452D"
+    },
+    {
+      "type": "color",
+      "id": "cta_heading_color",
+      "label": "CTA heading",
+      "default": "#FAF8F3"
+    },
+    {
+      "type": "color",
+      "id": "cta_description_color",
+      "label": "CTA description",
+      "default": "#F2EEE3"
+    },
+    {
+      "type": "color",
+      "id": "button_bg",
+      "label": "Button background",
+      "default": "#56694B"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_bg",
+      "label": "Button hover background",
+      "default": "#33452D"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "font_picker",
+      "id": "heading_font",
+      "label": "Heading font",
+      "default": "assistant_n4"
+    },
+    {
+      "type": "font_picker",
+      "id": "body_font",
+      "label": "Body font",
+      "default": "assistant_n4"
+    },
+    {
+      "type": "range",
+      "id": "label_size",
+      "label": "Label size",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Heading size",
+      "min": 30,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "default": 56
+    },
+    {
+      "type": "range",
+      "id": "description_size",
+      "label": "Description size",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "column_heading_size",
+      "label": "Column heading size",
+      "min": 18,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "feature_size",
+      "label": "Feature size",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "cta_heading_size",
+      "label": "CTA heading size",
+      "min": 24,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "cta_description_size",
+      "label": "CTA description size",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "button_size",
+      "label": "Button size",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Border radius"
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "label": "Column border radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "cta_border_radius",
+      "label": "CTA border radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "label": "Button border radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Icons"
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "label": "Icon size",
+      "min": 20,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "default": 32
+    }
+  ],
+  "presets": [
+    {
+      "name": "Folliq comparison"
+    }
+  ]
+}
+{% endschema %}

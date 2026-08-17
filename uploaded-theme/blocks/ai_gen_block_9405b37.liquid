@@ -1,0 +1,693 @@
+{% doc %}
+  @prompt
+    Create a premium Shopify section inspired by a modern skincare landing page.
+    
+    Brand: Folliq™
+    
+    Style:
+    - Minimalistic, premium, clean and trustworthy.
+    - Use the official Folliq brand colors:
+      • Deep Forest Green (#0F4A33)
+      • Sage Green (#7FAF8C)
+      • Light Mint (#DCEEDC)
+      • White (#FFFFFF)
+    - Rounded corners (18-24px).
+    - Soft shadows.
+    - Modern typography similar to Inter or SF Pro Display.
+    - Fully responsive.
+    
+    Layout:
+    - Two-column section.
+    - Left side (about 55% width):
+        - Small premium guarantee badge/icon.
+        - Large heading:
+          "30-Day Money-Back Guarantee"
+        - Supporting text:
+          "Try Folliq risk-free. If you're not completely satisfied within 30 days, simply contact us for a full refund."
+        - Large CTA button:
+          "Try Folliq Risk-Free"
+          Background: Light Mint
+          Text: Deep Forest Green
+          Rounded corners.
+          Smooth hover animation.
+    
+    - Right side (45% width):
+        - Large transparent PNG placeholder for a custom avatar.
+        - The avatar should stand naturally, looking directly at the visitor.
+        - The avatar should hold a Folliq shampoo bar near the chest.
+        - Leave enough spacing so I can replace the placeholder with my own PNG later.
+        - Do NOT crop the person's head.
+    
+    Background:
+    - Elegant dark green gradient using Folliq brand colors.
+    - Very subtle radial lighting behind the avatar.
+    - No patterns.
+    - Premium cosmetic aesthetic.
+    
+    Animations:
+    - Fade-in when section becomes visible.
+    - Slight button hover scaling.
+    - Smooth appearance of the avatar.
+    
+    Technical requirements:
+    - Build as a Shopify Liquid section.
+    - Separate HTML, Liquid, CSS and JavaScript.
+    - Editable through Shopify Theme Editor.
+    - Add settings for:
+        • Heading
+        • Description
+        • CTA text
+        • CTA link
+        • Avatar image upload
+        • Guarantee badge upload
+        • Background colors
+        • Button colors
+    
+    Spacing:
+    - Max width: 1400px
+    - Vertical padding: 90px
+    - Desktop height approximately 500-550px.
+    - Mobile layout stacks vertically with text first and avatar below.
+    
+    The final result should feel like a premium DTC hair-care brand similar to Aesop, Prose or Veloma, while using only the Folliq visual identity.
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-folliq-guarantee-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    background: {{ block.settings.background_gradient_start }};
+    background: linear-gradient(135deg, {{ block.settings.background_gradient_start }} 0%, {{ block.settings.background_gradient_end }} 100%);
+    padding: {{ block.settings.section_padding_mobile }}px 20px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ai-folliq-guarantee-container-{{ ai_gen_id }} {
+    max-width: {{ block.settings.max_width }}px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .ai-folliq-guarantee-content-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .ai-folliq-guarantee-badge-{{ ai_gen_id }} {
+    width: {{ block.settings.badge_size }}px;
+    height: {{ block.settings.badge_size }}px;
+    flex-shrink: 0;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .ai-folliq-guarantee-badge-{{ ai_gen_id }} img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .ai-folliq-guarantee-badge-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed rgba(255, 255, 255, 0.3);
+  }
+
+  .ai-folliq-guarantee-badge-placeholder-{{ ai_gen_id }} svg {
+    width: 50%;
+    height: 50%;
+    opacity: 0.3;
+  }
+
+  .ai-folliq-guarantee-heading-{{ ai_gen_id }} {
+    font-size: {{ block.settings.heading_size_mobile }}px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: {{ block.settings.heading_color }};
+    margin: 0;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .ai-folliq-guarantee-text-{{ ai_gen_id }} {
+    font-size: {{ block.settings.text_size_mobile }}px;
+    line-height: 1.6;
+    color: {{ block.settings.text_color }};
+    margin: 0;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .ai-folliq-guarantee-cta-{{ ai_gen_id }} {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: {{ block.settings.button_padding_vertical }}px {{ block.settings.button_padding_horizontal }}px;
+    background-color: {{ block.settings.button_bg_color }};
+    color: {{ block.settings.button_text_color }};
+    font-size: {{ block.settings.button_text_size }}px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: {{ block.settings.button_border_radius }}px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(20px);
+    border: none;
+    cursor: pointer;
+  }
+
+  .ai-folliq-guarantee-cta-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_hover_bg_color }};
+    color: {{ block.settings.button_hover_text_color }};
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .ai-folliq-guarantee-avatar-{{ ai_gen_id }} {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    min-height: 400px;
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  .ai-folliq-guarantee-avatar-glow-{{ ai_gen_id }} {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, {{ block.settings.glow_color }} 0%, transparent 70%);
+    opacity: {{ block.settings.glow_opacity }};
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .ai-folliq-guarantee-avatar-image-{{ ai_gen_id }} {
+    position: relative;
+    z-index: 2;
+    max-width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: contain;
+    object-position: bottom center;
+  }
+
+  .ai-folliq-guarantee-avatar-placeholder-{{ ai_gen_id }} {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 350px;
+    height: 400px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: {{ block.settings.avatar_border_radius }}px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    border: 2px dashed rgba(255, 255, 255, 0.2);
+    padding: 30px;
+  }
+
+  .ai-folliq-guarantee-avatar-placeholder-{{ ai_gen_id }} svg {
+    width: 80px;
+    height: 80px;
+    opacity: 0.3;
+  }
+
+  .ai-folliq-guarantee-avatar-placeholder-text-{{ ai_gen_id }} {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 14px;
+    text-align: center;
+    line-height: 1.5;
+  }
+
+  .ai-folliq-guarantee-{{ ai_gen_id }}.ai-visible .ai-folliq-guarantee-badge-{{ ai_gen_id }},
+  .ai-folliq-guarantee-{{ ai_gen_id }}.ai-visible .ai-folliq-guarantee-heading-{{ ai_gen_id }},
+  .ai-folliq-guarantee-{{ ai_gen_id }}.ai-visible .ai-folliq-guarantee-text-{{ ai_gen_id }},
+  .ai-folliq-guarantee-{{ ai_gen_id }}.ai-visible .ai-folliq-guarantee-cta-{{ ai_gen_id }},
+  .ai-folliq-guarantee-{{ ai_gen_id }}.ai-visible .ai-folliq-guarantee-avatar-{{ ai_gen_id }} {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .ai-folliq-guarantee-{{ ai_gen_id }}.ai-visible .ai-folliq-guarantee-badge-{{ ai_gen_id }} {
+    transition: opacity 0.6s ease 0.2s, transform 0.6s ease 0.2s;
+  }
+
+  .ai-folliq-guarantee-{{ ai_gen_id }}.ai-visible .ai-folliq-guarantee-heading-{{ ai_gen_id }} {
+    transition: opacity 0.6s ease 0.3s, transform 0.6s ease 0.3s;
+  }
+
+  .ai-folliq-guarantee-{{ ai_gen_id }}.ai-visible .ai-folliq-guarantee-text-{{ ai_gen_id }} {
+    transition: opacity 0.6s ease 0.4s, transform 0.6s ease 0.4s;
+  }
+
+  .ai-folliq-guarantee-{{ ai_gen_id }}.ai-visible .ai-folliq-guarantee-cta-{{ ai_gen_id }} {
+    transition: opacity 0.6s ease 0.5s, transform 0.6s ease 0.5s;
+  }
+
+  .ai-folliq-guarantee-{{ ai_gen_id }}.ai-visible .ai-folliq-guarantee-avatar-{{ ai_gen_id }} {
+    transition: opacity 0.8s ease 0.4s, transform 0.8s ease 0.4s;
+  }
+
+  @media screen and (min-width: 750px) {
+    .ai-folliq-guarantee-{{ ai_gen_id }} {
+      padding: {{ block.settings.section_padding_desktop }}px 40px;
+      min-height: {{ block.settings.section_min_height }}px;
+      display: flex;
+      align-items: center;
+    }
+
+    .ai-folliq-guarantee-container-{{ ai_gen_id }} {
+      grid-template-columns: {{ block.settings.content_width }}% {{ 100 | minus: block.settings.content_width }}%;
+      gap: 60px;
+    }
+
+    .ai-folliq-guarantee-heading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.heading_size_desktop }}px;
+    }
+
+    .ai-folliq-guarantee-text-{{ ai_gen_id }} {
+      font-size: {{ block.settings.text_size_desktop }}px;
+    }
+
+    .ai-folliq-guarantee-avatar-{{ ai_gen_id }} {
+      min-height: 500px;
+    }
+
+    .ai-folliq-guarantee-avatar-placeholder-{{ ai_gen_id }} {
+      max-width: 400px;
+      height: 500px;
+    }
+
+    .ai-folliq-guarantee-avatar-glow-{{ ai_gen_id }} {
+      width: 400px;
+      height: 400px;
+    }
+  }
+{% endstyle %}
+
+<folliq-guarantee-{{ ai_gen_id }} class="ai-folliq-guarantee-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-folliq-guarantee-container-{{ ai_gen_id }}">
+    <div class="ai-folliq-guarantee-content-{{ ai_gen_id }}">
+      <div class="ai-folliq-guarantee-badge-{{ ai_gen_id }}">
+        {% if block.settings.badge_image %}
+          <img
+            src="{{ block.settings.badge_image | image_url: width: 200 }}"
+            alt="{{ block.settings.badge_image.alt | escape }}"
+            loading="lazy"
+            width="200"
+            height="200"
+          >
+        {% else %}
+          <div class="ai-folliq-guarantee-badge-placeholder-{{ ai_gen_id }}">
+            {{ 'image' | placeholder_svg_tag }}
+          </div>
+        {% endif %}
+      </div>
+
+      {% if block.settings.heading != blank %}
+        <h2 class="ai-folliq-guarantee-heading-{{ ai_gen_id }}">
+          {{ block.settings.heading }}
+        </h2>
+      {% endif %}
+
+      {% if block.settings.description != blank %}
+        <div class="ai-folliq-guarantee-text-{{ ai_gen_id }}">
+          {{ block.settings.description }}
+        </div>
+      {% endif %}
+
+      {% if block.settings.cta_text != blank %}
+        <a
+          href="{{ block.settings.cta_link }}"
+          class="ai-folliq-guarantee-cta-{{ ai_gen_id }}"
+        >
+          {{ block.settings.cta_text }}
+        </a>
+      {% endif %}
+    </div>
+
+    <div class="ai-folliq-guarantee-avatar-{{ ai_gen_id }}">
+      <div class="ai-folliq-guarantee-avatar-glow-{{ ai_gen_id }}"></div>
+      {% if block.settings.avatar_image %}
+        <img
+          src="{{ block.settings.avatar_image | image_url: width: 800 }}"
+          alt="{{ block.settings.avatar_image.alt | escape }}"
+          loading="lazy"
+          width="800"
+          height="800"
+          class="ai-folliq-guarantee-avatar-image-{{ ai_gen_id }}"
+        >
+      {% else %}
+        <div class="ai-folliq-guarantee-avatar-placeholder-{{ ai_gen_id }}">
+          {{ 'image' | placeholder_svg_tag }}
+          <div class="ai-folliq-guarantee-avatar-placeholder-text-{{ ai_gen_id }}">
+            Upload a transparent PNG of a person holding your Folliq product
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</folliq-guarantee-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class FolliqGuarantee{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+        this.observer = null;
+      }
+
+      connectedCallback() {
+        this.setupIntersectionObserver();
+      }
+
+      setupIntersectionObserver() {
+        const options = {
+          root: null,
+          rootMargin: '0px',
+          threshold: 0.2
+        };
+
+        this.observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              this.classList.add('ai-visible');
+              this.observer.unobserve(this);
+            }
+          });
+        }, options);
+
+        this.observer.observe(this);
+      }
+
+      disconnectedCallback() {
+        if (this.observer) {
+          this.observer.disconnect();
+        }
+      }
+    }
+
+    customElements.define('folliq-guarantee-{{ ai_gen_id }}', FolliqGuarantee{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Folliq guarantee",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "image_picker",
+      "id": "badge_image",
+      "label": "Guarantee badge"
+    },
+    {
+      "type": "range",
+      "id": "badge_size",
+      "label": "Badge size",
+      "min": 40,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "<p>30-Day Money-Back Guarantee</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Try Folliq risk-free. If you're not completely satisfied within 30 days, simply contact us for a full refund.</p>"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "Button text",
+      "default": "Try Folliq Risk-Free"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "Button link"
+    },
+    {
+      "type": "image_picker",
+      "id": "avatar_image",
+      "label": "Avatar image"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Maximum width",
+      "min": 1000,
+      "max": 1600,
+      "step": 100,
+      "unit": "px",
+      "default": 1400
+    },
+    {
+      "type": "range",
+      "id": "content_width",
+      "label": "Content column width",
+      "min": 45,
+      "max": 65,
+      "step": 5,
+      "unit": "%",
+      "default": 55
+    },
+    {
+      "type": "range",
+      "id": "section_min_height",
+      "label": "Minimum height",
+      "min": 400,
+      "max": 700,
+      "step": 50,
+      "unit": "px",
+      "default": 550
+    },
+    {
+      "type": "range",
+      "id": "section_padding_desktop",
+      "label": "Padding (desktop)",
+      "min": 60,
+      "max": 120,
+      "step": 10,
+      "unit": "px",
+      "default": 90
+    },
+    {
+      "type": "range",
+      "id": "section_padding_mobile",
+      "label": "Padding (mobile)",
+      "min": 40,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_gradient_start",
+      "label": "Background gradient start",
+      "default": "#0F4A33"
+    },
+    {
+      "type": "color",
+      "id": "background_gradient_end",
+      "label": "Background gradient end",
+      "default": "#1a5c42"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#DCEEDC"
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color",
+      "label": "Button background",
+      "default": "#DCEEDC"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text",
+      "default": "#0F4A33"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_bg_color",
+      "label": "Button hover background",
+      "default": "#7FAF8C"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_text_color",
+      "label": "Button hover text",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "glow_color",
+      "label": "Avatar glow color",
+      "default": "#7FAF8C"
+    },
+    {
+      "type": "range",
+      "id": "glow_opacity",
+      "label": "Glow opacity",
+      "min": 0,
+      "max": 1,
+      "step": 0.1,
+      "default": 0.3
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_desktop",
+      "label": "Heading size (desktop)",
+      "min": 32,
+      "max": 72,
+      "step": 4,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "label": "Heading size (mobile)",
+      "min": 24,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "text_size_desktop",
+      "label": "Text size (desktop)",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "text_size_mobile",
+      "label": "Text size (mobile)",
+      "min": 14,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "button_text_size",
+      "label": "Button text size",
+      "min": 14,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Button style"
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "button_padding_vertical",
+      "label": "Vertical padding",
+      "min": 12,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "button_padding_horizontal",
+      "label": "Horizontal padding",
+      "min": 24,
+      "max": 60,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "avatar_border_radius",
+      "label": "Avatar placeholder radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    }
+  ],
+  "presets": [
+    {
+      "name": "Folliq guarantee"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,899 @@
+{% doc %}
+  @prompt
+    Create a premium full-width "30-Day Risk-Free Guarantee" section for the Folliq hair care brand.
+    
+    IMPORTANT:
+    Follow the Folliq Brand Guidelines exactly.
+    
+    Brand Style:
+    - Premium
+    - Minimal
+    - Luxury
+    - Botanical
+    - Clinical
+    - Elegant
+    - Scandinavian
+    - Clean
+    - Inspired by Apple, Aesop, Act+Acre, Rhode and luxury wellness brands.
+    
+    Use ONLY the official Folliq brand colors.
+    
+    Color Palette:
+    
+    Primary Green
+    #33452D
+    
+    Dark Green
+    #273522
+    
+    Accent Green
+    #56694B
+    
+    Warm Ivory
+    #F2EEE3
+    
+    Soft Ivory
+    #FAF8F3
+    
+    Text
+    #1F231D
+    
+    Border
+    #D9D8D2
+    
+    Do NOT introduce any additional green shades.
+    
+    Typography:
+    
+    Heading:
+    Cormorant Garamond
+    
+    Body:
+    Manrope
+    
+    Buttons:
+    Manrope SemiBold
+    
+    Layout:
+    
+    Create a premium rounded container instead of a full-width colored banner.
+    
+    Container:
+    - Background: #33452D
+    - Border Radius: 28px
+    - Maximum Width: 1480px
+    - Centered on the page
+    - 120px vertical padding
+    - 80px horizontal padding
+    
+    Page background outside the container:
+    #FAF8F3
+    
+    Inside Layout:
+    
+    Two columns.
+    
+    LEFT (45%)
+    
+    Top:
+    Editable guarantee badge.
+    
+    Heading:
+    
+    30-Day Risk-Free Guarantee
+    
+    Paragraph:
+    
+    Experience Folliq with complete confidence. If you're not fully satisfied within 30 days, we'll provide a full refund. No hassle. No hidden conditions.
+    
+    Primary Button:
+    
+    Try Folliq Risk-Free
+    
+    Button Style:
+    
+    Background:
+    #F2EEE3
+    
+    Text:
+    #1F231D
+    
+    Hover:
+    Background #FFFFFF
+    
+    Rounded:
+    16px
+    
+    Height:
+    56px
+    
+    Width:
+    340px
+    
+    Below button create three premium trust badges:
+    
+    ✓ 30-Day Guarantee
+    
+    ✓ Secure Checkout
+    
+    ✓ Fast Shipping
+    
+    Each badge:
+    
+    Small outline icon
+    
+    Text color:
+    #F2EEE3
+    
+    Font:
+    Manrope Medium
+    
+    RIGHT (55%)
+    
+    Large lifestyle image.
+    
+    A confident man or woman with healthy shiny hair holding a Folliq shampoo bar.
+    
+    Image requirements:
+    
+    Natural lighting
+    
+    Premium studio photography
+    
+    Warm tones
+    
+    Transparent cutout
+    
+    Soft shadow
+    
+    Image aligned to the bottom-right corner.
+    
+    Spacing:
+    
+    Desktop:
+    120px top and bottom
+    
+    Tablet:
+    96px
+    
+    Mobile:
+    72px
+    
+    Responsive:
+    
+    Desktop:
+    Text left
+    Image right
+    
+    Tablet:
+    Image below
+    
+    Mobile:
+    Single centered column
+    
+    Animations:
+    
+    Fade-up on scroll.
+    
+    Button hover:
+    Scale 1.03
+    
+    Image:
+    Very subtle floating animation.
+    
+    Everything must remain elegant and minimal.
+    
+    Theme Editor Settings:
+    
+    Every element must be editable:
+    
+    - Badge image
+    - Heading
+    - Paragraph
+    - Button text
+    - Button URL
+    - Lifestyle image
+    - Trust badges
+    - Colors
+    - Padding
+    - Border Radius
+    
+    The final result should feel like a premium DTC brand—not flashy, not salesy, with generous whitespace, refined typography, and a luxurious botanical aesthetic consistent with the Folliq identity.
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600&display=swap');
+
+  .ai-guarantee-wrapper-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    background-color: {{ block.settings.page_background }};
+    padding: {{ block.settings.section_padding_desktop }}px 20px;
+  }
+
+  .ai-guarantee-container-{{ ai_gen_id }} {
+    max-width: {{ block.settings.container_max_width }}px;
+    margin: 0 auto;
+    background-color: {{ block.settings.container_background }};
+    border-radius: {{ block.settings.container_border_radius }}px;
+    padding: {{ block.settings.container_padding_vertical }}px {{ block.settings.container_padding_horizontal }}px;
+    display: grid;
+    grid-template-columns: {{ block.settings.left_column_width }}% {{ 100 | minus: block.settings.left_column_width }}%;
+    gap: 60px;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .ai-guarantee-container-{{ ai_gen_id }}.ai-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .ai-guarantee-content-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .ai-guarantee-badge-wrapper-{{ ai_gen_id }} {
+    width: fit-content;
+  }
+
+  .ai-guarantee-badge-{{ ai_gen_id }} {
+    max-width: {{ block.settings.badge_max_width }}px;
+    height: auto;
+    display: block;
+  }
+
+  .ai-guarantee-badge-placeholder-{{ ai_gen_id }} {
+    width: {{ block.settings.badge_max_width }}px;
+    height: 80px;
+    background-color: rgba(242, 238, 227, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px dashed rgba(242, 238, 227, 0.3);
+  }
+
+  .ai-guarantee-badge-placeholder-{{ ai_gen_id }} svg {
+    width: 40px;
+    height: 40px;
+    opacity: 0.3;
+  }
+
+  .ai-guarantee-text-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .ai-guarantee-heading-{{ ai_gen_id }} {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: {{ block.settings.heading_font_size }}px;
+    font-weight: 500;
+    line-height: 1.2;
+    color: {{ block.settings.heading_color }};
+    margin: 0;
+    letter-spacing: -0.02em;
+  }
+
+  .ai-guarantee-paragraph-{{ ai_gen_id }} {
+    font-family: 'Manrope', sans-serif;
+    font-size: {{ block.settings.paragraph_font_size }}px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: {{ block.settings.paragraph_color }};
+    margin: 0;
+    opacity: 0.9;
+  }
+
+  .ai-guarantee-button-{{ ai_gen_id }} {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: {{ block.settings.button_width }}px;
+    height: {{ block.settings.button_height }}px;
+    background-color: {{ block.settings.button_background }};
+    color: {{ block.settings.button_text_color }};
+    font-family: 'Manrope', sans-serif;
+    font-size: {{ block.settings.button_font_size }}px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: {{ block.settings.button_border_radius }}px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 0.01em;
+  }
+
+  .ai-guarantee-button-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_hover_background }};
+    transform: scale(1.03);
+  }
+
+  .ai-guarantee-trust-badges-{{ ai_gen_id }} {
+    display: flex;
+    gap: 32px;
+    margin-top: 8px;
+  }
+
+  .ai-guarantee-trust-badge-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .ai-guarantee-trust-icon-{{ ai_gen_id }} {
+    width: 18px;
+    height: 18px;
+    color: {{ block.settings.trust_badge_color }};
+    flex-shrink: 0;
+  }
+
+  .ai-guarantee-trust-text-{{ ai_gen_id }} {
+    font-family: 'Manrope', sans-serif;
+    font-size: {{ block.settings.trust_badge_font_size }}px;
+    font-weight: 500;
+    color: {{ block.settings.trust_badge_color }};
+    white-space: nowrap;
+  }
+
+  .ai-guarantee-image-wrapper-{{ ai_gen_id }} {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    height: 100%;
+    min-height: 400px;
+  }
+
+  .ai-guarantee-image-{{ ai_gen_id }} {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    animation: ai-float-{{ ai_gen_id }} 6s ease-in-out infinite;
+  }
+
+  .ai-guarantee-image-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    background-color: rgba(242, 238, 227, 0.05);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px dashed rgba(242, 238, 227, 0.2);
+    position: relative;
+  }
+
+  .ai-guarantee-image-placeholder-{{ ai_gen_id }} svg {
+    width: 80px;
+    height: 80px;
+    opacity: 0.2;
+  }
+
+  .ai-guarantee-empty-state-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Manrope', sans-serif;
+    font-size: 14px;
+    color: rgba(242, 238, 227, 0.5);
+    text-align: center;
+  }
+
+  @keyframes ai-float-{{ ai_gen_id }} {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+
+  @media screen and (max-width: 989px) {
+    .ai-guarantee-wrapper-{{ ai_gen_id }} {
+      padding: {{ block.settings.section_padding_tablet }}px 20px;
+    }
+
+    .ai-guarantee-container-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+      gap: 48px;
+      padding: {{ block.settings.container_padding_vertical | times: 0.8 }}px {{ block.settings.container_padding_horizontal | times: 0.7 }}px;
+    }
+
+    .ai-guarantee-heading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.heading_font_size | times: 0.85 }}px;
+    }
+
+    .ai-guarantee-paragraph-{{ ai_gen_id }} {
+      font-size: {{ block.settings.paragraph_font_size | times: 0.95 }}px;
+    }
+
+    .ai-guarantee-button-{{ ai_gen_id }} {
+      width: 100%;
+      max-width: {{ block.settings.button_width }}px;
+    }
+
+    .ai-guarantee-trust-badges-{{ ai_gen_id }} {
+      gap: 24px;
+    }
+
+    .ai-guarantee-image-wrapper-{{ ai_gen_id }} {
+      min-height: 350px;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-guarantee-wrapper-{{ ai_gen_id }} {
+      padding: {{ block.settings.section_padding_mobile }}px 16px;
+    }
+
+    .ai-guarantee-container-{{ ai_gen_id }} {
+      gap: 40px;
+      padding: {{ block.settings.container_padding_vertical | times: 0.6 }}px {{ block.settings.container_padding_horizontal | times: 0.5 }}px;
+      border-radius: {{ block.settings.container_border_radius | times: 0.7 }}px;
+    }
+
+    .ai-guarantee-content-{{ ai_gen_id }} {
+      gap: 24px;
+      text-align: center;
+      align-items: center;
+    }
+
+    .ai-guarantee-heading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.heading_font_size | times: 0.7 }}px;
+    }
+
+    .ai-guarantee-paragraph-{{ ai_gen_id }} {
+      font-size: {{ block.settings.paragraph_font_size | times: 0.9 }}px;
+    }
+
+    .ai-guarantee-button-{{ ai_gen_id }} {
+      width: 100%;
+      font-size: {{ block.settings.button_font_size | times: 0.95 }}px;
+    }
+
+    .ai-guarantee-trust-badges-{{ ai_gen_id }} {
+      flex-direction: column;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .ai-guarantee-image-wrapper-{{ ai_gen_id }} {
+      min-height: 300px;
+      justify-content: center;
+    }
+  }
+{% endstyle %}
+
+<folliq-guarantee-{{ ai_gen_id }} class="ai-guarantee-wrapper-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-guarantee-container-{{ ai_gen_id }}">
+    <div class="ai-guarantee-content-{{ ai_gen_id }}">
+      {% if block.settings.badge_image %}
+        <div class="ai-guarantee-badge-wrapper-{{ ai_gen_id }}">
+          <img
+            src="{{ block.settings.badge_image | image_url: width: 400 }}"
+            alt="{{ block.settings.badge_image.alt | escape }}"
+            class="ai-guarantee-badge-{{ ai_gen_id }}"
+            loading="lazy"
+            width="{{ block.settings.badge_image.width }}"
+            height="{{ block.settings.badge_image.height }}"
+          >
+        </div>
+      {% else %}
+        <div class="ai-guarantee-badge-placeholder-{{ ai_gen_id }}">
+          {{ 'image' | placeholder_svg_tag }}
+        </div>
+      {% endif %}
+
+      <div class="ai-guarantee-text-{{ ai_gen_id }}">
+        {% if block.settings.heading != blank %}
+          <h2 class="ai-guarantee-heading-{{ ai_gen_id }}">{{ block.settings.heading }}</h2>
+        {% endif %}
+
+        {% if block.settings.paragraph != blank %}
+          <p class="ai-guarantee-paragraph-{{ ai_gen_id }}">{{ block.settings.paragraph }}</p>
+        {% endif %}
+      </div>
+
+      {% if block.settings.button_text != blank %}
+        <a
+          href="{{ block.settings.button_url }}"
+          class="ai-guarantee-button-{{ ai_gen_id }}"
+        >
+          {{ block.settings.button_text }}
+        </a>
+      {% endif %}
+
+      <div class="ai-guarantee-trust-badges-{{ ai_gen_id }}">
+        {% if block.settings.trust_badge_1 != blank %}
+          <div class="ai-guarantee-trust-badge-{{ ai_gen_id }}">
+            <svg class="ai-guarantee-trust-icon-{{ ai_gen_id }}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span class="ai-guarantee-trust-text-{{ ai_gen_id }}">{{ block.settings.trust_badge_1 }}</span>
+          </div>
+        {% endif %}
+
+        {% if block.settings.trust_badge_2 != blank %}
+          <div class="ai-guarantee-trust-badge-{{ ai_gen_id }}">
+            <svg class="ai-guarantee-trust-icon-{{ ai_gen_id }}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span class="ai-guarantee-trust-text-{{ ai_gen_id }}">{{ block.settings.trust_badge_2 }}</span>
+          </div>
+        {% endif %}
+
+        {% if block.settings.trust_badge_3 != blank %}
+          <div class="ai-guarantee-trust-badge-{{ ai_gen_id }}">
+            <svg class="ai-guarantee-trust-icon-{{ ai_gen_id }}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span class="ai-guarantee-trust-text-{{ ai_gen_id }}">{{ block.settings.trust_badge_3 }}</span>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="ai-guarantee-image-wrapper-{{ ai_gen_id }}">
+      {% if block.settings.lifestyle_image %}
+        <img
+          src="{{ block.settings.lifestyle_image | image_url: width: 1200 }}"
+          alt="{{ block.settings.lifestyle_image.alt | escape }}"
+          class="ai-guarantee-image-{{ ai_gen_id }}"
+          loading="lazy"
+          width="{{ block.settings.lifestyle_image.width }}"
+          height="{{ block.settings.lifestyle_image.height }}"
+        >
+      {% else %}
+        <div class="ai-guarantee-image-placeholder-{{ ai_gen_id }}">
+          {{ 'product-1' | placeholder_svg_tag }}
+          <div class="ai-guarantee-empty-state-{{ ai_gen_id }}">
+            Add lifestyle image
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</folliq-guarantee-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class FolliqGuarantee{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+        this.container = this.querySelector('.ai-guarantee-container-{{ ai_gen_id }}');
+      }
+
+      connectedCallback() {
+        this.setupScrollAnimation();
+      }
+
+      setupScrollAnimation() {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              this.container.classList.add('ai-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.1,
+          rootMargin: '0px 0px -50px 0px'
+        });
+
+        observer.observe(this.container);
+      }
+    }
+
+    customElements.define('folliq-guarantee-{{ ai_gen_id }}', FolliqGuarantee{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Risk-free guarantee",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Badge"
+    },
+    {
+      "type": "image_picker",
+      "id": "badge_image",
+      "label": "Badge image"
+    },
+    {
+      "type": "range",
+      "id": "badge_max_width",
+      "label": "Badge width",
+      "min": 60,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 120
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "30-Day Risk-Free Guarantee"
+    },
+    {
+      "type": "range",
+      "id": "heading_font_size",
+      "label": "Heading size",
+      "min": 28,
+      "max": 72,
+      "step": 2,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#F2EEE3"
+    },
+    {
+      "type": "textarea",
+      "id": "paragraph",
+      "label": "Paragraph",
+      "default": "Experience Folliq with complete confidence. If you're not fully satisfied within 30 days, we'll provide a full refund. No hassle. No hidden conditions."
+    },
+    {
+      "type": "range",
+      "id": "paragraph_font_size",
+      "label": "Paragraph size",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "paragraph_color",
+      "label": "Paragraph color",
+      "default": "#F2EEE3"
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Try Folliq Risk-Free"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button link"
+    },
+    {
+      "type": "range",
+      "id": "button_width",
+      "label": "Button width",
+      "min": 200,
+      "max": 400,
+      "step": 20,
+      "unit": "px",
+      "default": 340
+    },
+    {
+      "type": "range",
+      "id": "button_height",
+      "label": "Button height",
+      "min": 44,
+      "max": 72,
+      "step": 4,
+      "unit": "px",
+      "default": 56
+    },
+    {
+      "type": "range",
+      "id": "button_font_size",
+      "label": "Button font size",
+      "min": 14,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "label": "Button radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "button_background",
+      "label": "Button background",
+      "default": "#F2EEE3"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_background",
+      "label": "Button hover background",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text color",
+      "default": "#1F231D"
+    },
+    {
+      "type": "header",
+      "content": "Trust badges"
+    },
+    {
+      "type": "text",
+      "id": "trust_badge_1",
+      "label": "Badge 1",
+      "default": "30-Day Guarantee"
+    },
+    {
+      "type": "text",
+      "id": "trust_badge_2",
+      "label": "Badge 2",
+      "default": "Secure Checkout"
+    },
+    {
+      "type": "text",
+      "id": "trust_badge_3",
+      "label": "Badge 3",
+      "default": "Fast Shipping"
+    },
+    {
+      "type": "range",
+      "id": "trust_badge_font_size",
+      "label": "Badge font size",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "trust_badge_color",
+      "label": "Badge color",
+      "default": "#F2EEE3"
+    },
+    {
+      "type": "header",
+      "content": "Lifestyle image"
+    },
+    {
+      "type": "image_picker",
+      "id": "lifestyle_image",
+      "label": "Image"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "left_column_width",
+      "label": "Left column width",
+      "min": 35,
+      "max": 55,
+      "step": 5,
+      "unit": "%",
+      "default": 45
+    },
+    {
+      "type": "range",
+      "id": "container_max_width",
+      "label": "Container max width",
+      "min": 1200,
+      "max": 1600,
+      "step": 40,
+      "unit": "px",
+      "default": 1480
+    },
+    {
+      "type": "range",
+      "id": "container_border_radius",
+      "label": "Container radius",
+      "min": 0,
+      "max": 60,
+      "step": 4,
+      "unit": "px",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "container_padding_vertical",
+      "label": "Container vertical padding",
+      "min": 60,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 120
+    },
+    {
+      "type": "range",
+      "id": "container_padding_horizontal",
+      "label": "Container horizontal padding",
+      "min": 40,
+      "max": 160,
+      "step": 10,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "section_padding_desktop",
+      "label": "Section padding desktop",
+      "min": 60,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 120
+    },
+    {
+      "type": "range",
+      "id": "section_padding_tablet",
+      "label": "Section padding tablet",
+      "min": 40,
+      "max": 160,
+      "step": 8,
+      "unit": "px",
+      "default": 96
+    },
+    {
+      "type": "range",
+      "id": "section_padding_mobile",
+      "label": "Section padding mobile",
+      "min": 32,
+      "max": 120,
+      "step": 8,
+      "unit": "px",
+      "default": 72
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "page_background",
+      "label": "Page background",
+      "default": "#FAF8F3"
+    },
+    {
+      "type": "color",
+      "id": "container_background",
+      "label": "Container background",
+      "default": "#33452D"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Risk-free guarantee"
+    }
+  ]
+}
+{% endschema %}
