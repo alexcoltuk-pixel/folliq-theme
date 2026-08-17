@@ -1,0 +1,51 @@
+{{ 'component-folliq-pdp-final.css' | asset_url | stylesheet_tag }}
+
+<div class="folliq-social color-{{ section.settings.color_scheme }}">
+  <div class="folliq-social__inner">
+    {%- assign person_blocks = section.blocks | where: 'type', 'person' -%}
+    {%- if person_blocks.size > 0 -%}
+      <div class="folliq-social__avatars">
+        {%- for block in person_blocks -%}
+          <span class="folliq-social__avatar" {{ block.shopify_attributes }}>{{ block.settings.initials }}</span>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+    <p class="folliq-social__text">
+      {%- for block in person_blocks -%}
+        <strong>{{ block.settings.name }}</strong>{%- render 'icon-check-folliq' -%}{%- unless forloop.last -%}, {% endunless -%}
+      {%- endfor -%}
+      {{ section.settings.trailing_text }}
+    </p>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Folliq Social Proof",
+  "tag": "section",
+  "class": "section-folliq-social",
+  "settings": [
+    { "type": "text", "id": "trailing_text", "label": "Trailing text", "default": "and 1,500+ others love Folliq!" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-1" }
+  ],
+  "blocks": [
+    {
+      "type": "person",
+      "name": "Person",
+      "settings": [
+        { "type": "text", "id": "initials", "label": "Avatar initials", "default": "E" },
+        { "type": "text", "id": "name", "label": "Name", "default": "Emma" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Folliq Social Proof",
+      "blocks": [
+        { "type": "person", "settings": { "initials": "E", "name": "Emma" } },
+        { "type": "person", "settings": { "initials": "M", "name": "Mark" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

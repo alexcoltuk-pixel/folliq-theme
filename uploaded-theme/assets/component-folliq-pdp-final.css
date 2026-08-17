@@ -478,3 +478,61 @@
   opacity: 0.8;
   margin: 0;
 }
+
+/* === Social proof bar === */
+.folliq-social {
+  padding: 1.6rem 5%;
+}
+
+.folliq-social__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.folliq-social__avatars {
+  display: flex;
+  flex-shrink: 0;
+}
+
+.folliq-social__avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.6rem;
+  height: 3.6rem;
+  border-radius: 50%;
+  background: rgb(var(--color-button));
+  color: rgb(var(--color-button-label));
+  font-family: var(--font-heading-family);
+  font-size: 1.4rem;
+  font-weight: 600;
+  border: 2px solid rgb(var(--color-background));
+  margin-left: -1rem;
+}
+
+.folliq-social__avatar:first-child {
+  margin-left: 0;
+}
+
+.folliq-social__text {
+  font-family: var(--font-body-family);
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+.folliq-social__text strong {
+  font-weight: 700;
+}
+
+.folliq-social__text svg {
+  width: 1.4rem;
+  height: 1.4rem;
+  vertical-align: -0.2rem;
+  color: rgb(var(--color-button));
+  margin: 0 0.3rem 0 0.15rem;
+}
