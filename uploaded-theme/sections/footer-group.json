@@ -1,1 +1,49 @@
-{"name":"t:sections.footer.name","type":"footer","sections":{"footer":{"type":"footer","blocks":{"text_U94CCW":{"type":"text","settings":{"heading":"<strong>Join the FOLLIQ Community<\/strong>","subtext":"<p>Get exclusive offers, hair care tips, and early access to new products. Subscribe and enjoy healthier-looking hair every day.<\/p>"}},"brand_information_pdcWtq":{"type":"brand_information","settings":{"show_social":true}}},"block_order":["text_U94CCW","brand_information_pdcWtq"],"settings":{"color_scheme":"scheme-4","newsletter_enable":true,"newsletter_heading":"Subscribe to our emails","enable_follow_on_shop":true,"show_social":true,"enable_country_selector":true,"enable_language_selector":true,"payment_enable":true,"show_policy":true,"margin_top":0,"padding_top":36,"padding_bottom":36}}},"order":["footer"]}
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "footer": {
+      "type": "footer-folliq",
+      "blocks": {
+        "brand_folliq": {
+          "type": "brand",
+          "settings": {
+            "logo_width": 130,
+            "tagline": "<p>Botanical haircare formulated with rosemary, ginger and biotin — for hair that looks fuller and feels stronger.<\/p>",
+            "show_social": true
+          }
+        },
+        "menu_shop_folliq": {
+          "type": "menu",
+          "settings": {
+            "heading": "Shop",
+            "menu": "main-menu"
+          }
+        },
+        "menu_support_folliq": {
+          "type": "menu",
+          "settings": {
+            "heading": "Support",
+            "menu": "footer"
+          }
+        },
+        "newsletter_folliq": {
+          "type": "newsletter",
+          "settings": {
+            "heading": "Join the Folliq community",
+            "subtext": "<p>Hair care tips, offers and early access — straight to your inbox.<\/p>"
+          }
+        }
+      },
+      "block_order": ["brand_folliq", "menu_shop_folliq", "menu_support_folliq", "newsletter_folliq"],
+      "settings": {
+        "color_scheme": "scheme-4",
+        "show_payment_icons": true,
+        "show_policy_links": true,
+        "enable_country_selector": true,
+        "enable_language_selector": true
+      }
+    }
+  },
+  "order": ["footer"]
+}

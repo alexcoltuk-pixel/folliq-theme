@@ -1,0 +1,252 @@
+.footer-folliq {
+  padding: 6rem 0 3rem;
+}
+
+.footer-folliq__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+/* Top row: brand / menu columns / newsletter */
+
+.footer-folliq__top {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4.8rem;
+  padding-bottom: 4.8rem;
+}
+
+.footer-folliq__block--brand {
+  flex: 1 1 280px;
+  max-width: 340px;
+}
+
+.footer-folliq__block--menu {
+  flex: 0 1 160px;
+}
+
+.footer-folliq__block--newsletter {
+  flex: 1 1 300px;
+  max-width: 380px;
+  margin-left: auto;
+}
+
+.footer-folliq__logo-link {
+  display: inline-block;
+}
+
+.footer-folliq__logo-link img {
+  display: block;
+  height: auto;
+}
+
+.footer-folliq__logo-text {
+  font-family: var(--font-heading-family);
+  font-size: 2.4rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: rgb(var(--color-foreground));
+}
+
+.footer-folliq__tagline {
+  font-family: var(--font-body-family);
+  font-size: 1.4rem;
+  line-height: 1.6;
+  opacity: 0.8;
+  margin-top: 1.4rem;
+}
+
+.footer-folliq__social {
+  display: flex;
+  gap: 1.2rem;
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0 0;
+}
+
+.footer-folliq__social .list-social__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(var(--color-foreground), 0.25);
+  color: rgb(var(--color-foreground));
+}
+
+.footer-folliq__social .list-social__link svg {
+  width: 16px;
+  height: 16px;
+}
+
+.footer-folliq__heading {
+  font-family: var(--font-heading-family);
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin: 0 0 1.6rem;
+}
+
+.footer-folliq__menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer-folliq__menu-link {
+  font-family: var(--font-body-family);
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: rgb(var(--color-foreground));
+  opacity: 0.85;
+}
+
+.footer-folliq__menu-link:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.footer-folliq__newsletter-text {
+  font-family: var(--font-body-family);
+  font-size: 1.4rem;
+  line-height: 1.6;
+  opacity: 0.8;
+  margin-bottom: 1.8rem;
+}
+
+.footer-folliq__newsletter-field-wrapper {
+  display: flex;
+  align-items: stretch;
+  border: 1px solid rgba(var(--color-foreground), 0.3);
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.footer-folliq__newsletter-input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  background: transparent;
+  padding: 1.2rem 1.8rem;
+  font-family: var(--font-body-family);
+  font-size: 1.4rem;
+  color: rgb(var(--color-foreground));
+}
+
+.footer-folliq__newsletter-input:focus {
+  outline: none;
+}
+
+.footer-folliq__newsletter-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  flex-shrink: 0;
+  border: none;
+  background: rgb(var(--color-button));
+  color: rgb(var(--color-button-text));
+  cursor: pointer;
+}
+
+.footer-folliq__newsletter-submit svg {
+  width: 16px;
+  height: 16px;
+}
+
+.footer-folliq__form-message {
+  display: block;
+  font-family: var(--font-body-family);
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+
+.footer-folliq__form-message--success {
+  opacity: 0.85;
+}
+
+/* Bottom bar */
+
+.footer-folliq__bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding-top: 3.2rem;
+  border-top: 1px solid rgba(var(--color-foreground), 0.15);
+}
+
+.footer-folliq__localization {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.footer-folliq__payment {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-folliq__copyright {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 1.6rem;
+  font-family: var(--font-body-family);
+  font-size: 1.2rem;
+  opacity: 0.7;
+  margin-left: auto;
+}
+
+.footer-folliq__copyright a {
+  color: currentColor;
+}
+
+.footer-folliq__policies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.6rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+@media screen and (max-width: 989px) {
+  .footer-folliq__block--newsletter {
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .footer-folliq {
+    padding: 4.8rem 0 2.4rem;
+  }
+
+  .footer-folliq__top {
+    flex-direction: column;
+    gap: 3.2rem;
+  }
+
+  .footer-folliq__block--brand,
+  .footer-folliq__block--menu,
+  .footer-folliq__block--newsletter {
+    max-width: none;
+  }
+
+  .footer-folliq__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-folliq__copyright {
+    margin-left: 0;
+  }
+}
